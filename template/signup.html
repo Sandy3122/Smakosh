@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Askbootstrap" />
+  <meta name="author" content="Askbootstrap" />
+  <link rel="icon" type="image/png" href="img/fav.png" />
+  <title>Smakosh - Online Food Delivery System</title>
+  <!-- Slick Slider -->
+  <link rel="stylesheet" type="text/css" href="vendor/slick/slick.min.css" />
+  <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.min.css" />
+  <!-- Feather Icon-->
+  <link href="vendor/icons/feather.css" rel="stylesheet" type="text/css" />
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- Sidebar CSS -->
+  <link href="vendor/sidebar/demo.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="osahan-signup login-page">
+    <video loop autoplay muted id="vid">
+      <source src="img/bg.mp4" type="video/mp4" />
+      <source src="img/bg.mp4" type="video/ogg" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="d-flex align-items-center justify-content-center flex-column vh-100">
+      <div class="px-5 col-md-6 ml-auto">
+        <div class="px-5 col-10 mx-auto">
+          <h2 class="text-dark my-0">Hello There.</h2>
+          <p class="text-50">Sign up to continue</p>
+          <!-- <form class="mt-5 mb-4" action="verification.html" > -->
+          <form class="mt-5 mb-4" >
+            <div class="form-group">
+              <label for="exampleInputName1" class="text-dark">Name</label>
+              <input type="text" placeholder="Enter Name" class="form-control" id="username"aria-describedby="nameHelp" name="name" />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputNumber1" class="text-dark">Mobile Number</label>
+              <input type="number" placeholder="Enter Mobile" class="form-control" id="userphone"aria-describedby="numberHelp" name="phone" />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputNumber1" class="text-dark">E-mail</label>
+              <input type="email" placeholder="Enter Your Mail-Id" class="form-control"id="useremail" aria-describedby="numberHelp" name="email" />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1" class="text-dark">Password</label>
+              <input type="password" placeholder="Enter Password" class="form-control" id="password"name="password" />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1" class="text-dark">Confirm Password</label>
+              <input type="text" placeholder="Confirm Your Password" class="form-control"id="confirmpassword" name="confirmpassword" />
+            </div>
+            <!-- <input type="button" value="Sign Up" class="btn btn-primary btn-lg btn-block"> -->
+
+            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="RegisterationData()"> SIGN UP </button>
+            <!-- <div class="py-2">
+                            <button class="btn btn-facebook btn-lg btn-block"><i class="feather-facebook"></i> Connect with Facebook</button>
+                        </div> -->
+          
+          </form>
+        </div>
+
+        <div class="new-acc d-flex align-items-center justify-content-center">
+          <a href="login.html">
+            <p class="text-center m-0">Already Have an account? Sign in</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- slick Slider JS-->
+  <script type="text/javascript" src="vendor/slick/slick.min.js"></script>
+  <!-- Sidebar JS-->
+  <script type="text/javascript" src="vendor/sidebar/hc-offcanvas-nav.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script type="text/javascript" src="js/osahan.js"></script>
+</body>
+<script>
+  // //alert("working")
+  // const api_url = "http://localhost:8080/getRegisterationData";
+
+
+  // //   const api_url = "http://localhost:3000/getRegisterationData";
+
+  // // Calling that async function
+  // //getapi(api_url);
+  function RegisterationData() {
+    
+  //  var password = document.getElementById('password').value;
+  //   var  confirmpassword: document.getElementById('confirmpassword').value;
+  //   if(password != confirmpassword){
+  //     alert("wrong details")
+  //   }
+  
+  
+  var name= document.getElementById('username').value;
+  var number= document.getElementById('userphone').value;
+  var email= document.getElementById('useremail').value;
+  var password= document.getElementById('password').value;
+  var confirmPassword= document.getElementById('confirmpassword').value;
+  // var phno = 10;
+    if(name=='' || number=='' || email==''){
+      alert('Please fill the filed')
+      return false;
+    }
+    // else if(number.match(phno)){
+    //   alert("Mobile Number Should Contain 10 Digits")
+    //   return false;
+    // }
+    else if(password != confirmPassword){
+      alert('Please the check the password')
+      return false;
+    }
+    
+    
+    var data = {
+      Name: document.getElementById('username').value,
+      MobileNumber: document.getElementById('userphone').value,
+      Email: document.getElementById('useremail').value,
+      Password: document.getElementById('password').value,
+      ConfirmPassword: document.getElementById('confirmpassword').value,
+
+    }
+    // console.log(data)
+    // if(data.Name=='' || data.MobileNumber=='' || data.Email==''){
+    //       alert('Please fill the filed')
+    //     }else if(Password != ConfirmPassword){
+    //       alert('Please the check the password')
+    //     }
+    //     else{
+    //       console.log('success:', data);
+          
+    //     }
+    fetch('/sendData', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        
+      })
+      .catch((error) => {
+        alert("Mail ID Already Exits")
+      });
+  }
+
+  // load the data by call this function
+  // getdata();
+  // function getdata(){
+  //     document.getElementById('tbody_id').innerHTML ="<tr><td>sim</td><td>sim@gmail.com</td></tr";
+
+  // }
+  // api url
+
+
+  // Defining async function
+  // async function getapi(url) {
+
+  //   // Storing response
+  //   const response = await fetch(url);
+
+  //   // Storing data in form of JSON
+  //   var data = await response.json();
+  //   if (response) {
+  //     hideloader();
+  //     document.getElementById('tbody_id').innerHTML ="<tr><td>sim</td><td>sim@gmail.com</td></tr";
+  //     var tableBody = document.getElementById('tbody_id');
+  //     tableBody.innerHTML = "";
+  //     for (var i = 0; i < data.length; i++) {
+  //       str = '<tr><td>' + data[i].name + '</td><td>' + data[i].email + '</td><td>Edit/Delete</td></tr>';
+  //       tableBody.append(str);
+  //       var row = tableBody.insertRow(0);
+  //       var cell1 = row.insertCell(0);
+  //       var cell2 = row.insertCell(1);
+  //       var cell3 = row.insertCell(2);
+  //       var cell4 = row.insertCell(3);
+  //       var cell5 = row.insertCell(4);
+  //       cell1.innerHTML = data[i].name;
+  //       cell2.innerHTML = data[i].phone;
+  //       cell3.innerHTML = data[i].email;
+  //       // cell4.innerHTML = "<button onclick=editRow('" + data[i]._id + "')>Edit</button>| <button onclick=deleterow('" + data[i]._id + "')>Delete</button>";
+  //       cell4.innerHTML = data[i].password;
+  //       cell5.innerHTML = data[i].confirmpassword;
+  //     }
+  //   }
+  // }
+  
+  </script>
+</html>
