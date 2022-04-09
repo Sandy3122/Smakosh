@@ -4,16 +4,18 @@ app.path = require("path");
 // var monk = require("monk");
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
-
-// app.use(express.static("contents"));
 var path = require('path')
-const RegisterationData = require('./schema.js');
+
+//Importing the Schema's
+const registrationSchema = require('./models/customerSignUpSchema.js');
+const custLogInData = require('./models/customerLogInSchema.js');
+
 
 app.use(express.static(path.join(__dirname, '/template'))); 
 app.use(express.static(path.join(__dirname, 'restaurant_pages')));
 
-// Mongodb Database Connection
 
+// Mongodb Database Connection
 const mongoose = require("mongoose");
 // const urlencoded = require("body-parser/lib/types/urlencoded");
 mongoose.connect("mongodb+srv://Sandeep1999:Sandeep3122@sandeep.nlcna.mongodb.net/Smakosh?retryWrites=true&w=majority", {
@@ -27,7 +29,9 @@ mongoose.connect("mongodb+srv://Sandeep1999:Sandeep3122@sandeep.nlcna.mongodb.ne
 const connection = mongoose.connection;
 
 
-
+var monk = require('monk');
+var dbs = monk('mongodb+srv://Sandeep1999:Sandeep3122@sandeep.nlcna.mongodb.net/Smakosh?retryWrites=true&w=majority')
+var datacollection = dbs.collection('items')
 
 
 app.get("/", (req,res) => {
@@ -37,8 +41,8 @@ app.get("/", (req,res) => {
 
 //sending registration data to database
 app.post('/sendData', function(req,res){
-
-    var obj = new RegisterationData({
+    console.log(req.body);
+    var obj = new registrationSchema({
         Name:req.body.Name,
         MobileNumber:req.body.MobileNumber,
         Email:req.body.Email,
@@ -46,13 +50,21 @@ app.post('/sendData', function(req,res){
         ConfirmPassword:req.body.ConfirmPassword,
     })
 
-    obj.save(function(err, results) {
-        if(results){
-           console.log(results);
-            res.send(results);
-        }else{
-            console.log(err)
-            res.send(err);
+    registrationSchema.findOne({ $or: [{ Name:req.body.Name }, { MobileNumber:req.body.MobileNumber }, {Email: req.body.Email }, ] }, function(err,docs){
+        if(err || docs==null){
+            //console.log(err)
+            obj.save(function(err, results) {
+                if(results){
+                   console.log("results"+ results);
+                    res.send(results);
+                }else{
+                    console.log(err)
+                    res.send(err);
+                }
+            })
+        } 
+        else{
+            res.sendStatus(500);
         }
     })
    
@@ -62,8 +74,8 @@ app.post('/sendData', function(req,res){
 
 //getting registration data
 
-app.get('/getRegisterationData',(req,res)=>{
-RegisterationData.find(function(err,result){
+app.get('/getRegistrationSchema',(req,res)=>{
+registrationSchema.find(function(err,result){
         if(err || result==null)
         {
             
@@ -79,8 +91,41 @@ RegisterationData.find(function(err,result){
 });
 
 
-//getting navbar html pages
 
+//posting login data
+app.post('/loginData', function(req,res){
+    //res.sendFile(__dirname + '/template/signup.html');
+    console.log(req.body);
+    
+    registrationSchema.findOne({Email :req.body.Email, Password:req.body.Password}, function(err,docs){
+        if(err || docs==null){
+            //console.log(err)
+            res.sendStatus(500)
+        } 
+        else{
+            res.send(docs);
+        }
+    })
+   
+});
+
+//Getting Data From Mongodb Data Fot Restaurants
+app.get("/restaurantPizzaHut", function(req,res){
+    datacollection.find({restaurant_name:"Pizza Hut",category_name:"Veg Pizza"}, function(err,result){
+        if(err){
+            console.log(err)
+            // res.sendStatus(500)
+        } 
+        else{
+            console.log(result);
+            res.send(result);
+        }
+    })
+});
+
+
+
+//getting navbar html pages
 app.get('/home',function(req,res){
     res.sendFile(__dirname + "/template/home.html");
 });
@@ -188,6 +233,10 @@ app.get('/breakfast',function(req,res){
 app.get('/salad',function(req,res){
     res.sendFile(__dirname + "/template/salad.html");
 });
+app.get('/status_onprocess',function(req,res){
+    res.sendFile(__dirname + "/template//status_onprocess.html");
+});
+
 
 
 //Getting Restaurant html pages 
@@ -195,26 +244,26 @@ app.get('/salad',function(req,res){
 app.get('/pizza-hut',function(req,res){
     res.sendFile(__dirname + "/restaurant_pages/pizza-hut.html");
 });
-app.get('/restaurant2',function(req,res){
-    res.sendFile(__dirname + "/restaurant_pages/restaurant2.html");
+app.get('/yati-foods',function(req,res){
+    res.sendFile(__dirname + "/restaurant_pages/yati-foods.html");
 });
-app.get('/restaurant3',function(req,res){
-    res.sendFile(__dirname + "/restaurant_pages/restaurant3.html");
+app.get('/dakshin-haweli',function(req,res){
+    res.sendFile(__dirname + "/restaurant_pages/dakshin-haweli.html");
 });
-app.get('/restaurant4',function(req,res){
-    res.sendFile(__dirname + "/restaurant_pages/restaurant4.html");
+app.get('/kfc',function(req,res){
+    res.sendFile(__dirname + "/restaurant_pages/kfc.html");
 });
-app.get('/restaurant5',function(req,res){
-    res.sendFile(__dirname + "/restaurant_pages/restaurant5.html");
+app.get('/sub-way',function(req,res){
+    res.sendFile(__dirname + "/restaurant_pages/sub-way.html");
 });
-app.get('/restaurant6',function(req,res){
-    res.sendFile(__dirname + "/restaurant_pages/restaurant6.html");
+app.get('/royal-tiffins',function(req,res){
+    res.sendFile(__dirname + "/restaurant_pages/royal-tiffins.html");
 });
-app.get('/restaurant7',function(req,res){
-    res.sendFile(__dirname + "/restaurant_pages/restaurant7.html");
+app.get('/bakes&cakes',function(req,res){
+    res.sendFile(__dirname + "/restaurant_pages/bakes&cakes.html");
 });
-app.get('/restaurant8',function(req,res){
-    res.sendFile(__dirname + "/restaurant_pages/restaurant8.html");
+app.get('/overaction',function(req,res){
+    res.sendFile(__dirname + "/restaurant_pages/overaction.html");
 });
 
 
@@ -227,4 +276,3 @@ app.get('/adminlogin',function(req,res){
 
 //listening to the server
 app.listen(8000, ()=> console.log("Successfully Server Started"));
-

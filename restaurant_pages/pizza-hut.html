@@ -34,7 +34,7 @@
                     </div>
                     <div class="col-3 d-flex align-items-center m-none">
                         <div class="dropdown mr-3">
-                            <a class="text-dark dropdown-toggle d-flex align-items-center py-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="text-dark dropdown-toggle d-flex align-items-center py-3"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div><i class="feather-map-pin mr-2 bg-light rounded-pill p-2 icofont-size"></i></div>
                                 <div>
                                     <p class="text-muted mb-0 small">Select Location</p>
@@ -53,30 +53,30 @@
                                     </div>
                                     <div class="p-3 border-bottom">
                                         <a href="/home" class="text-decoration-none">
-                                            <p class="font-weight-bold text-primary m-0"><i class="feather-navigation"></i>Surampalem</p>
+                                            <p class="font-weight-bold text-primary m-0"><i class="feather-navigation"></i> Surempalem </p>
                                         </a>
                                     </div>
                                     <div class="filter">
-                                        <h6 class="px-3 py-3 bg-light pb-1 m-0 border-bottom">Choose your country</h6>
+                                        <h6 class="px-3 py-3 bg-light pb-1 m-0 border-bottom">Choose Your Location</h6>
                                         <div class="custom-control  border-bottom px-0 custom-radio">
                                             <input type="radio" id="customRadio1" name="location" class="custom-control-input">
                                             <label class="custom-control-label py-3 w-100 px-3" for="customRadio1">Kakinada</label>
                                         </div>
                                         <div class="custom-control  border-bottom px-0 custom-radio">
                                             <input type="radio" id="customRadio2" name="location" class="custom-control-input" checked="">
-                                            <label class="custom-control-label py-3 w-100 px-3" for="customRadio2">Rajahmundary</label>
-                                        </div>
-                                        <div class="custom-control  border-bottom px-0 custom-radio">
-                                            <input type="radio" id="customRadio5" name="location" class="custom-control-input">
-                                            <label class="custom-control-label py-3 w-100 px-3" for="customRadio5">Surampalem</label>
+                                            <label class="custom-control-label py-3 w-100 px-3" for="customRadio2">Rajahmundry</label>
                                         </div>
                                         <div class="custom-control  border-bottom px-0 custom-radio">
                                             <input type="radio" id="customRadio3" name="location" class="custom-control-input">
-                                            <label class="custom-control-label py-3 w-100 px-3" for="customRadio3">Peddapuram</label>
+                                            <label class="custom-control-label py-3 w-100 px-3" for="customRadio3">Surempalem</label>
                                         </div>
                                         <div class="custom-control  border-bottom px-0 custom-radio">
                                             <input type="radio" id="customRadio4" name="location" class="custom-control-input">
-                                            <label class="custom-control-label py-3 w-100 px-3" for="customRadio4">Samalkot</label>
+                                            <label class="custom-control-label py-3 w-100 px-3" for="customRadio4">Peddapuram</label>
+                                        </div>
+                                        <div class="custom-control  border-bottom px-0 custom-radio">
+                                            <input type="radio" id="customRadio5" name="location" class="custom-control-input">
+                                            <label class="custom-control-label py-3 w-100 px-3" for="customRadio5">Samalkot</label>
                                         </div>
                                         <div class="custom-control  px-0 custom-radio">
                                             <input type="radio" id="customRadio6" name="location" class="custom-control-input">
@@ -104,8 +104,8 @@
                             </a>
                             <!-- my account -->
                             <div class="dropdown mr-4 m-none">
-                                <a href="#" class="dropdown-toggle text-dark py-3 d-block" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img alt="#" src="img/user/1.jpg" class="img-fluid rounded-circle header-user mr-2 header-user"> Smakosh
+                                <a  class="dropdown-toggle text-dark py-3 d-block" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img alt="#" src="img/user/1.jpg" class="img-fluid rounded-circle header-user mr-2 header-user"> Sandeep
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" href="/profile">My account</a>
@@ -122,7 +122,7 @@
                                     <i class="feather-shopping-cart h6 mr-2 mb-0"></i> <span>Cart</span>
                                 </div>
                             </a>
-                            <a class="toggle" href="#">
+                            <a class="toggle" >
                                 <span></span>
                             </a>
                         </div>
@@ -198,15 +198,16 @@
                     </div>
                     <div class="row m-0">
                         <h6 class="p-3 m-0 bg-light w-100">Veg Pizza <small class="text-black-50">3 ITEMS</small></h6>
+                        
                         <div class="col-md-12 px-0 border-top">
-                            <div class="">
-                                <div class="p-3 border-bottom menu-list">
+                            <div class="" id="photos">
+                                <!-- <div class="p-3 border-bottom menu-list">
                                     <span class="float-right"><a  class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#extras">ADD</a></span>
                                     <div class="media">
                                         <img alt="#" src="img/restaurants/pizza_hut/creamyTomatoPastaPizza.png" alt="askbootstrap" class="mr-3 rounded-pill ">
                                         <div class="media-body">
-                                            <h6 class="mb-1">Creamy Tomato Pasta Pizza</h6>
-                                            <p class="text-muted mb-0">Loaded with a delicious creamy tomato pasta topping, BBQ pepper chicken, green capsicum, crunchy red and yellow bell peppers.</p>
+                                            <h6 class="mb-1">Margherita Pizza</h6>
+                                            <p class="text-muted mb-0">A hugely popular margherita, with a deliciously tangy single cheese topping.</p>
                                             <p class="text-muted mb-0"><b>₹229</b></p>
                                         </div>
                                     </div>
@@ -216,7 +217,7 @@
                                     <div class="media">
                                         <img alt="#" src="img/restaurants/pizza_hut/goldenCorn.png" alt="askbootstrap" class="mr-3 rounded-pill ">
                                         <div class="media-body">
-                                            <h6 class="mb-1">Golden Corn <span class="badge badge-danger">BEST SELLER</span></h6>
+                                            <h6 class="mb-1"> Golden Corn Pizza <span class="badge badge-danger">BEST SELLER</span></h6>
                                             <p class="text-muted mb-0">Sweet & juicy golden corn for that lipsmacking taste</p>
                                             <p class="text-muted mb-0"><b>₹189</b></p>
                                         </div>
@@ -227,12 +228,12 @@
                                     <div class="media">
                                         <img alt="#" src="img/restaurants/pizza_hut/peppypaneer.png" alt="askbootstrap" class="mr-3 rounded-pill ">
                                         <div class="media-body">
-                                            <h6 class="mb-1">Peppy Paneer <span class="badge badge-success">Pure Veg</span></h6>
-                                            <p class="text-muted mb-0">Flavorful trio of juicy paneer, crisp capsicum with spicy red paprika</p>
+                                            <h6 class="mb-1">Red Paprika Pizza <span class="badge badge-success">PURE VEG</span></h6>
+                                            <p class="text-muted mb-0"> It is wonderful on nachos, crackers with cheese and for making chilly cheese toast.</p>
                                             <p class="text-muted mb-0"><b>₹249</b></p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
@@ -289,7 +290,7 @@
                         </div>
                     </div>
                     <div class="row m-0">
-                        <h6 class="p-3 m-0 bg-light w-100">Desserts & Beverage's <small class="text-black-50">7 ITEMS</small></h6>
+                        <h6 class="p-3 m-0 bg-light w-100">Desserts & Beverage's <small class="text-black-50">3 ITEMS</small></h6>
                         <div class="col-md-12 px-0 border-top">
                             <div class="">
                                 <div class="p-3 border-bottom menu-list">
@@ -340,9 +341,9 @@
                                 <div class="p-3 border-bottom menu-list">
                                     <span class="float-right"><a  class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#extras">ADD</a></span>
                                     <div class="media">
-                                            <img alt="#" src="img/restaurants/pizza_hut/sprite.png" alt="askbootstrap" class="mr-3 rounded-pill ">
+                                            <img alt="#" src="img/restaurants/pizza_hut/sprit.png" alt="askbootstrap" class="mr-3 rounded-pill ">
                                         <div class="media-body">
-                                            <h6 class="mb-1">Sprite </h6>
+                                            <h6 class="mb-1">Sprit </h6>
                                             <p class="text-muted mb-0">1 Liter</p>
                                             <p class="text-muted mb-0"><b>₹69</b></p>
                                         </div>
@@ -676,6 +677,162 @@
             </section>
         </div>
     </footer>
+    <!-- <nav id="main-nav">
+        <ul class="second-nav">
+            <li><a href="/home"><i class="feather-home mr-2"></i> Homepage</a></li>
+            <li><a href="/my_order"><i class="feather-list mr-2"></i> My Orders</a></li>
+            <li>
+                <a ><i class="feather-edit-2 mr-2"></i> Authentication</a>
+                <ul>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/signup">Register</a></li>
+                    <li><a href="/forgot_password">Forgot Password</a></li>
+                    <li><a href="/verification">Verification</a></li>
+                    <li><a href="/location">Location</a></li>
+                </ul>
+            </li>
+            <li><a href="/favorites"><i class="feather-heart mr-2"></i> Favorites</a></li>
+            <li><a href="/trending"><i class="feather-trending-up mr-2"></i> Trending</a></li>
+            <li><a href="/most_popular"><i class="feather-award mr-2"></i> Most Popular</a></li>
+            <li><a href="/checkout"><i class="feather-list mr-2"></i> Checkout</a></li>
+            <li><a href="/successful"><i class="feather-check-circle mr-2"></i> Successful</a></li>
+            <li><a href="/map"><i class="feather-map-pin mr-2"></i> Live Map</a></li>
+            <li>
+                <a ><i class="feather-user mr-2"></i> Profile</a>
+                <ul>
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/favorites">Delivery support</a></li>
+                    <li><a href="/contact-us">Contact Us</a></li>
+                    <li><a href="/terms">Terms of use</a></li>
+                    <li><a href="/privacy">Privacy & Policy</a></li>
+                </ul>
+            </li>
+            <li>
+                <a ><i class="feather-alert-triangle mr-2"></i> Error</a>
+                <ul>
+                    <li><a href="/not-found">Not Found</a>
+                        <li><a href="/maintence"> Maintence</a>
+                            <li><a href="/coming-soon">Coming Soon</a>
+                </ul>
+                </li>
+                <li>
+                    <a ><i class="feather-link mr-2"></i> Navigation Link Example</a>
+                    <ul>
+                        <li>
+                            <a >Link Example 1</a>
+                            <ul>
+                                <li>
+                                    <a >Link Example 1.1</a>
+                                    <ul>
+                                        <li><a >Link</a></li>
+                                        <li><a >Link</a></li>
+                                        <li><a >Link</a></li>
+                                        <li><a >Link</a></li>
+                                        <li><a >Link</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a >Link Example 1.2</a>
+                                    <ul>
+                                        <li><a >Link</a></li>
+                                        <li><a >Link</a></li>
+                                        <li><a >Link</a></li>
+                                        <li><a >Link</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a >Link Example 2</a></li>
+                        <li><a >Link Example 3</a></li>
+                        <li><a >Link Example 4</a></li>
+                        <li data-nav-custom-content>
+                            <div class="custom-message">
+                                You can add any custom content to your navigation items. This text is just an example.
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+        </ul>
+        <ul class="bottom-nav">
+            <li class="email">
+                <a class="text-danger" href="/home">
+                    <p class="h5 m-0"><i class="feather-home text-danger"></i></p>
+                    Home
+                </a>
+            </li>
+            <li class="github">
+                <a href="/faq">
+                    <p class="h5 m-0"><i class="feather-message-circle"></i></p>
+                    FAQ
+                </a>
+            </li>
+            <li class="ko-fi">
+                <a href="/contact-us">
+                    <p class="h5 m-0"><i class="feather-phone"></i></p>
+                    Help
+                </a>
+            </li>
+        </ul>
+    </nav> -->
+    <!-- extras modal -->
+    <!-- <div class="modal fade" id="extras" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Extras</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form> -->
+                        <!-- extras body -->
+                        <!-- <div class="recepie-body">
+                            <div class="custom-control custom-radio border-bottom py-2">
+                                <input type="radio" id="customRadio1f" name="location" class="custom-control-input" checked>
+                                <label class="custom-control-label" for="customRadio1f">Tuna <span class="text-muted">+$35.00</span></label>
+                            </div>
+                            <div class="custom-control custom-radio border-bottom py-2">
+                                <input type="radio" id="customRadio2f" name="location" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio2f">Salmon <span class="text-muted">+$20.00</span></label>
+                            </div>
+                            <div class="custom-control custom-radio border-bottom py-2">
+                                <input type="radio" id="customRadio3f" name="location" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio3f">Wasabi <span class="text-muted">+$25.00</span></label>
+                            </div>
+                            <div class="custom-control custom-radio border-bottom py-2">
+                                <input type="radio" id="customRadio4f" name="location" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio4f">Unagi  <span class="text-muted">+$10.00</span></label>
+                            </div>
+                            <div class="custom-control custom-radio border-bottom py-2">
+                                <input type="radio" id="customRadio5f" name="location" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio5f">Vegetables  <span class="text-muted">+$5.00</span></label>
+                            </div>
+                            <div class="custom-control custom-radio border-bottom py-2">
+                                <input type="radio" id="customRadio6f" name="location" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio6f">Noodles  <span class="text-muted">+$30.00</span></label>
+                            </div>
+                            <h6 class="font-weight-bold mt-4">QUANTITY</h6>
+                            <div class="d-flex align-items-center">
+                                <p class="m-0">1 Item</p>
+                                <div class="ml-auto">
+                                    <span class="count-number"><button type="button" class="btn-sm left dec btn btn-outline-secondary"> <i class="feather-minus"></i> </button><input class="count-number-input" type="text" readonly="" value="1"><button type="button" class="btn-sm right inc btn btn-outline-secondary"> <i class="feather-plus"></i> </button></span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer p-0 border-0">
+                    <div class="col-6 m-0 p-0">
+                        <button type="button" class="btn border-top btn-lg btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                    <div class="col-6 m-0 p-0">
+                        <button type="button" class="btn btn-primary btn-lg btn-block">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -685,6 +842,74 @@
     <script type="text/javascript" src="vendor/sidebar/hc-offcanvas-nav.js"></script>
     <!-- Custom scripts for all pages-->
     <script type="text/javascript" src="js/osahan.js"></script>
+    <!-- fetching data from mongodb -->
+    <!-- <script type="text/javascript" src="mongodbData/pizzaHutData.js"></script> -->
+    <script>
+        fetch('/restaurantPizzaHut',{
+			method:'get',
+			headers:{
+				'Content-Type' : 'application/json'
+			}
+		})
+		.then(response => response.json())
+		.then(data => {
+			console.log(data)
+			for(var i=0; i < data.length; i++){
+                console.log(i)
+            var newDiv = document.createElement('div');
+            // newDiv.id = 'r'+i;
+            newDiv.className = 'p-3 border-bottom menu-list';
+
+            var span1 = document.createElement('span')
+            span1.className = "float-right"
+            
+            var anchar1 = document.createElement('a')
+            anchar1.className = "btn btn-outline-secondary btn-sm"
+            anchar1.innerText = "ADD"
+            
+            
+            span1.appendChild(anchar1)
+
+            var newSubDiv = document.createElement('div');
+            // newDiv.id = 'r'+i;
+            newSubDiv.className = 'media';
+
+            var image1 = document.createElement('img')
+            image1.src = "img/restaurants/pizza_hut/"+data[i].item_img
+            image1.className = "mr-3 rounded-pill"
+
+            var newSubDiv1 = document.createElement('div');
+            // newDiv.id = 'r'+i;
+            newSubDiv1.className = 'media-body';
+
+            var heading1 = document.createElement('h6');
+            // newDiv.id = 'r'+i;
+            heading1.className = 'media-body';
+            heading1.innerHTML = data[i].item_name
+
+            var p1 = document.createElement('p')
+            p1.className = "text-muted mb-0"
+            p1.innerHTML = data[i].description
+            
+            var p2 = document.createElement('p')
+            p2.className = "text-muted mb-0"
+            p2.innerHTML = data[i].price
+
+            newSubDiv1.appendChild(heading1)
+            newSubDiv1.appendChild(p1)
+            newSubDiv1.appendChild(p2)
+
+            newSubDiv.appendChild(image1)
+            newSubDiv.appendChild(newSubDiv1)    
+            newDiv.appendChild(span1)
+            newDiv.appendChild(newSubDiv)
+            document.getElementById('photos').appendChild(newDiv);
+                console.log(newDiv)
+            }
+		})
+    </script>
+
+
 </body>
 
 </html>

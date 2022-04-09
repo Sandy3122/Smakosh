@@ -786,6 +786,18 @@ p {
     box-shadow: none;
 }
 
+/* Password Show And Hide */
+
+.pwd{
+    position:relative;
+}
+#togglePassword{
+    position:absolute;
+    cursor: pointer;
+    margin:-20px 0px 0px 96%;
+    color:gray;
+}
+
 
 /* Filter */
 
