@@ -1,0 +1,128 @@
+/* ======== Add Restaurant ======== */
+body {
+            background-image: url("https://images.pexels.com/photos/1907227/pexels-photo-1907227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+            color: white;
+            background-size: cover;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .main {
+            margin-top: 100px;
+        }
+
+        @media all and (max-width: 400px) {
+            .btn {
+                font-size: 18px;
+            }
+
+            .main {
+                margin-top: 0px;
+            }
+        }
+
+        @media all and (max-width: 375px) {
+            .btn {
+                font-size: 14px;
+            }
+
+            .main {
+                margin-top: 0px;
+            }
+        }
+
+        
+        @media all and (min-width: 760px) {
+            .btn {
+                font-size: 10px;
+            }
+        }
+        @media all and (max-width: 1025px) {
+            .main {
+                margin-top:10px;
+            }
+        }
+
+        @media all and (min-width: 1024px) {
+            .btn {
+                font-size: 15px;
+            }
+        }
+
+        @media screen and  (min-width: 2000px) {
+            h2
+            {
+                font-size:4.4rem;
+            }
+            h6
+            {
+                font-size:2rem;
+            }
+            .container
+            {
+                margin-top:17rem;
+            }
+            .main {
+                margin-top:10px;
+            }
+            .btn
+            {
+                font-size:30px;
+            }
+                
+        }       
+
+        .btn {
+            cursor: pointer;
+            border: 1px solid #fff;
+            background: none;
+            transition: 0.8s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn1,
+        .btn2 {
+            color: #fc036b;
+        }
+
+        .btn1:hover,
+        .btn2:hover {
+            color: #fff;
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 0%;
+            background: #fc036b;
+            z-index: -1;
+            transition: 0.8s ease;
+        }
+
+        .btn1::before {
+            top: 0;
+            border-radius: 0 0 50% 50%;
+        }
+
+        .btn2::before {
+            bottom: 0;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .btn1:hover::before {
+            height: 180%;
+        }
+
+        .btn2:hover::before {
+            height: 180%;
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+        }
+

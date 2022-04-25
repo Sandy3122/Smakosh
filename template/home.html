@@ -4,21 +4,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Askbootstrap">
-    <meta name="author" content="Askbootstrap">
-    <link rel="icon" type="image/png" href="img/fav.png">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="../img/fav.png">
     <title>Smakosh - Online Food Ordering Website</title>
     <!-- Slick Slider -->
-    <link rel="stylesheet" type="text/css" href="vendor/slick/slick.min.css" />
-    <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../vendor/slick/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="../vendor/slick/slick-theme.min.css" />
     <!-- Feather Icon-->
-    <link href="vendor/icons/feather.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/icons/feather.css" rel="stylesheet" type="text/css">
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
     <!-- Sidebar CSS -->
-    <link href="vendor/sidebar/demo.css" rel="stylesheet">
+    <link href="../vendor/sidebar/demo.css" rel="stylesheet">
 </head>
 
 <body class="fixed-bottom-bar">
@@ -27,8 +27,8 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-1">
-                        <a href="/home" class="brand-wrap mb-0">
-                            <img alt="#" class="img-fluid" src="img/logo_web.png">
+                        <a href="/customer/home" class="brand-wrap mb-0">
+                            <img alt="#" class="img-fluid" src="../img/logo_web.png">
                         </a>
                         <!-- brand-wrap.// -->
                     </div>
@@ -52,7 +52,7 @@
                                         </div>
                                     </div>
                                     <div class="p-3 border-bottom">
-                                        <a href="/home" class="text-decoration-none">
+                                        <a href="/customer/home" class="text-decoration-none">
                                             <p class="font-weight-bold text-primary m-0"><i class="feather-navigation"></i>Surampalem</p>
                                         </a>
                                     </div>
@@ -91,13 +91,13 @@
                     <div class="col-8">
                         <div class="d-flex align-items-center justify-content-end pr-5">
                             <!-- search -->
-                            <a href="/search" class="widget-header mr-4 text-dark">
+                            <a href="/customer/search" class="widget-header mr-4 text-dark">
                                 <div class="icon d-flex align-items-center">
                                     <i class="feather-search h6 mr-2 mb-0"></i> <span>Search</span>
                                 </div>
                             </a>
                             <!-- offers -->
-                            <a href="/offers" class="widget-header mr-4 text-white btn bg-primary m-none">
+                            <a href="/customer/offers" class="widget-header mr-4 text-white btn bg-primary m-none">
                                 <div class="icon d-flex align-items-center">
                                     <i class="feather-disc h6 mr-2 mb-0"></i> <span>Offers</span>
                                 </div>
@@ -105,19 +105,19 @@
                             <!-- my account -->
                             <div class="dropdown mr-4 m-none">
                                 <a href="#" class="dropdown-toggle text-dark py-3 d-block" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img alt="#" src="img/user/1.jpg" class="img-fluid rounded-circle header-user mr-2 header-user"> Smakosh
+                                    <!-- <img alt="#" src="../img/user/1.jpg" class="img-fluid rounded-circle header-user mr-2 header-user">  -->
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="/profile">My account</a>
-                                    <a class="dropdown-item" href="/faq">Delivery support</a>
-                                    <a class="dropdown-item" href="/contact-us">Contant us</a>
-                                    <a class="dropdown-item" href="/terms">Term of use</a>
-                                    <a class="dropdown-item" href="/privacy">Privacy policy</a>
-                                    <a class="dropdown-item" href="/login">Logout</a>
+                                    <a class="dropdown-item" href="/customer/profile">My account</a>
+                                    <a class="dropdown-item" href="/customer/faq">Delivery support</a>
+                                    <a class="dropdown-item" href="/customer/contact-us">Contant us</a>
+                                    <a class="dropdown-item" href="/customer/terms">Term of use</a>
+                                    <a class="dropdown-item" href="/customer/privacy">Privacy policy</a>
+                                    <a class="dropdown-item" href="/customer/logout">Logout</a>
                                 </div>
                             </div>
                             <!-- signin -->
-                            <a href="/checkout" class="widget-header mr-4 text-dark">
+                            <a href="/customer/checkout" class="widget-header mr-4 text-dark">
                                 <div class="icon d-flex align-items-center">
                                     <i class="feather-shopping-cart h6 mr-2 mb-0"></i> <span>Cart</span>
                                 </div>
@@ -144,7 +144,7 @@
                         <span></span>
                     </a>
                     <h4 class="font-weight-bold m-0 pl-5">Browse</h4>
-                    <a class="text-white font-weight-bold ml-auto" data-toggle="modal" data-target="#exampleModal" href="#">Filter</a>
+                    <!-- <a class="text-white font-weight-bold ml-auto" data-toggle="modal" data-target="#exampleModal" href="#">Filter</a> -->
                 </div>
             </div>
             <div class="input-group mt-3 rounded shadow-sm overflow-hidden">
@@ -154,60 +154,62 @@
                 <input type="text" class="shadow-none border-0 form-control" placeholder="Search for restaurants or dishes">
             </div>
         </div>
+
+        
         <!-- Filters -->
         <div class="container">
             <div class="cat-slider">
                 <div class="cat-item px-1 py-3">
-                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href="/fries">
-                        <img alt="#" src="img/icons/Fries.png" class="img-fluid mb-2">
+                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href="/customer/fries">
+                        <img alt="#" src="../img/icons/Fries.png" class="img-fluid mb-2">
                         <p class="m-0 small">Fries</p>
                     </a>
                 </div>
                 <div class="cat-item px-1 py-3">
-                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href="/pizza">
-                        <img alt="#" src="img/icons/Pizza.png" class="img-fluid mb-2">
+                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href="/customer/pizza">
+                        <img alt="#" src="../img/icons/Pizza.png" class="img-fluid mb-2">
                         <p class="m-0 small">Pizza</p>
                     </a>
                 </div>
                 <div class="cat-item px-1 py-3">
-                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href="/burger">
-                        <img alt="#" src="img/icons/Burger.png" class="img-fluid mb-2">
+                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href="/customer/burger">
+                        <img alt="#" src="../img/icons/Burger.png" class="img-fluid mb-2">
                         <p class="m-0 small">Burger</p>
                     </a>
                 </div>
                 <div class="cat-item px-1 py-3">
-                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href="/sandwich">
-                        <img alt="#" src="img/icons/Sandwich.png" class="img-fluid mb-2">
+                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href="/customer/sandwich">
+                        <img alt="#" src="../img/icons/Sandwich.png" class="img-fluid mb-2">
                         <p class="m-0 small">Sandwich</p>
                     </a>
                 </div>
                 <div class="cat-item px-1 py-3">
-                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href="/coffee">
-                        <img alt="#" src="img/icons/Coffee.png" class="img-fluid mb-2">
-                        <p class="m-0 small">Coffee</p>
+                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href="/customer/cakes">
+                        <img alt="#" src="../img/icons/Cakes.png" class="img-fluid mb-2">
+                        <p class="m-0 small">Cakes</p>
                     </a>
                 </div>
                 <div class="cat-item px-1 py-3">
-                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href="/starter">
-                        <img alt="#" src="img/icons/Steak.png" class="img-fluid mb-2">
-                        <p class="m-0 small">Steak</p>
+                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href="/customer/starter">
+                        <img alt="#" src="../img/icons/Biryani.png" class="img-fluid mb-2">
+                        <p class="m-0 small">Biryani</p>
                     </a>
                 </div>
                 <div class="cat-item px-1 py-3">
-                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href="/soup">
-                        <img alt="#" src="img/icons/ColaCan.png" class="img-fluid mb-2">
-                        <p class="m-0 small">ColaCan</p>
+                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href="/customer/soup">
+                        <img alt="#" src="../img/icons/ColaCan.png" class="img-fluid mb-2">
+                        <p class="m-0 small">Soft Drinks</p>
                     </a>
                 </div>
                 <div class="cat-item px-1 py-3">
-                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href="/breakfast">
-                        <img alt="#" src="img/icons/Breakfast.png" class="img-fluid mb-2">
+                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href="/customer/breakfast">
+                        <img alt="#" src="../img/icons/Breakfast.png" class="img-fluid mb-2">
                         <p class="m-0 small">Breakfast</p>
                     </a>
                 </div>
                 <div class="cat-item px-1 py-3">
-                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href="/salad">
-                        <img alt="#" src="img/icons/Salad.png" class="img-fluid mb-2">
+                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href="/customer/salad">
+                        <img alt="#" src="../img/icons/Salad.png" class="img-fluid mb-2">
                         <p class="m-0 small">Salad</p>
                     </a>
                 </div>
@@ -219,27 +221,27 @@
                 <div class="offer-slider">
                     <div class="cat-item px-1 py-3">
                         <a class="d-block text-center shadow-sm" href="trending.html">
-                            <img alt="#" src="img/pro1.jpg" class="img-fluid rounded">
+                            <img alt="#" src="../img/pro1.jpg" class="img-fluid rounded">
                         </a>
                     </div>
                     <div class="cat-item px-1 py-3">
                         <a class="d-block text-center shadow-sm" href="trending.html">
-                            <img alt="#" src="img/pro2.jpg" class="img-fluid rounded">
+                            <img alt="#" src="../img/pro2.jpg" class="img-fluid rounded">
                         </a>
                     </div>
                     <div class="cat-item px-1 py-3">
                         <a class="d-block text-center shadow-sm" href="trending.html">
-                            <img alt="#" src="img/pro3.jpg" class="img-fluid rounded">
+                            <img alt="#" src="../img/pro3.jpg" class="img-fluid rounded">
                         </a>
                     </div>
                     <div class="cat-item px-1 py-3">
                         <a class="d-block text-center shadow-sm" href="trending.html">
-                            <img alt="#" src="img/pro4.jpg" class="img-fluid rounded">
+                            <img alt="#" src="../img/pro4.jpg" class="img-fluid rounded">
                         </a>
                     </div>
                     <div class="cat-item px-1 py-3">
                         <a class="d-block text-center shadow-sm" href="trending.html">
-                            <img alt="#" src="img/pro2.jpg" class="img-fluid rounded">
+                            <img alt="#" src="../img/pro2.jpg" class="img-fluid rounded">
                         </a>
                     </div>
                 </div>
@@ -249,7 +251,7 @@
             <!-- Trending this week -->
             <div class="pt-4 pb-2 title d-flex align-items-center">
                 <h5 class="m-0">Trending this week</h5>
-                <a class="font-weight-bold ml-auto" href="trending.html">View all <i class="feather-chevrons-right"></i></a>
+                <!-- <a class="font-weight-bold ml-auto" href="trending.html">View all <i class="feather-chevrons-right"></i></a> -->
             </div>
             <!-- slider -->
             <div class="trending-slider">
@@ -259,20 +261,20 @@
                             <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                             <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
                             <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                            <a href="restaurant.html">
-                                <img alt="#" src="img/trending1.png" class="img-fluid item-img w-100">
+                            <a href="/restaurant/pizza-hut">
+                                <img alt="#" src="../img/popular1.png" class="img-fluid item-img w-100">
                             </a>
                         </div>
                         <div class="p-3 position-relative">
                             <div class="list-card-body">
-                                <h6 class="mb-1"><a href="restaurant.html" class="text-black">Famous Dave's Bar-B-Que
+                                <h6 class="mb-1"><a href="/restaurant/pizza-hut" class="text-black">Pizza Hut
                               </a>
                                 </h6>
-                                <p class="text-gray mb-3">Vegetarian • Indian • Pure veg</p>
+                                <p class="text-gray mb-3">• Pizza • Fast Food • Desserts • Beverages</p>
                                 <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="feather-clock"></i> 15–30 min</span> <span class="float-right text-black-50"> ₹350 FOR TWO</span></p>
                             </div>
                             <div class="list-card-badge">
-                                <span class="badge badge-danger">OFFER</span> <small> Use Coupon OSAHAN50</small>
+                                <span class="badge badge-danger">OFFER</span> <small> Use Coupon SMAKOSH0</small>
                             </div>
                         </div>
                     </div>
@@ -283,14 +285,14 @@
                             <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                             <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
                             <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                            <a href="restaurant.html">
-                                <img alt="#" src="img/trending2.png" class="img-fluid item-img w-100">
+                            <a href="/restaurant/kfc">
+                                <img alt="#" src="../img/popular4.png" class="img-fluid item-img w-100">
                             </a>
                         </div>
                         <div class="p-3 position-relative">
                             <div class="list-card-body">
-                                <h6 class="mb-1"><a href="restaurant.html" class="text-black">Thai Famous Cuisine</a></h6>
-                                <p class="text-gray mb-3">North Indian • Indian • Pure veg</p>
+                                <h6 class="mb-1"><a href="/restaurant/kfc" class="text-black">KFC</a></h6>
+                                <p class="text-gray mb-3">• Buckets • American • Snacks</p>
                                 <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="feather-clock"></i> 30–35 min</span> <span class="float-right text-black-50"> ₹250 FOR TWO</span></p>
                             </div>
                             <div class="list-card-badge">
@@ -305,16 +307,16 @@
                             <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                             <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
                             <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                            <a href="restaurant.html">
-                                <img alt="#" src="img/trending3.png" class="img-fluid item-img w-100">
+                            <a href="/restaurant/sub-way">
+                                <img alt="#" src="../img/popular5.png" class="img-fluid item-img w-100">
                             </a>
                         </div>
                         <div class="p-3 position-relative">
                             <div class="list-card-body">
-                                <h6 class="mb-1"><a href="restaurant.html" class="text-black">Pizza Hut
+                                <h6 class="mb-1"><a href="/restaurant/sub-way" class="text-black">SubWay
                               </a>
                                 </h6>
-                                <p class="text-gray mb-3">North • Hamburgers • Pure veg</p>
+                                <p class="text-gray mb-3">• Burgers • Pizza • Desserts</p>
                                 <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="feather-clock"></i> 15–25 min</span> <span class="float-right text-black-50"> ₹500 FOR TWO</span></p>
                             </div>
                             <div class="list-card-badge">
@@ -329,14 +331,14 @@
                             <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                             <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
                             <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                            <a href="restaurant.html">
-                                <img alt="#" src="img/trending2.png" class="img-fluid item-img w-100">
+                            <a href="/restaurant/royal-tiffins">
+                                <img alt="#" src="../img/popular6.png" class="img-fluid item-img w-100">
                             </a>
                         </div>
                         <div class="p-3 position-relative">
                             <div class="list-card-body">
-                                <h6 class="mb-1"><a href="restaurant.html" class="text-black">Thai Famous Cuisine</a></h6>
-                                <p class="text-gray mb-3">North Indian • Indian • Pure veg</p>
+                                <h6 class="mb-1"><a href="/restaurant/royal-tiffins" class="text-black">Royal Tiffins</a></h6>
+                                <p class="text-gray mb-3">• South India • Punjabi • Chinese</p>
                                 <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="feather-clock"></i> 30–35 min</span> <span class="float-right text-black-50"> ₹250 FOR TWO</span></p>
                             </div>
                             <div class="list-card-badge">
@@ -348,28 +350,28 @@
             </div>
             <!-- Most popular -->
             <div class="py-3 title d-flex align-items-center">
-                <h5 class="m-0">Most popular</h5>
-                <a class="font-weight-bold ml-auto" href="most_popular.html">26 places <i class="feather-chevrons-right"></i></a>
+                <h5 class="m-0">Our Restaurants</h5>
+                <!-- <a class="font-weight-bold ml-auto" href="most_popular.html">26 places <i class="feather-chevrons-right"></i></a> -->
             </div>
             <!-- Most popular -->
             <div class="most_popular">
-                <div class="row">
-                    <div class="col-md-3 pb-3">
+                <div class="row" id="test">
+                    <!-- <div class="col-md-3 pb-3">
                         <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
                             <div class="list-card-image">
                                 <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                                 <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
                                 <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                                <a href="/pizza-hut">
-                                    <img alt="#" src="img/popular1.png" class="img-fluid item-img w-100">
+                                <a href="/restaurant/pizza-hut">
+                                    <img alt="#" src="../img/popular1.png" class="img-fluid item-img w-100">
                                 </a>
                             </div>
                             <div class="p-3 position-relative">
                                 <div class="list-card-body">
-                                    <h6 class="mb-1"><a href="/pizza-hut" class="text-black">Pizza Hut
+                                    <h6 class="mb-1"><a href="/restaurant/pizza-hut" class="text-black">Pizza Hut
                                  </a>
                                     </h6>
-                                    <p class="text-gray mb-1 small">• Kakinada • Mainroad</p>
+                                    <p class="text-gray mb-1 small">• Pizza • Fast Food • Desserts • Beverages</p>
                                     <p class="text-gray mb-1 rating">
                                     </p>
                                     <ul class="rating-stars list-unstyled">
@@ -395,14 +397,14 @@
                                 <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                                 <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
                                 <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                                <a href="/yati-foods">
-                                    <img alt="#" src="img/popular2.png" class="img-fluid item-img w-100">
+                                <a href="/restaurant/yati-foods">
+                                    <img alt="#" src="../img/popular2.png" class="img-fluid item-img w-100">
                                 </a>
                             </div>
                             <div class="p-3 position-relative">
                                 <div class="list-card-body">
-                                    <h6 class="mb-1"><a href="/yati-foods" class="text-black">Yati Foods</a></h6>
-                                    <p class="text-gray mb-1 small">• Indian • Pure veg</p>
+                                    <h6 class="mb-1"><a href="/restaurant/yati-foods" class="text-black">Yati Foods</a></h6>
+                                    <p class="text-gray mb-1 small">• Fast Food • Desserts • Beverages</p>
                                     <p class="text-gray mb-1 rating">
                                     </p>
                                     <ul class="rating-stars list-unstyled">
@@ -428,13 +430,13 @@
                                 <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                                 <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
                                 <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                                <a href="/dakshin-haweli">
-                                    <img alt="#" src="img/popular3.png" class="img-fluid item-img w-100">
+                                <a href="/restaurant/dakshin-haweli">
+                                    <img alt="#" src="../img/popular3.png" class="img-fluid item-img w-100">
                                 </a>
                             </div>
                             <div class="p-3 position-relative">
                                 <div class="list-card-body">
-                                    <h6 class="mb-1"><a href="/dakshin-haweli" class="text-black">Dakshin Haweli
+                                    <h6 class="mb-1"><a href="/restaurant/dakshin-haweli" class="text-black">Dakshin Haweli
                                  </a>
                                     </h6>
                                     <p class="text-gray mb-1 small">• Hamburgers • Pure veg</p>
@@ -463,14 +465,14 @@
                                 <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                                 <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
                                 <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                                <a href="/kfc">
-                                    <img alt="#" src="img/popular4.png" class="img-fluid item-img w-100">
+                                <a href="/restaurant/kfc">
+                                    <img alt="#" src="../img/popular4.png" class="img-fluid item-img w-100">
                                 </a>
                             </div>
                             <div class="p-3 position-relative">
                                 <div class="list-card-body">
-                                    <h6 class="mb-1"><a href="/kfc" class="text-black">KFC</a></h6>
-                                    <p class="text-gray mb-1 small">American • Pure veg</p>
+                                    <h6 class="mb-1"><a href="/restaurant/kfc" class="text-black">KFC</a></h6>
+                                    <p class="text-gray mb-1 small">• Buckets • American • Snacks</p>
                                     <p class="text-gray mb-1 rating">
                                     </p>
                                     <ul class="rating-stars list-unstyled">
@@ -489,25 +491,25 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="row">
-                    <div class="col-md-3 pb-3">
+                    <!-- <div class="col-md-3 pb-3">
                         <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
                             <div class="list-card-image">
                                 <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                                 <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
                                 <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                                <a href="/sub-way">
-                                    <img alt="#" src="img/popular5.png" class="img-fluid item-img w-100">
+                                <a href="/restaurant/sub-way">
+                                    <img alt="#" src="../img/popular5.png" class="img-fluid item-img w-100">
                                 </a>
                             </div>
                             <div class="p-3 position-relative">
                                 <div class="list-card-body">
-                                    <h6 class="mb-1"><a href="/sub-way" class="text-black">SubWay
+                                    <h6 class="mb-1"><a href="/restaurant/sub-way" class="text-black">SubWay
                                  </a>
                                     </h6>
-                                    <p class="text-gray mb-1 small">• North • Hamburgers</p>
+                                    <p class="text-gray mb-1 small">• Burgers • Pizza • Desserts</p>
                                     <p class="text-gray mb-1 rating">
                                     </p>
                                     <ul class="rating-stars list-unstyled">
@@ -533,14 +535,14 @@
                                 <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                                 <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
                                 <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                                <a href="/royal-tiffins">
-                                    <img alt="#" src="img/popular6.png" class="img-fluid item-img w-100">
+                                <a href="/restaurant/royal-tiffins">
+                                    <img alt="#" src="../img/popular6.png" class="img-fluid item-img w-100">
                                 </a>
                             </div>
                             <div class="p-3 position-relative">
                                 <div class="list-card-body">
-                                    <h6 class="mb-1"><a href="/royal-tiffins" class="text-black">Royal Tiffins</a></h6>
-                                    <p class="text-gray mb-1 small">• Indian • Pure veg</p>
+                                    <h6 class="mb-1"><a href="/restaurant/royal-tiffins" class="text-black">Royal Tiffins</a></h6>
+                                    <p class="text-gray mb-1 small">• South India • Punjabi • Chinese</p>
                                     <p class="text-gray mb-1 rating">
                                     </p>
                                     <ul class="rating-stars list-unstyled">
@@ -566,13 +568,13 @@
                                 <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                                 <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
                                 <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                                <a href="/bakes&cakes">
-                                    <img alt="#" src="img/popular7.png" class="img-fluid item-img w-100">
+                                <a href="/restaurant/bakes&cakes">
+                                    <img alt="#" src="../img/popular7.png" class="img-fluid item-img w-100">
                                 </a>
                             </div>
                             <div class="p-3 position-relative">
                                 <div class="list-card-body">
-                                    <h6 class="mb-1"><a href="/bakes&cakes" class="text-black">Bakes & Cakes
+                                    <h6 class="mb-1"><a href="/restaurant/bakes&cakes" class="text-black">Bakes & Cakes
                                  </a>
                                     </h6>
                                     <p class="text-gray mb-1 small">• Hamburgers • Pure veg</p>
@@ -601,13 +603,13 @@
                                 <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                                 <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
                                 <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                                <a href="/overaction">
-                                    <img alt="#" src="img/popular8.png" class="img-fluid item-img w-100">
+                                <a href="/restaurant/freezingHub">
+                                    <img alt="#" src="../img/popular8.png" class="img-fluid item-img w-100">
                                 </a>
                             </div>
                             <div class="p-3 position-relative">
                                 <div class="list-card-body">
-                                    <h6 class="mb-1"><a href="/overaction" class="text-black">Overaction</a></h6>
+                                    <h6 class="mb-1"><a href="/restaurant/freezingHub" class="text-black">Freezing Hub</a></h6>
                                     <p class="text-gray mb-1 small">American • Pure veg</p>
                                     <p class="text-gray mb-1 rating">
                                     </p>
@@ -627,14 +629,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <!-- Most sales -->
             <!-- <div class="pt-2 pb-3 title d-flex align-items-center">
                 <h5 class="m-0">Most sales</h5>
                 <a class="font-weight-bold ml-auto" href="#">26 places <i class="feather-chevrons-right"></i></a>
-            </div>
+            </div> -->
             <!-- Most sales -->
             <!-- <div class="most_sale">
                 <div class="row mb-3">
@@ -645,7 +647,7 @@
                                 <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
                                 <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
                                 <a href="/restaurant">
-                                    <img alt="#" src="img/sales1.png" class="img-fluid item-img w-100">
+                                    <img alt="#" src="../img/sales1.png" class="img-fluid item-img w-100">
                                 </a>
                             </div>
                             <div class="p-3 position-relative">
@@ -669,7 +671,7 @@
                                 <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
                                 <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
                                 <a href="/restaurant">
-                                    <img alt="#" src="img/sales2.png" class="img-fluid item-img w-100">
+                                    <img alt="#" src="../img/sales2.png" class="img-fluid item-img w-100">
                                 </a>
                             </div>
                             <div class="p-3 position-relative">
@@ -691,7 +693,7 @@
                                 <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
                                 <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
                                 <a href="/restaurant">
-                                    <img alt="#" src="img/sales3.png" class="img-fluid item-img w-100">
+                                    <img alt="#" src="../img/sales3.png" class="img-fluid item-img w-100">
                                 </a>
                             </div>
                             <div class="p-3 position-relative">
@@ -716,32 +718,32 @@
     <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
         <div class="row">
             <div class="col selected">
-                <a href="/home" class="text-danger small font-weight-bold text-decoration-none">
+                <a href="/customer/home" class="text-danger small font-weight-bold text-decoration-none">
                     <p class="h4 m-0"><i class="feather-home text-danger"></i></p>
                     Home
                 </a>
             </div>
             <div class="col">
-                <a href="most_popular.html" class="text-dark small font-weight-bold text-decoration-none">
+                <a href="/customer/most_popular" class="text-dark small font-weight-bold text-decoration-none">
                     <p class="h4 m-0"><i class="feather-map-pin"></i></p>
                     Trending
                 </a>
             </div>
             <div class="col bg-white rounded-circle mt-n4 px-3 py-2">
                 <div class="bg-danger rounded-circle mt-n0 shadow">
-                    <a href="checkout.html" class="text-white small font-weight-bold text-decoration-none">
+                    <a href="/customer/checkout" class="text-white small font-weight-bold text-decoration-none">
                         <i class="feather-shopping-cart"></i>
                     </a>
                 </div>
             </div>
             <div class="col">
-                <a href="favorites.html" class="text-dark small font-weight-bold text-decoration-none">
+                <a href="/customer/favorites" class="text-dark small font-weight-bold text-decoration-none">
                     <p class="h4 m-0"><i class="feather-heart"></i></p>
                     Favorites
                 </a>
             </div>
             <div class="col">
-                <a href="profile.html" class="text-dark small font-weight-bold text-decoration-none">
+                <a href="/customer/profile" class="text-dark small font-weight-bold text-decoration-none">
                     <p class="h4 m-0"><i class="feather-user"></i></p>
                     Profile
                 </a>
@@ -755,7 +757,7 @@
                 <div class="row pt-3">
                     <aside class="col-md-4 footer-about">
                         <article class="d-flex pb-3">
-                            <div><img alt="#" src="img/logo_web.png" class="logo-footer mr-3"></div>
+                            <div><img alt="#" src="../img/logo_web.png" class="logo-footer mr-3"></div>
                             <div>
                                 <h6 class="title text-white">About Us</h6>
                                 <p class="text-muted">Some short text about company like You might remember the Dell computer commercials in which a youth reports.</p>
@@ -771,33 +773,219 @@
                     <aside class="col-sm-3 col-md-2 text-white">
                         <h6 class="title">Services</h6>
                         <ul class="list-unstyled hov_footer">
-                            <li> <a href="/contact-us" class="text-muted">Contact Us</a></li>
-                            <li> <a href="/terms" class="text-muted">Terms of use</a></li>
-                            <li> <a href="/privacy" class="text-muted">Privacy policy</a></li>
+                            <li> <a href="/customer/contact-us" class="text-muted">Contact Us</a></li>
+                            <li> <a href="/customer/terms" class="text-muted">Terms of use</a></li>
+                            <li> <a href="/customer/privacy" class="text-muted">Privacy policy</a></li>
                         </ul>
                     </aside>
                     <aside class="col-sm-3  col-md-2 text-white">
                         <h6 class="title">For users</h6>
                         <ul class="list-unstyled hov_footer">
-                            <li> <a href="/login" class="text-muted"> User Login </a></li>
-                            <li> <a href="/signup" class="text-muted"> User register </a></li>
-                            <li> <a href="/forgot_password" class="text-muted"> Forgot Password </a></li>
-                            <li> <a href="/profile" class="text-muted"> Account Setting </a></li>
+                            <li> <a href="/customer/login" class="text-muted"> User Login </a></li>
+                            <li> <a href="/customer/signup" class="text-muted"> User register </a></li>
+                            <li> <a href="/customer/forgot_password" class="text-muted"> Forgot Password </a></li>
+                            <li> <a href="/customer/profile" class="text-muted"> Account Setting </a></li>
                         </ul>
                     </aside>
                 </div>
             </section>
         </div>
     </footer>
+    <nav id="main-nav">
+        <ul class="second-nav">
+            <li><a href="home.html"><i class="feather-home mr-2"></i> Homepage</a></li>
+            <li><a href="my_order.html"><i class="feather-list mr-2"></i> My Orders</a></li>
+            <li>
+                <a href="#"><i class="feather-edit-2 mr-2"></i> Authentication</a>
+                <ul>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Register</a></li>
+                    <li><a href="forgot_password.html">Forgot Password</a></li>
+                    <li><a href="verification.html">Verification</a></li>
+                    <li><a href="location.html">Location</a></li>
+                </ul>
+            </li>
+            <li><a href="favorites.html"><i class="feather-heart mr-2"></i> Favorites</a></li>
+            <li><a href="trending.html"><i class="feather-trending-up mr-2"></i> Trending</a></li>
+            <li><a href="most_popular.html"><i class="feather-award mr-2"></i> Most Popular</a></li>
+            <li><a href="restaurant.html"><i class="feather-paperclip mr-2"></i> Restaurant Detail</a></li>
+            <li><a href="checkout.html"><i class="feather-list mr-2"></i> Checkout</a></li>
+            <li><a href="successful.html"><i class="feather-check-circle mr-2"></i> Successful</a></li>
+            <li><a href="map.html"><i class="feather-map-pin mr-2"></i> Live Map</a></li>
+            <li>
+                <a href="#"><i class="feather-user mr-2"></i> Profile</a>
+                <ul>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="favorites.html">Delivery support</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="terms.html">Terms of use</a></li>
+                    <li><a href="privacy.html">Privacy & Policy</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="feather-alert-triangle mr-2"></i> Error</a>
+                <ul>
+                    <li><a href="not-found.html">Not Found</a>
+                        <li><a href="maintence.html"> Maintence</a>
+                            <li><a href="coming-soon.html">Coming Soon</a>
+                </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="feather-link mr-2"></i> Navigation Link Example</a>
+                    <ul>
+                        <li>
+                            <a href="#">Link Example 1</a>
+                            <ul>
+                                <li>
+                                    <a href="#">Link Example 1.1</a>
+                                    <ul>
+                                        <li><a href="#">Link</a></li>
+                                        <li><a href="#">Link</a></li>
+                                        <li><a href="#">Link</a></li>
+                                        <li><a href="#">Link</a></li>
+                                        <li><a href="#">Link</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Link Example 1.2</a>
+                                    <ul>
+                                        <li><a href="#">Link</a></li>
+                                        <li><a href="#">Link</a></li>
+                                        <li><a href="#">Link</a></li>
+                                        <li><a href="#">Link</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Link Example 2</a></li>
+                        <li><a href="#">Link Example 3</a></li>
+                        <li><a href="#">Link Example 4</a></li>
+                        <li data-nav-custom-content>
+                            <div class="custom-message">
+                                You can add any custom content to your navigation items. This text is just an example.
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+        </ul>
+        <ul class="bottom-nav">
+            <li class="email">
+                <a class="text-danger" href="home.html">
+                    <p class="h5 m-0"><i class="feather-home text-danger"></i></p>
+                    Home
+                </a>
+            </li>
+            <li class="github">
+                <a href="faq.html">
+                    <p class="h5 m-0"><i class="feather-message-circle"></i></p>
+                    FAQ
+                </a>
+            </li>
+            <li class="ko-fi">
+                <a href="contact-us.html">
+                    <p class="h5 m-0"><i class="feather-phone"></i></p>
+                    Help
+                </a>
+            </li>
+        </ul>
+    </nav>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- slick Slider JS-->
-    <script type="text/javascript" src="vendor/slick/slick.min.js"></script>
+    <script type="text/javascript" src="../vendor/slick/slick.min.js"></script>
     <!-- Sidebar JS-->
-    <script type="text/javascript" src="vendor/sidebar/hc-offcanvas-nav.js"></script>
+    <script type="text/javascript" src="../vendor/sidebar/hc-offcanvas-nav.js"></script>
     <!-- Custom scripts for all pages-->
-    <script type="text/javascript" src="js/osahan.js"></script>
+    <script type="text/javascript" src="../js/osahan.js"></script>
 </body>
+
+<script>
+//Getting Restaurants Data From MongoDB
+function mypagefun(element){
+        // console.log(element.id)
+        window.localStorage.setItem('restaurantid',element.id)
+        // alert(element.id)
+    }
+
+
+fetch('/homeData',{
+    method:'get',
+    headers:{
+        'Content-Type' : 'application/json'
+    }
+})
+.then(response => response.json())
+.then(data => {
+    console.log(data)
+    for(var i=0; i < data.length; i++){
+        var variable = '' + 
+        '<div class="col-md-3 pb-3">' + 
+        '    <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">' + 
+        '        <div class="list-card-image">' + 
+        '            <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>' + 
+        '            <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>' + 
+        '            <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>' + 
+        '            <a href="/restaurant/pizza-hut" id="'+data[i].restaurant_name+'"  onclick="mypagefun(this)">' + 
+        '                <img alt="#" src="../img/restaurants/'+data[i].restaurant_img +'"' + 'class="img-fluid item-img w-100">' + 
+        '            </a>' + 
+        '        </div>' +
+        '        <div class="p-3 position-relative">' + 
+        '            <div class="list-card-body">' + 
+        '                <h6 class="mb-1"><a href="/restaurant/pizza-hut" id="'+data[i].restaurant_name+'"  onclick="mypagefun(this)" class="text-black">'+data[i].restaurant_name  + 
+        '             </a>' + 
+        '                </h6>' + 
+        '                <p class="text-gray mb-1 small">'+data[i].restaurant_address+'</p>' + 
+        '                <p class="text-gray mb-1 rating">' + 
+        '                </p>' + 
+        '                <ul class="rating-stars list-unstyled">' + 
+        '                    <li>' + 
+        '                        <i class="feather-star star_active"></i>' + 
+        '                        <i class="feather-star star_active"></i>' + 
+        '                        <i class="feather-star star_active"></i>' + 
+        '                        <i class="feather-star star_active"></i>' + 
+        '                        <i class="feather-star"></i>' + 
+        '                    </li>' + 
+        '                </ul>' + 
+        '                <p></p>' + 
+        '            </div>' + 
+        '            <div class="list-card-badge">' + 
+        '                <span class="badge badge-danger">OFFER</span> <small>65% SMAKOSH50</small>' + 
+        '            </div>' + 
+        '        </div>' + 
+        '    </div>' + 
+        '</div>' + 
+        '';
+        var div = document.getElementById('test')
+        div.insertAdjacentHTML('beforeend',variable)
+    //     console.log(i)
+    // var newDiv = document.createElement('div');
+    // // newDiv.id = 'r'+i;
+    // newDiv.className = 'col-md-3 pb-3';
+
+    } 
+
+
+    
+})
+
+// const api_url = "/getusers";
+  
+// // Defining async function
+// async function getapi(url) {
+//     // Storing response
+//     const response = await fetch(url);
+//     // Storing data in form of JSON
+//     var data = await response.json();
+//     console.log(data);
+//         if(data){
+            
+//             document.getElementById("dropdownMenuButton").innerHTML = data[0].Name;   
+//         }
+// }
+// // Calling that async function
+// getapi(api_url);
+
+</script>
 
 </html>

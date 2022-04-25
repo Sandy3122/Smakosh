@@ -28,7 +28,7 @@ function loginValidation(){
     .then(response => response.json())
     .then(data => {
       console.log(data)
-      window.location.href="/home"
+      window.location.href="/customer/home"
     })
     .catch((error)=>{
         alert("Not Valid")

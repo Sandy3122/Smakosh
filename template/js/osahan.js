@@ -178,3 +178,22 @@ Version: 1.0
     var Nav = $main_nav.hcOffcanvasNav(defaultOptions);
 
 })(jQuery); // End of use strict
+
+
+
+const api_url = "/getusers";
+  
+// Defining async function
+async function getapi(url) {
+    // Storing response
+    const response = await fetch(url);
+    // Storing data in form of JSON
+    var data = await response.json();
+    console.log(data);
+        if(data){
+            
+            document.getElementById("dropdownMenuButton").innerHTML = data[0].Name;   
+        }
+}
+// Calling that async function
+getapi(api_url);

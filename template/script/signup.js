@@ -40,7 +40,7 @@ function RegisterationData() {
         .then(data => {
           console.log(data)
           alert("Successfully Registered! Click OK To SignIn")
-          window.location.href="/login"
+          window.location.href="/customer/login"
         })
         .catch((error) => {
           alert("Mail ID Already Exits")
