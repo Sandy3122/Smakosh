@@ -398,6 +398,7 @@ function subprice(){
         document.getElementById('cart_price').innerHTML = parseInt(totalprice) - parseInt(price)
         document.getElementById('total_price').innerHTML = parseInt(totalprice) - parseInt(price)
         document.getElementById('overall_cost').innerHTML = (parseInt(totalprice) - parseInt(price)) + 62 + 10
+        document.getElementById('total_pay+').innerHTML = (parseInt(totalprice) - parseInt(price)) + 62 + 10
     }
 }
 

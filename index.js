@@ -8,6 +8,7 @@ var path = require('path')
 //Importing the Schema's
 const registrationSchema = require('./models/customerSignUpSchema.js');
 const custLogInData = require('./models/customerLogInSchema.js');
+const custCardDetailsData = require('./models/cardDetailsSchema.js');
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
@@ -47,25 +48,17 @@ app.use(sessions({
     resave: false
 }));
 
-
-
 var session;
 
 
+app.get("/", function(req,res) {
+    session=req.session;
+    if(session.user){
+        res.send("Welcome User,<a href='/customer/home'>Click Here Fot Home</a>");
+    }else
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    res.sendFile(__dirname + "/template/home1.html");
+});
 
 //Customer Routers From Controllers
 var customerRouter = require('./contollers/coustomerModule/coustomerModuleController.js')
@@ -74,6 +67,11 @@ app.use('/customer', customerRouter)
 //Customer Login Routers From Controllers
 var customerLoginRouter = require('./contollers/coustomerModule/customerLoginController.js')
 app.use('/', customerLoginRouter)
+
+//Getting Users Data Route From Controllers
+var usersDataRouter = require('./contollers/coustomerModule/getusers')
+app.get('/getusers', usersDataRouter)
+
 
 //Restuarnt Routers
 //Pizza Hut Restaurant Routers
@@ -117,26 +115,24 @@ var freezingHubRouter = require('./contollers/coustomerModule/restaurants/freezi
 app.use('/restaurant', freezingHubRouter)
 
 
-//it will gets users data
-// var usersData = require('./contollers/coustomerModule/getusers.js')
-// app.use('/getusers', usersData)
-app.get('/getusers',function(req,res){
-    session = req.session;
-    if(session.user){
-        registrationSchema.find({"_id":session.user._id},function(err,result){
-            if(err){
-                console.log("err");
-            }
-            else{
-                //console.log("result");
-                res.send(result)
-            }
-        });
-    }
-    else{
-        console.log('err');
-    }
-});
+// //it will gets users data
+// app.get('/getusers',function(req,res){
+//     session = req.session;
+//     if(session.user){
+//         registrationSchema.find({"_id":session.user._id},function(err,result){
+//             if(err){
+//                 console.log("err");
+//             }
+//             else{
+//                 //console.log("result");
+//                 res.send(result)
+//             }
+//         });
+//     }
+//     else{
+//         console.log('err');
+//     }
+// });
 
 
 app.get('/homeData', function(req,res){
@@ -151,19 +147,71 @@ app.get('/homeData', function(req,res){
     })
 });
 
+    // app.post('/sendCardDetails',function(req,res){
+    // //    console.log(req.session);
+    //     session = req.session;
+    //     if(session.user){
+    //         // console.log(req.body);
+    //     // console.log(session.user);
+    //     var data={
+    //         CardNumber:req.body.CardNumber,
+    //         ValidThrough:req.body.ValidThrough,
+    //         Cvv:req.body.Cvv,
+    //         NameOnCard:req.body.NameOnCard,
+    //         // wallet:req.body.wallet,
+    //         // refferal_code:req.body.refferal_code
+    
+    //     }
+    //     var filter={
+    //         "_id":session.user._id
+    
+    //     }
+    
+    //     custCardDetailsData.findOneAndUpdate(filter,data,{new:true},function(err,docs){
+    //         if(err){
+    //             console.log(err);
+    //         }
+    //         else{
+    //             console.log(docs);
+    //         }
+    //     });
+    
+    
+    //     }else{
+    //         console.log("err");
+    //     }
+    // });
 
-app.get("/", function(req,res) {
-    session=req.session;
-    if(session.user){
-        res.send("Welcome User,<a href='/customer/home'>Click Here Fot Home</a>");
-    }else
+//getting admin pages
+app.post('/sendCardDetails',function(req,res){
+console.log(req.body);
+    var obj = new custCardDetailsData({
+        CradNumber:req.body.CradNumber,
+        ValidThrough:req.body.ValidThrough,
+        Cvv:req.body.Cvv,
+        NameOnCard:req.body.NameOnCard,
+    })
 
-    res.sendFile(__dirname + "/template/home1.html");
+    custCardDetailsData.findOne({ $or: [{ CradNumber:req.body.CradNumber }, { ValidThrough:req.body.ValidThrough }, {Cvv:req.body.Cvv}, ] }, function(err,docs){
+        if(err || docs==null){
+            //console.log(err)
+            obj.save(function(err, results) {
+                if(results){
+                   console.log("results"+ results);
+                    res.send(results);
+                }else{
+                    console.log(err)
+                    res.send(err);
+                }
+            })
+        } 
+        else{
+            res.sendStatus(500);
+        }
+    })
 });
 
 
-
-//getting admin pages
 app.get('/adminlogin',function(req,res){
     res.sendFile(__dirname + "/template/admin_login.html");
 });

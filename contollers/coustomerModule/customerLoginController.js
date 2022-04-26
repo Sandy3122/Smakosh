@@ -42,13 +42,13 @@ var session;
 
 
 //LogIn Route and getting data from mongodb
-router.get('/login',function(req,res){
-    session=req.session;
-    if(session.user){
-        res.send("Welcome User <a href=\'/customer/logout'>click to logout</a>");
-    }else
-    res.sendFile(path.resolve('template/login.html'));
-});
+// router.get('/login',function(req,res){
+//     session=req.session;
+//     if(session.user){
+//         res.send("Welcome User <a href=\'/customer/logout'>click to logout</a>");
+//     }else
+//     res.sendFile(path.resolve('template/login.html'));
+// });
 
 router.post('/loginData', function(req,res){
     //res.sendFile(__dirname + '/template/signup.html');

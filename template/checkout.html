@@ -209,13 +209,13 @@
                                                 <div class="col-md-12 form-group">
                                                     <label class="form-label font-weight-bold small">Card number</label>
                                                     <div class="input-group">
-                                                        <input placeholder="Card number" type="number" class="form-control">
+                                                        <input placeholder="Card number" type="tel" id="cardNum" maxlength="16" class="form-control">
                                                         <div class="input-group-append"><button type="button" class="btn btn-outline-secondary"><i class="feather-credit-card"></i></button></div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-8 form-group"><label class="form-label font-weight-bold small">Valid through(MM/YY)</label><input placeholder="Enter Valid through(MM/YY)" type="number" class="form-control"></div>
-                                                <div class="col-md-4 form-group"><label class="form-label font-weight-bold small">CVV</label><input placeholder="Enter CVV Number" type="number" class="form-control"></div>
-                                                <div class="col-md-12 form-group"><label class="form-label font-weight-bold small">Name on card</label><input placeholder="Enter Card number" type="text" class="form-control"></div>
+                                                <div class="col-md-8 form-group"><label class="form-label font-weight-bold small">Valid through(MM/YY)</label><input placeholder="Enter Valid through(MM/YY)" id="valid" maxlength="4" type="tel" class="form-control"></div>
+                                                <div class="col-md-4 form-group"><label class="form-label font-weight-bold small">CVV</label><input placeholder="Enter CVV Number" type="tel" maxlength="3" id="cvv" class="form-control"></div>
+                                                <div class="col-md-12 form-group"><label class="form-label font-weight-bold small">Name on card</label><input placeholder="Enter Card number" id="name" type="text" class="form-control"></div>
                                                 <div class="col-md-12 form-group mb-0">
                                                     <div class="custom-control custom-checkbox"><input type="checkbox" id="custom-checkbox1" class="custom-control-input"><label title="" type="checkbox" for="custom-checkbox1" class="custom-control-label small pt-1">Securely save this card for a faster checkout next time.</label></div>
                                                 </div>
@@ -374,8 +374,9 @@
                             <hr>
                             <h6 class="font-weight-bold mb-0">TO PAY <span class="float-right">₹1329</span></h6>
                         </div>
-                        <div class="p-3">
-                            <a class="btn btn-success btn-block btn-lg" href="successful.html">PAY ₹1329<i class="feather-arrow-right"></i></a>
+                        <div class="p-3"   onclick="CustomerCard()">
+                            <a class="btn btn-success btn-block btn-lg" >PAY ₹1329<i class="feather-arrow-right"></i></a>
+                            <!-- <a class="btn btn-success btn-block btn-lg" href="/customer/successful" >PAY ₹1329<i class="feather-arrow-right"></i></a> -->
                         </div>
                     </div><a href="                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 "></a>
                 </div>
@@ -433,5 +434,88 @@
     <!-- Custom scripts for all pages-->
     <script type="text/javascript" src="../js/osahan.js"></script>
 </body>
+
+     <script>
+        function CustomerCard(){
+            alert("testing")
+        var data = {
+        CardNum: document.getElementById('cardNum').value,
+        ValidThrough: document.getElementById('valid').value,
+        Cvv: document.getElementById('cvv').value,
+        NameOnCard: document.getElementById('name').value,
+  
+      }
+      console.log(data)
+
+      fetch('/sendCardDetails', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+        
+        .then(response => response.json())
+        .then(data => {
+          console.log(data)
+          alert("Successfully Registered! Click OK To SignIn")
+          window.location.href="/customer/successful"
+        })
+        .catch((error) => {
+          alert("Card Number Already Exists")
+        });
+    }
+    
+    </script>
+
+
+    <!-- <script>
+        function CustomerCard(){
+            alert("testing")
+        //   var name = document.getElementById('cardholder_name').value
+        //   if(name.length <= 4){
+        //     alert("please enter the cardholder name")
+        //   }
+          var CardNumber = document.getElementById('cardNum').value
+          if(Cardnumber.length <= 15){
+            alert("Please enter valid card number")
+          }
+          var Cvv = document.getElementById('cvv').value
+          if(Cvv.length <= 2){
+            alert("Please enter valid CVV number")
+          }
+          var Valid = document.getElementById('valid').value
+          if(Valid.length <= 3){
+            alert("Please enter Valid Expiration Month")
+          }
+         
+          var NameOnCard = document.getElementById('name').value
+          if(NameOnCard.length <= 7){
+            alert("please enter valid expiration year")
+          }
+          // console.log(name+"  "+ cardnumber+"  "+ cvv+"  "+ ExpirationMonth+"  "+ year)
+          if((CardNumber.length == 16) && (Cvv.length == 3) && (Valid.length == 4) && (NameOnCard.length == 8)){
+            var data = {
+              CardNumber: CardNumber,
+              Cvv:Cvv,
+              Valid:Valid,
+              NameOnCard:NameOnCard
+            }
+            fetch("/sendCardDetails",
+            {
+                method: "POST",
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(function(res){ return res.json(); })
+            .then(function(data){ alert( JSON.stringify( data ) ) })
+          }
+          
+        }
+    
+      </script> -->
 
 </html>

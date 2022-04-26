@@ -193,6 +193,9 @@ async function getapi(url) {
         if(data){
             
             document.getElementById("dropdownMenuButton").innerHTML = data[0].Name;   
+            document.getElementById("userName").innerHTML = data[0].Name;   
+            document.getElementById("userEmail").innerHTML = data[0].Email;   
+            document.querySelectorAll('#userMobile','#exampleInputEmail1').innerHTML = data[0].MobileNumber;   
         }
 }
 // Calling that async function

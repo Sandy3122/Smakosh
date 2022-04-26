@@ -2,7 +2,6 @@ var express = require("express");
 var app = express();
 app.path = require("path");
 var router = express.Router();
-
 // var monk = require("monk");
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
@@ -67,25 +66,25 @@ router.get('/login',function(req,res){
     res.sendFile(path.resolve('template/login.html'));
 });
 
-router.post('/loginData', function(req,res){
-    //res.sendFile(__dirname + '/template/signup.html');
-    session=req.session;
-    console.log(req.body);
+// router.post('/loginData', function(req,res){
+//     //res.sendFile(__dirname + '/template/signup.html');
+//     session=req.session;
+//     console.log(req.body);
     
-    registrationSchema.findOne({Email :req.body.Email, Password:req.body.Password}, function(err,docs){
-        if(err || docs==null){
-            //console.log(err)
-            res.sendStatus(500)
-        } 
-        else{
-            // session=req.session;
-            session.user=docs;
-            res.send(docs);
-        }
-    })
+//     registrationSchema.findOne({Email :req.body.Email, Password:req.body.Password}, function(err,docs){
+//         if(err || docs==null){
+//             //console.log(err)
+//             res.sendStatus(500)
+//         } 
+//         else{
+//             // session=req.session;
+//             session.user=docs;
+//             res.send(docs);
+//         }
+//     })
 
    
-});
+// });
 
 router.get('/restaurantSignIn',function(req,res){
     res.sendFile(path.resolve('template/signInRestaurant.html'));
@@ -256,37 +255,6 @@ router.get('/salad',function(req,res){
 router.get('/status_onprocess',function(req,res){
     res.sendFile(path.resolve("template//status_onprocess.html"));
 });
-
-
-
-
-
-//Getting Restaurant html pages 
-
-// router.get('/pizza-hut',function(req,res){
-//     res.sendFile(__dirname + "/restaurant_pages/pizza-hut.html");
-// });
-// router.get('/yati-foods',function(req,res){
-//     res.sendFile(path.resolve("restaurant_pages/yati-foods.html"));
-// });
-// router.get('/dakshin-haweli',function(req,res){
-//     res.sendFile(path.resolve("restaurant_pages/dakshin-haweli.html"));
-// });
-// router.get('/kfc',function(req,res){
-//     res.sendFile(path.resolve("restaurant_pages/kfc.html"));
-// });
-// router.get('/sub-way',function(req,res){
-//     res.sendFile(path.resolve("restaurant_pages/sub-way.html"));
-// });
-// router.get('/royal-tiffins',function(req,res){
-//     res.sendFile(path.resolve("restaurant_pages/royal-tiffins.html"));
-// });
-// router.get('/bakes&cakes',function(req,res){
-//     res.sendFile(path.resolve("restaurant_pages/bakes&cakes.html"));
-// });
-// router.get('/freezingHub',function(req,res){
-//     res.sendFile(path.resolve("restaurant_pages/freezingHub.html"));
-// });
 
 
 module.exports = router;
