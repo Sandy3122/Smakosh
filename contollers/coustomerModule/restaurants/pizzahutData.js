@@ -46,7 +46,7 @@ router.post('/cart', function(req,res){
 })
 
 router.post('/getrestaurant', function(req,res){
-    restaurants.findOne({restaurant_name: 'Pizza Hut'},function(err,docs){
+    restaurants.findOne({restaurant_name: req.body.name },function(err,docs){
         if(err || (docs==null)){
             console.log(err)
         }
@@ -116,4 +116,12 @@ router.get("/PizzaHutDrinks", function(req,res){
     })
 });
 
+router.get('/pizza', function(req, res){
+    MyModel.find().distinct('_id', 
+function(error,ids){
+    //ids is an array of all onjectids
+});
+})
+
 module.exports = router
+

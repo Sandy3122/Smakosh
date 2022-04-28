@@ -7,7 +7,12 @@ function RegisterationData() {
     var confirmPassword= document.getElementById('confirmpassword').value;
     var phno = length==10;
       if(name=='' || number=='' || email==''){
-        alert('Please fill the filed')
+        swal({
+          title: "Fields Empty!",
+          text: "Please Check The Missing Fields!",
+          icon: "warning",
+          button: "OK",
+        });
         return false;
       }
       else if(number.match(phno)){
@@ -39,7 +44,12 @@ function RegisterationData() {
         .then(response => response.json())
         .then(data => {
           console.log(data)
-          alert("Successfully Registered! Click OK To SignIn")
+          swal({
+            title: "Successfully Submited",
+            text: "Click OK To SignIn",
+            icon: "success",
+            button: "OK",
+          });
           window.location.href="/customer/login"
         })
         .catch((error) => {
