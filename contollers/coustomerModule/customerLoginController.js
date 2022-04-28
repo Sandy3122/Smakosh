@@ -66,8 +66,6 @@ router.post('/loginData', function(req,res){
             res.send(docs);
         }
     })
-
-   
 });
 
 //sending registration data to database
@@ -100,6 +98,7 @@ router.post('/sendData', function(req,res){
     })
    
 });
+
 
 
 //getting registration data

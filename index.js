@@ -60,6 +60,8 @@ app.get("/", function(req,res) {
     res.sendFile(__dirname + "/template/home1.html");
 });
 
+
+
 //Customer Routers From Controllers
 var customerRouter = require('./contollers/coustomerModule/coustomerModuleController.js')
 app.use('/customer', customerRouter)
@@ -72,80 +74,106 @@ app.use('/', customerLoginRouter)
 var usersDataRouter = require('./contollers/coustomerModule/getusers')
 app.get('/getusers', usersDataRouter)
 
+//Getting home Page Data From Controllers
+var usersDataRouter = require('./contollers/coustomerModule/homeDataController.js')
+app.get('/homeData', usersDataRouter)
+
+// //Getting Card Details Data From Controllers
+// var cardDetailsRouter = require('./contollers/coustomerModule/cardDetailsControllers.js')
+// app.get('/sendCardDetails', cardDetailsRouter)
+
 
 //Restuarnt Routers
 //Pizza Hut Restaurant Routers
 var pizzaHutRouter = require('./contollers/coustomerModule/restaurants/pizzahutData.js')
-
 app.use('/restaurant', pizzaHutRouter)
 
 // Yati Foods Restaurant Routers
 var yatiFoodsRouter = require('./contollers/coustomerModule/restaurants/yatiFoodsData.js')
-
 app.use('/restaurant', yatiFoodsRouter)
 
 // Dakshin Haweli Restaurant Routers
 var dakshinHaweliRouter = require('./contollers/coustomerModule/restaurants/dakshinHaweliData.js')
-
 app.use('/restaurant', dakshinHaweliRouter)
 
 // KFC Restaurant Routers
 var dakshinHaweliRouter = require('./contollers/coustomerModule/restaurants/kfcData.js')
-
 app.use('/restaurant', dakshinHaweliRouter)
 
 // SubWay Restaurant Routers
 var subWayRouter = require('./contollers/coustomerModule/restaurants/subWayData.js')
-
 app.use('/restaurant', subWayRouter)
 
 // Royal Tiffins Restaurant Routers
 var royalTiffinsRouter = require('./contollers/coustomerModule/restaurants/royalTiffinsData.js')
-
 app.use('/restaurant', royalTiffinsRouter)
 
 // Bakes & Cakes Restaurant Routers
 var cakesRouter = require('./contollers/coustomerModule/restaurants/bakes&cakesData.js')
-
 app.use('/restaurant', cakesRouter)
 
 // Freezing Hub Restaurant Routers
 var freezingHubRouter = require('./contollers/coustomerModule/restaurants/freezingHubData.js')
-
 app.use('/restaurant', freezingHubRouter)
 
 
-// //it will gets users data
-// app.get('/getusers',function(req,res){
-//     session = req.session;
-//     if(session.user){
-//         registrationSchema.find({"_id":session.user._id},function(err,result){
-//             if(err){
-//                 console.log("err");
-//             }
-//             else{
-//                 //console.log("result");
-//                 res.send(result)
-//             }
-//         });
-//     }
-//     else{
-//         console.log('err');
-//     }
-// });
 
 
-app.get('/homeData', function(req,res){
-    restaurants.find({},function(err,docs){
-        if(err || (docs==null)){
-            console.log(err)
-        }
-        else{
-            // console.log(docs)
-            res.send(docs)
-        }
-    })
-});
+
+
+
+
+
+
+
+//Posting Customer Card Details To MongoDB
+app.post('/sendCardDetails',function(req,res){
+    console.log(req.body);
+        var obj = new custCardDetailsData({
+            CradNumber:req.body.CradNumber,
+            ValidThrough:req.body.ValidThrough,
+            Cvv:req.body.Cvv,
+            NameOnCard:req.body.NameOnCard,
+        })
+    
+        custCardDetailsData.findOne({ $or: [{ CradNumber:req.body.CradNumber }, {Cvv:req.body.Cvv}, ] }, function(err,docs){
+            if(err || docs==null){
+                //console.log(err)
+                obj.save(function(err, results) {
+                    if(results){
+                       console.log("results"+ results);
+                        res.send(results);
+                    }else{
+                        console.log(err)
+                        res.send(err);
+                    }
+                })
+            } 
+            else{
+                res.sendStatus(500);
+            }
+        })
+    });
+
+
+// //getting registration data
+// app.get('/getcustCardDetailsData',(req,res)=>{
+//     custCardDetailsData.find(function(err,result){
+//             if(err || result==null)
+//             {
+                
+//                 console.log(err)
+//             }
+//             else if(result!=undefined)
+//             {
+                
+//                 console.log(result)
+//                 res.send(result);
+//             }
+//         })
+//     });
+
+
 
     // app.post('/sendCardDetails',function(req,res){
     // //    console.log(req.session);
@@ -183,35 +211,6 @@ app.get('/homeData', function(req,res){
     // });
 
 //getting admin pages
-app.post('/sendCardDetails',function(req,res){
-console.log(req.body);
-    var obj = new custCardDetailsData({
-        CradNumber:req.body.CradNumber,
-        ValidThrough:req.body.ValidThrough,
-        Cvv:req.body.Cvv,
-        NameOnCard:req.body.NameOnCard,
-    })
-
-    custCardDetailsData.findOne({ $or: [{ CradNumber:req.body.CradNumber }, { ValidThrough:req.body.ValidThrough }, {Cvv:req.body.Cvv}, ] }, function(err,docs){
-        if(err || docs==null){
-            //console.log(err)
-            obj.save(function(err, results) {
-                if(results){
-                   console.log("results"+ results);
-                    res.send(results);
-                }else{
-                    console.log(err)
-                    res.send(err);
-                }
-            })
-        } 
-        else{
-            res.sendStatus(500);
-        }
-    })
-});
-
-
 app.get('/adminlogin',function(req,res){
     res.sendFile(__dirname + "/template/admin_login.html");
 });

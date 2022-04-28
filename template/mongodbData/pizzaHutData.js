@@ -1,7 +1,8 @@
 //Getting Restaurant Data From MongoDB
 // fetch('/restaurant/getrestaurant',{
 //     method:'get',
-//     headers:{
+//     headers:
+//      {
 //         'Content-Type' : 'application/json'
 //     }
 // })
@@ -61,8 +62,8 @@ fetch('/restaurant/PizzaHutVeg',{
         document.getElementById('quantity').value = "1"
     })
 }
-    
-    
+
+
     span1.appendChild
     (anchar1)
 

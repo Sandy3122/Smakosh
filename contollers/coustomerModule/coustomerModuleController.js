@@ -3,8 +3,7 @@ var app = express();
 app.path = require("path");
 var router = express.Router();
 // var monk = require("monk");
-app.use(express.json());
-app.use(express.urlencoded({extended:false}));
+
 var path = require('path')
 
 //Importing the Schema's
