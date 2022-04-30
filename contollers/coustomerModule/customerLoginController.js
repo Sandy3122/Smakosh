@@ -50,24 +50,6 @@ var session;
 //     res.sendFile(path.resolve('template/login.html'));
 // });
 
-router.post('/loginData', function(req,res){
-    //res.sendFile(__dirname + '/template/signup.html');
-    session=req.session;
-    console.log(req.body);
-    
-    registrationSchema.findOne({Email :req.body.Email, Password:req.body.Password}, function(err,docs){
-        if(err || docs==null){
-            //console.log(err)
-            res.sendStatus(500)
-        } 
-        else{
-            // session=req.session;
-            session.user=docs;
-            res.send(docs);
-        }
-    })
-});
-
 //sending registration data to database
 router.post('/sendData', function(req,res){
     console.log(req.body);
@@ -114,6 +96,26 @@ registrationSchema.find(function(err,result){
             
             console.log(result)
             res.send(result);
+        }
+    })
+});
+
+
+//Login Data
+router.post('/loginData', function(req,res){
+    //res.sendFile(__dirname + '/template/signup.html');
+    session=req.session;
+    console.log(req.body);
+    
+    registrationSchema.findOne({Email :req.body.Email, Password:req.body.Password}, function(err,docs){
+        if(err || docs==null){
+            //console.log(err)
+            res.sendStatus(500)
+        } 
+        else{
+            // session=req.session;
+            session.user=docs;
+            res.send(docs);
         }
     })
 });

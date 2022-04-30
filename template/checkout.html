@@ -444,9 +444,7 @@
         Cvv: document.getElementById('cvv').value,
         NameOnCard: document.getElementById('name').value,
   
-      }
-      console.log(data)
-
+      };
       fetch('/sendCardDetails', {
         method: 'POST',
         headers: {

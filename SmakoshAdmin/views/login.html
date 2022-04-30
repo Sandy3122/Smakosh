@@ -1,0 +1,128 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMAKOSH - Admin dashboard</title>
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link
+      rel="apple-touch-icon"
+      type="image/x-icon"
+      href="img/apple-touch-icon-57x57-precomposed.png"/>
+    <link
+      rel="apple-touch-icon"
+      type="image/x-icon"
+      sizes="72x72"
+      href="img/apple-touch-icon-72x72-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      type="image/x-icon"
+      sizes="114x114"
+      href="img/apple-touch-icon-114x114-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      type="image/x-icon"
+      sizes="144x144"
+      href="img/apple-touch-icon-144x144-precomposed.png"
+    />
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Main styles -->
+    <link href="css/admin.css" rel="stylesheet" />
+    <!-- Icon fonts-->
+    <link
+      href="vendor/font-awesome/css/font-awesome.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <!-- Plugin styles -->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet" />
+    <!-- Your custom styles -->
+    <link href="css/custom.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <div>
+          <h3>Admin Login <i class="fas fa-user"></i></h3>
+        </div>
+
+        <div class="mb-3">
+          <label for="UserName" class="form-label">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            placeholder="enter your Username"
+          />
+          <p id="message1"></p>
+        </div>
+
+        <div class="mb-3">
+          <label for="Password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Enter your password"
+          />
+          <p id="message2"></p>
+        </div>
+        <br />
+        <div class="text-center">
+          <button type="button" class="btn btn-success" onclick="login()">
+            Submit
+          </button>
+          
+        </div>
+      </form>
+    </div>
+  </body>
+  <script>
+    function login() {
+      //const form = document.getElementById("register");
+
+    var Username = document.getElementById("username").value;
+    var Password = document.getElementById("password").value;
+    if (Username.length <= 0) {
+      // alert("username is required");
+      document.getElementById("message1").innerHTML =
+        "!Please enter your email";
+      Username.focus();
+    } else if (Password.length <= 0) {
+      document.getElementById("message2").innerHTML = "!Please enter password";
+      Password.focus();
+    }
+    if (Username.length != 0 && Password.length != 0) {
+      var data = {
+        Username: Username,
+        Password: Password,
+      };
+      console.log(data);
+    };
+    fetch("/loginData", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        window.location.href = "/admin/dashboard";
+      })
+      .catch((error) => {
+        alert("Not Valid");
+      })
+    };
+
+  </script>
+</html>

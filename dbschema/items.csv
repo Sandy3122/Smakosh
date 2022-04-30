@@ -1,13 +1,13 @@
-category_name,category_name_id,description,item_tag,item_id,item_img,item_name,price,restaurant_id,restaurant_name
-Veg Pizza,403,"It is wonderful on nachos, crackers with cheese and for making chilly cheese toast.",PURE VEG,103,peppypaneer.png,Red Paprika Pizza,₹249,203,Pizza Hut
-Desserts & Beverage's,410,A truly indulgent experience with sweet and rich red velvet cake on a creamy cheese flavoured base to give a burst of flavour in every bite!,PURE VEG,110,redVelvetLavaCake.png,Red Velvet Lava Cake,₹145,210,Pizza Hut
-Non-Veg Pizza,407,"Epic combination of signature pan crust, delicious chicken momos topped with spicy Schezwan sauce, Schezwan meatballs, onion, capsicum & 100% mozzarella",PURE VEG,107,momoMia.png,Momo Mia Pizza,₹349,207,Pizza Hut
-Desserts & Beverage's,409,Sweet temptation! Butterscotch flavored mousse,NON VEG,109,butterscotchMousseCake.png,Butterscotch Mousse Cake,₹115,209,Pizza Hut
-Veg Pizza,402,Sweet & juicy golden corn for that lipsmacking taste,NON VEG,102,goldenCorn.png,Golden Corn Pizza,₹189,202,Pizza Hut
-Soft Drink's,411,1 Liter,BEST SELLER,111,thumsUp.png,Thums-Up,₹69,211,Pizza Hut
-Non-Veg Pizza,404,Pepper barbecue chicken for that extra zing,NON VEG,104,pepperBarbequeChicken.png,Pepper Barbecue Chicken,₹289,204,Pizza Hut
-Non-Veg Pizza,406,"Chicken malai tikka, herbed onion & green capsicum and red paprika",BEST SELLER,106,malaiChickenTikka.png,Malai Chicken Tikka,₹269,206,Pizza Hut
-Non-Veg Pizza,405,"Chicken sausage, chicken pepperoni, sweet corn, black olive & jalapeno",MUST TRY,105,italianChickenFeast.png,Italian Chicken Feast,₹329,205,Pizza Hut
-Veg Pizza,401,"A hugely popular margherita, with a deliciously tangy single cheese topping.",BEST SELLER,101,creamyTomatoPastaPizza.png,Margherita Pizza,₹229,201,Pizza Hut
-Soft Drink's,412,1 Liter, ,112,sprit.png,Sprit,₹69,212,Pizza Hut
-Desserts & Beverage's,408,Hot bubbling gooey chocolate straight from heaven, ,108,chocoVolcanoCake.png,Choco Volcano Cake,₹129,208,Pizza Hut
+category_name,category_name_id,description,item_id,item_img,item_name,price,restaurant_id,restaurant_name
+Veg Pizza,403,"It is wonderful on nachos, crackers with cheese and for making chilly cheese toast.",103,peppypaneer.png,Red Paprika Pizza,₹249,203,Pizza Hut
+Desserts & Beverage's,410,A truly indulgent experience with sweet and rich red velvet cake on a creamy cheese flavoured base to give a burst of flavour in every bite!,110,redVelvetLavaCake.png,Red Velvet Lava Cake,₹145,210,Pizza Hut
+Non-Veg Pizza,407,"Epic combination of signature pan crust, delicious chicken momos topped with spicy Schezwan sauce, Schezwan meatballs, onion, capsicum & 100% mozzarella",107,momoMia.png,Momo Mia Pizza,₹349,207,Pizza Hut
+Desserts & Beverage's,409,Sweet temptation! Butterscotch flavored mousse,109,butterscotchMousseCake.png,Butterscotch Mousse Cake,₹115,209,Pizza Hut
+Veg Pizza,402,Sweet & juicy golden corn for that lipsmacking taste,102,goldenCorn.png,Golden Corn Pizza,₹189,202,Pizza Hut
+Soft Drink's,411,1 Liter,111,thumsUp.png,Thums-Up,₹69,211,Pizza Hut
+Non-Veg Pizza,404,Pepper barbecue chicken for that extra zing,104,pepperBarbequeChicken.png,Pepper Barbecue Chicken,₹289,204,Pizza Hut
+Non-Veg Pizza,406,"Chicken malai tikka, herbed onion & green capsicum and red paprika",106,malaiChickenTikka.png,Malai Chicken Tikka,₹269,206,Pizza Hut
+Non-Veg Pizza,405,"Chicken sausage, chicken pepperoni, sweet corn, black olive & jalapeno",105,italianChickenFeast.png,Italian Chicken Feast,₹329,205,Pizza Hut
+Veg Pizza,401,"A hugely popular margherita, with a deliciously tangy single cheese topping.",101,creamyTomatoPastaPizza.png,Margherita Pizza,₹229,201,Pizza Hut
+Soft Drink's,412,1 Liter,112,sprit.png,Sprit,₹69,212,Pizza Hut
+Desserts & Beverage's,408,Hot bubbling gooey chocolate straight from heaven,108,chocoVolcanoCake.png,Choco Volcano Cake,₹129,208,Pizza Hut

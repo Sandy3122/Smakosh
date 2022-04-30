@@ -1,0 +1,46 @@
+b{
+  font-size: 24px;
+  color: navajowhite blue;
+}
+th{
+  color: #30323F;
+}
+.color1{
+  background-color: rgba(165, 42, 42, 0.841);
+
+}
+.color2{
+  background-color:rgba(0, 0, 255, 0.655) ;
+
+}
+.color3{
+  background-color: lightcoral ;
+
+}
+.color4{
+  background-color: purple;
+
+}
+.color5{
+  background-color: rgba(255, 0, 0, 0.832);
+
+}
+.color6{
+  background-color: orange;
+
+}
+.color7{
+  background-color: rgba(0, 128, 0, 0.875);
+
+}
+.color8{
+  background-color: yellowgreen;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+  height: 400px;
+  background-color: #343a40;
+}

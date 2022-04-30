@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Ansonika">
+    <title>SMAKOSH - Admin dashboard</title>
+     <!-- Favicons-->
+     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+     <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+     <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+     <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+     <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+     <!-- Bootstrap core CSS-->
+     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+     <!-- Main styles -->
+     <link href="css/admin.css" rel="stylesheet">
+     <!-- Icon fonts-->
+     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+     <!-- Plugin styles -->
+     <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+     <link href="vendor/dropzone.css" rel="stylesheet">
+     <link href="css/date_picker.css" rel="stylesheet">
+     <!-- Your custom styles -->
+     <link href="css/custom.css" rel="stylesheet">
+     <!-- WYSIWYG Editor -->
+     <link rel="stylesheet" href="js/editor/summernote-bs4.css">
+  
+</head>
+<body class="fixed-nav sticky-footer" id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-default fixed-top" id="mainNav">
+        <a class="navbar-brand" href="dashboard">  <b>SMAKOSH</b></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                    <a class="nav-link" href="dashboard">
+                        <i class="fa fa-fw fa-dashboard"></i>
+                        <span class="nav-link-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Restaurant Data">
+                    <a class="nav-link" href="restaurant">
+                        <i class="fas fa-hotel"></i>
+                        <span class="nav-link-text">Restaurant Data</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu data">
+                    <a class="nav-link" href="menu">
+                        <i class="fas fa-utensils-alt"></i>
+                        <span class="nav-link-text">Menu Data</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users">
+                    <a class="nav-link" href="users">
+                        <i class="fas fa-users"></i>
+                        <span class="nav-link-text">Users</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Revenue">
+                    <a class="nav-link" href="revenue">
+                        <i class="fas fa-rupee-sign"></i>
+                        <span class="nav-link-text">Revenue</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My listings">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMylistings">
+                        <i class="far fa-file-minus"></i>
+                        <span class="nav-link-text"> Add category</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseMylistings">
+                        <li>
+                           
+                            <a href="category"><i class="fal fa-file-edit"></i>  Category</a>
+                        </li>
+                        <li>
+                            <a href="subcategory"><i class="far fa-sticky-note"></i> Sub Category </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Revenue">
+                    <a class="nav-link" href="orderspage">
+                        <i class="fas fa-truck-container"></i>
+                        <span class="nav-link-text">Orders-data</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Messages">
+                    <a class="nav-link" href="messages">
+                        <i class="fa fa-fw fa-envelope-open"></i>
+                        <span class="nav-link-text">Messages</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Invoice">
+                    <a class="nav-link" href="invoice" target="_blank">
+                        <i class="fa fa-fw fa-file"></i>
+                        <span class="nav-link-text">Invoice</span>
+                    </a>
+                </li>
+                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Reviews">
+                    <a class="nav-link" href="reviews">
+                        <i class="fa fa-fw fa-star"></i>
+                        <span class="nav-link-text">Reviews</span>
+                    </a>
+                </li>
+
+                    </ul>
+                    <ul class="navbar-nav sidenav-toggler">
+                        <li class="nav-item">
+                            <a class="nav-link text-center" id="sidenavToggler">
+                                <i class="fa fa-fw fa-angle-left"></i>
+                            </a>
+                        </li>
+                    </ul>
+            <ul class="navbar-nav sidenav-toggler">
+                <li class="nav-item">
+                    <a class="nav-link text-center" id="sidenavToggler">
+                        <i class="fa fa-fw fa-angle-left"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-fw fa-envelope"></i>
+                        <span class="d-lg-none">Messages
+                            <span class="badge badge-pill badge-primary">12 New</span>
+                        </span>
+                        <span class="indicator text-primary d-none d-lg-block">
+                            <i class="fa fa-fw fa-circle"></i>
+                        </span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+                        <h6 class="dropdown-header">New Messages:</h6>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <strong>David Miller</strong>
+                            <span class="small float-right text-muted">11:21 AM</span>
+                            <div class="dropdown-message small">Hey there! This new version of SB Admin is pretty awesome! These messages clip off when they reach the end of the box so they don't overflow over to the sides!</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <strong>Jane Smith</strong>
+                            <span class="small float-right text-muted">11:21 AM</span>
+                            <div class="dropdown-message small">I was wondering if you could meet for an appointment at 3:00 instead of 4:00. Thanks!</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <strong>John Doe</strong>
+                            <span class="small float-right text-muted">11:21 AM</span>
+                            <div class="dropdown-message small">I've sent the final files over to you for review. When you're able to sign off of them let me know and we can discuss distribution.</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item small" href="#">View all messages</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-fw fa-bell"></i>
+                        <span class="d-lg-none">Alerts
+                            <span class="badge badge-pill badge-warning">6 New</span>
+                        </span>
+                        <span class="indicator text-warning d-none d-lg-block">
+                            <i class="fa fa-fw fa-circle"></i>
+                        </span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+                        <h6 class="dropdown-header">New Alerts:</h6>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <span class="text-success">
+                                <strong>
+                                    <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
+                            </span>
+                            <span class="small float-right text-muted">11:21 AM</span>
+                            <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <span class="text-danger">
+                                <strong>
+                                    <i class="fa fa-long-arrow-down fa-fw"></i>Status Update</strong>
+                            </span>
+                            <span class="small float-right text-muted">11:21 AM</span>
+                            <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <span class="text-success">
+                                <strong>
+                                    <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
+                            </span>
+                            <span class="small float-right text-muted">11:21 AM</span>
+                            <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item small" href="#">View all alerts</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <form class="form-inline my-2 my-lg-0 mr-lg-2">
+                        <div class="input-group">
+                            <input class="form-control search-top" type="text" placeholder="Search for...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-dark" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- /Navigation-->
+
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#"><b>Dashboard</b></a>
+                </li>
+                <li class="breadcrumb-item active"><b>Category</b></li>
+            </ol>
+            <div class="box_general padding_bottom">
+                <div class="header_box version_2">
+                    <h2><i class="fa fa-file" style="color: #30323F;"></i>Add Category</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Category Name</label>
+                            <input type="text" class="form-control" placeholder="John Deo">
+                        </div>
+                    </div>
+                </div>
+                <br>
+               <!-- row -->
+                <p style="font-size: 15px; color: black;">Description</p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <textarea name="" id="" cols="30" rows="5">Type here</textarea>
+                    </div>
+                </div>
+                <!-- /row-->
+            </div>
+            <p><a href="#0" class="btn_1 medium">Save</a> <a href="#0" class="btn_1 medium gray">Add another item</a></p>
+            <footer class="sticky-footer">
+              
+            </footer>
+            <!-- table -->
+            <h5>Category List</h5>
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Category description</th>
+                                <th>Edit</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Category</th>
+                                <th>Category description</th>
+                                <th>Edit</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td>Pizza</td>
+                                <td>Contains more items,available in chineese,italian,south indian</td>
+                                <td><a href="#0" data-toggle="modal" data-target="#edit_item_order"><strong>Edit</strong></a> | <a href="#0"><strong>Delete</strong></a></td>
+                            </tr>
+                            <tr>
+                                <td>Pizza</td>
+                                <td>Contains more items,available in chineese,italian,south indian</td>
+                                <td><a href="#0" data-toggle="modal" data-target="#edit_item_order"><strong>Edit</strong></a> | <a href="#0"><strong>Delete</strong></a></td>
+                            </tr>
+                            <tr>
+                                <td>Pizza</td>
+                                <td>Contains more items,available in chineese,italian,south indian</td>
+                                <td><a href="#0" data-toggle="modal" data-target="#edit_item_order"><strong>Edit</strong></a> | <a href="#0"><strong>Delete</strong></a></td>
+                            </tr>
+                            <tr>
+                                <td>Pizza</td>
+                                <td>Contains more items,available in chineese,italian,south indian</td>
+                                <td><a href="#0" data-toggle="modal" data-target="#edit_item_order"><strong>Edit</strong></a> | <a href="#0"><strong>Delete</strong></a></td>
+                            </tr>
+                            <tr>
+                                <td>Pizza</td>
+                                <td>Contains more items,available in chineese,italian,south indian</td>
+                                <td><a href="#0" data-toggle="modal" data-target="#edit_item_order"><strong>Edit</strong></a> | <a href="#0"><strong>Delete</strong></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                  
+           
+            <!-- table end -->
+            
+    <!-- /box_general-->
+    </div>
+    <!-- /container-fluid-->
+    </div>
+    
+    <!-- /container-wrapper-->
+    <footer class="sticky-footer">
+    <div class="container-fluid">
+    <div class="text-center">
+    <small>Copyright © SMAKOSH 2021</small>
+    </div>
+    </div>
+    </footer>
+    <!-- Scroll to Top Button -->
+    <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fa fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">×</span>
+    </button>
+    </div>
+    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+    <div class="modal-footer">
+    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+    <a class="btn btn-primary" href="#0">Logout</a>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- Order Detail Modal -->
+    <div class="modal fade" id="client_detail_modal" tabindex="-1" role="dialog" aria-labelledby="client_detail_modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="client_detail_modalLabel">Edit order detail</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" value="Mark Twain">
+                    </div>
+                   <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Date</label>
+                                <input type="text" class="form-control date-pick" value="11/05/2020">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Time</label>
+                                <div class="styled-select">
+                                    <select>
+                                        <option selected="">08.30pm</option>
+                                        <option>08.45pm</option>
+                                        <option>09.00pm</option>
+                                        <option>09.15pm</option>
+                                        <option>09.30pm</option>
+                                        <option>09.45pm</option>
+                                        <option>10.00pm</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Row -->
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" class="form-control" value="Barda Bonilla 24 apt. 10, 2414 London">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Telephone</label>
+                                <input type="text" class="form-control" value="98432983242">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" value="mark@hotmail.com">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Row -->
+                    <div class="form-group">
+                        <label>Payment method</label>
+                        <div class="styled-select">
+                            <select>
+                                <option selected="">Paypal</option>
+                                <option>Credit Card</option>
+                                <option>Cash</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Withdrawal method</label>
+                        <div class="styled-select">
+                            <select>
+                                <option selected="">Delivery</option>
+                                <option>Take Away</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-primary" href="#0">Save</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Item Order Modal -->
+    <div class="modal fade" id="edit_item_order" tabindex="-1" role="dialog" aria-labelledby="edit_item_orderLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="edit_item_orderLabel">Edit item order</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Quantity</label>
+                        <div class="numbers-row">
+                            <input type="text" value="2" id="qty_1" class="qty2 form-control" name="quantity">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Size</label>
+                        <ul class="clearfix">
+                            <li>
+                                <label class="container_radio">Medium<span>+ $3.30</span>
+                                    <input type="radio" value="option1" name="options_1" checked="checked">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="container_radio">Large<span>+ $5.30</span>
+                                    <input type="radio" value="option2" name="options_1">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="container_radio">Extra Large<span>+ $8.30</span>
+                                    <input type="radio" value="option3" name="options_1">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <label>Extra Ingredients</label>
+                        <ul class="clearfix">
+                            <li>
+                                <label class="container_check">Extra Tomato<span>+ $4.30</span>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="container_check">Extra Peppers<span>+ $2.50</span>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="container_check">Extra Ham<span>+ $4.30</span>
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-primary" href="#0">Save</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="vendor/jquery.magnific-popup.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/admin.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="vendor/dropzone.min.js"></script>
+    <script src="vendor/bootstrap-datepicker.js"></script>
+    <script>
+    $('input.date-pick').datepicker();
+    </script>
+    <!-- WYSIWYG Editor -->
+    <script src="js/editor/summernote-bs4.min.js"></script>
+    <script>
+    $('.editor').summernote({
+        fontSizes: ['10', '14'],
+        toolbar: [
+            // [groupName, [list of button]]
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough']],
+            ['fontsize', ['fontsize']],
+            ['para', ['ul', 'ol', 'paragraph']]
+        ],
+        placeholder: 'Write here ....',
+        tabsize: 2,
+        height: 200
+    });
+    </script>
+      <!-- Custom scripts for this page-->
+      <script src="js/admin-datatables.js"></script>
+</body>
+
+</html>

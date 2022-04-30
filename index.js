@@ -156,66 +156,28 @@ app.post('/sendCardDetails',function(req,res){
     });
 
 
-// //getting registration data
-// app.get('/getcustCardDetailsData',(req,res)=>{
-//     custCardDetailsData.find(function(err,result){
-//             if(err || result==null)
-//             {
-                
-//                 console.log(err)
-//             }
-//             else if(result!=undefined)
-//             {
-                
-//                 console.log(result)
-//                 res.send(result);
-//             }
-//         })
-//     });
 
 
 
-    // app.post('/sendCardDetails',function(req,res){
-    // //    console.log(req.session);
-    //     session = req.session;
-    //     if(session.user){
-    //         // console.log(req.body);
-    //     // console.log(session.user);
-    //     var data={
-    //         CardNumber:req.body.CardNumber,
-    //         ValidThrough:req.body.ValidThrough,
-    //         Cvv:req.body.Cvv,
-    //         NameOnCard:req.body.NameOnCard,
-    //         // wallet:req.body.wallet,
-    //         // refferal_code:req.body.refferal_code
     
-    //     }
-    //     var filter={
-    //         "_id":session.user._id
-    
-    //     }
-    
-    //     custCardDetailsData.findOneAndUpdate(filter,data,{new:true},function(err,docs){
-    //         if(err){
-    //             console.log(err);
-    //         }
-    //         else{
-    //             console.log(docs);
-    //         }
-    //     });
-    
-    
-    //     }else{
-    //         console.log("err");
-    //     }
-    // });
+/*===============================
+===============================
+===============================
+======== ADMIN SECTION ========
+===============================
+===============================
+===============================*/
 
-//getting admin pages
-app.get('/adminlogin',function(req,res){
-    res.sendFile(__dirname + "/template/admin_login.html");
-});
+const AdminLogin = require("./SmakoshAdmin/modals/user.js")
 
 
+app.use(express.static(path.join(__dirname, "/SmakoshAdmin/public")));
+
+var adminrouter = require("./contollers/adminModule/adminModuleController.js");
+app.use("/admin", adminrouter);
+
+var loginrouter = require("./contollers/adminModule/AdminLoginControllers.js");
+app.get("/login", loginrouter);   
 
 
 //listening to the server
