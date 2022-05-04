@@ -62,8 +62,6 @@ fetch('/restaurant/PizzaHutVeg',{
         document.getElementById('quantity').value = "1"
     })
 }
-
-
     span1.appendChild
     (anchar1)
 
@@ -83,11 +81,6 @@ fetch('/restaurant/PizzaHutVeg',{
     // newDiv.id = 'r'+i;
     heading1.className = 'media-body';
     heading1.innerHTML = data[i].item_name
-    
-    var span2 = document.createElement('span');
-    // newDiv.id = 'r'+i;
-    span2.className = 'badge badge-success';
-   span2.innerHTML = data[i].item_tag
 
     var p1 = document.createElement('p')
     p1.className = "text-muted mb-0"
@@ -98,7 +91,6 @@ fetch('/restaurant/PizzaHutVeg',{
     p2.innerHTML = data[i].price
 
     newSubDiv1.appendChild(heading1)
-    heading1.appendChild(span2)
     newSubDiv1.appendChild(p1)
     newSubDiv1.appendChild(p2)
 
@@ -177,11 +169,6 @@ fetch('/restaurant/PizzaHutNonVeg',{
     heading1.className = 'media-body';
     heading1.innerHTML = data[i].item_name
 
-    var span2 = document.createElement('span');
-    // newDiv.id = 'r'+i;
-    span2.className = 'badge badge-danger';
-   span2.innerHTML = data[i].item_tag
-
     var p1 = document.createElement('p')
     p1.className = "text-muted mb-0"
     p1.innerHTML = data[i].description
@@ -191,7 +178,6 @@ fetch('/restaurant/PizzaHutNonVeg',{
     p2.innerHTML = data[i].price
 
     newSubDiv1.appendChild(heading1)
-    heading1.appendChild(span2)
     newSubDiv1.appendChild(p1)
     newSubDiv1.appendChild(p2)
 

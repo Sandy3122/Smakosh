@@ -17,7 +17,7 @@ function loginValidation(){
         Password : Password
       }
     console.log(data);
-    }
+    };
     fetch('/loginData',{
       method:'POST',
       headers: {

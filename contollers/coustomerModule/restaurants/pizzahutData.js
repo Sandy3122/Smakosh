@@ -8,18 +8,18 @@ app.use(express.static(path.join(__dirname, './')));
 app.use(express.static(path.join(__dirname, '../../restaurant_pages')));
 
 
-// Mongodb Database Connection
-const mongoose = require("mongoose");
-// const urlencoded = require("body-parser/lib/types/urlencoded");
-mongoose.connect("mongodb+srv://Sandeep1999:Sandeep3122@sandeep.nlcna.mongodb.net/Smakosh?retryWrites=true&w=majority", {
-    useUnifiedTopology : true,
-    useNewUrlParser : true,
-}).then(() => {
-    console.log("Successfully Connected To MongoDB Database.");
-}).catch((e) => {
-    console.log("Not Connected To MongoDB Database.");
-})
-const connection = mongoose.connection;
+// // Mongodb Database Connection
+// const mongoose = require("mongoose");
+// // const urlencoded = require("body-parser/lib/types/urlencoded");
+// mongoose.connect("mongodb+srv://Sandeep1999:Sandeep3122@sandeep.nlcna.mongodb.net/Smakosh?retryWrites=true&w=majority", {
+//     useUnifiedTopology : true,
+//     useNewUrlParser : true,
+// }).then(() => {
+//     console.log("Successfully Connected To MongoDB Database.");
+// }).catch((e) => {
+//     console.log("Not Connected To MongoDB Database.");
+// })
+// const connection = mongoose.connection;
 
 //Monk Connection
 var monk = require('monk');

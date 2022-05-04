@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Smakosh</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link href="assets/plugins/fullcalendar/css/fullcalendar.min.css" rel="stylesheet">
+    <!-- Date Dropper -->
+    <link rel="stylesheet" href="assets/plugins/datedropper/datedropper.min.css">
+    <!-- Timepicki -->
+    <link rel="stylesheet" href="assets/plugins/timepicki/css/timepicki.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="assets/plugins/dropify/dist/css/dropify.min.css">
+
+</head>
+
+<body>
+
+    <!--*******
+        Preloader start
+    ********-->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!--*******
+        Preloader end
+    ********-->
+
+
+    <!--************
+        Main wrapper start
+    *************-->
+    <div id="main-wrapper">
+
+        <!--************
+            Nav header start
+        *************-->
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="index.html">
+                    <!---- <b class="logo-abbr">S</b> -->
+                    <span class="brand-title"><b>Smakosh</b></span>
+                </a>
+            </div>
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="toggle-icon"><i class="fas fa-bars"></i></span>
+                </div>
+            </div>
+        </div>
+        <!--************
+            Nav header end
+        *************-->
+
+        <!--************
+            Header start
+        *************-->
+        <div class="header">
+            <div class="header-content clearfix">
+                <div class="header-left">
+                    <div class="input-group icons">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-transparent border-0" id="basic-addon1"><i
+                                    class="fas fa-search"></i></span>
+                        </div>
+                        <input type="search" class="border-0" placeholder="Search Dashboard"
+                            aria-label="Search Dashboard">
+                        <div class="drop-down animated flipInX d-md-none">
+                            <form action="#">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+
+                    <ul class="clearfix">
+                        <li class="icons d-none d-md-flex">
+                            <a href="javascript:void(0)" class="window_fullscreen-x">
+                                <i class="fal fa-expand"></i>
+                            </a>
+                        </li>
+                        <li class="icons">
+                            <a href="javascript:void(0)" class="">
+                                <i class="fas fa-envelope"></i>
+                                <span class="badge badge-danger">3</span>
+                            </a>
+                            <div class="drop-down animated flipInX">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li class="notification-unread">
+                                            <a href="javascript:void()">
+                                                <img class="float-left mr-3 avatar-img"
+                                                    src="../../assets/images/avatar/1.jpg" alt="">
+                                                <div class="notification-content">
+                                                    <div class="notification-text">Hey, What's up! You have a good news
+                                                        !!!</div>
+                                                    <div class="notification-timestamp">08 Hours ago</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="notification-unread">
+                                            <a href="javascript:void()">
+                                                <img class="float-left mr-3 avatar-img"
+                                                    src="../../assets/images/avatar/2.jpg" alt="">
+                                                <div class="notification-content">
+                                                    <div class="notification-timestamp">08 Hours ago</div>
+                                                    <div class="notification-text">Can you do me a favour?</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <img class="float-left mr-3 avatar-img"
+                                                    src="../../assets/images/avatar/3.jpg" alt="">
+                                                <div class="notification-content">
+                                                    <div class="notification-text">Hey!</div>
+                                                    <div class="notification-timestamp">08 Hours ago</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <img class="float-left mr-3 avatar-img"
+                                                    src="../../assets/images/avatar/4.jpg" alt="">
+                                                <div class="notification-content">
+                                                    <div class="notification-text">And what do you do?</div>
+                                                    <div class="notification-timestamp">08 Hours ago</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <a class="d-flex justify-content-center bg-primary px-4 text-white"
+                                        href="email-inbox.html">
+                                        <span>See all messagese </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="icons">
+                            <a href="javascript:void(0)" class="">
+                                <i class="fas fa-bell"></i>
+                                <span class="badge badge-primary">3</span>
+                            </a>
+                            <div class="drop-down animated flipInX dropdown-notfication">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-success-lighten-2"><i
+                                                        class="fas fa-calendar-alt"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Event Started</h6>
+                                                    <span class="notification-text">One hour ago</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-danger-lighten-2"><i
+                                                        class="fas fa-calendar-alt"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Event Started</h6>
+                                                    <span class="notification-text">One hour ago</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-success-lighten-2"><i
+                                                        class="fas fa-calendar-alt"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Event Started</h6>
+                                                    <span class="notification-text">One hour ago</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-danger-lighten-2"><i
+                                                        class="fas fa-calendar-alt"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Event Started</h6>
+                                                    <span class="notification-text">One hour ago</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <a class="d-flex justify-content-between bg-primary px-4 text-white"
+                                        href="javascript:void()">
+                                        <span>All Notifications</span>
+                                        <span><i class="icon-settings"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="icons">
+                            <div class="user-img c-pointer-x">
+                                <span class="activity active"></span>
+                                <img src="../../assets/images/user/1.png" height="40" width="40" alt="">
+                            </div>
+                            <div class="drop-down dropdown-profile animated flipInX">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li><a href="javascript:void()"><i class="icon-user"></i> <span>My
+                                                    Profile</span></a>
+                                        </li>
+                                        <li><a href="javascript:void()"><i class="fas fa-calendar-alt"></i> <span>My
+                                                    Calender</span></a>
+                                        </li>
+                                        <li><a href="javascript:void()"><i class="icon-envelope-open"></i> <span>My
+                                                    Inbox</span>
+                                                <div class="badge gradient-3 badge-pill badge-primary">3</div>
+                                            </a>
+                                        </li>
+                                        <li><a href="javascript:void()"><i class="icon-paper-plane"></i> <span>My
+                                                    Tasks</span>
+                                                <div class="badge badge-pill bg-dark">3</div>
+                                            </a>
+                                        </li>
+                                        <li><a href="javascript:void()"><i class="icon-check"></i>
+                                                <span>Online</span></a>
+                                        </li>
+                                        <li><a href="javascript:void()"><i class="icon-lock"></i> <span>Lock
+                                                    Screen</span></a>
+                                        </li>
+                                        <li><a href="javascript:void()"><i class="icon-key"></i> <span>Logout</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+        <!--************
+            Header end ti-comment-alt
+        *************-->
+
+        <!--************
+            Sidebar start
+        *************-->
+        <div class="nk-sidebar">
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label">Dashboard</li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="fal fa-tachometer-alt-fast"></i><span class="nav-text">Dashboard</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="/admin">Admin Overview</a></li>
+                            <li><a href="/menus">Menus</a></li>
+                            <li><a href="/menu">Add menu</a></li>
+                            <li><a href="/editmenu">editmenu</a></li>
+                            <!-- <li><a href="restaurant-order.html">Order</a></li> -->
+                            <li class="nav-label">Orders</li>
+                            <li>
+                                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                                    <i class="fas fa-gem"></i><span class="nav-text">Orders</span>
+                                </a>
+                                <ul aria-expanded="false">
+                                    <li><a href="Today-orders.html">Today orders</a></li>
+                                    <li><a href="Overall-orders.html">Overall Orders</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+
+
+
+
+                    <li><a href="components.html" aria-expanded="false"><i class="fas fa-puzzle-piece"></i><span
+                                class="nav-text">Components</span></a></li>
+
+
+                </ul>
+            </div>
+        </div>
+        <!--************
+            Sidebar end
+        *************-->
+
+        <!--************
+            Content body start
+        *************-->
+        <div class="content-body">
+
+            <div class="row page-titles mx-0">
+                <div class="col-sm-6 p-md-0">
+                    <div class="breadcrumb-range-picker">
+                        <span><i class="fas fa-calendar-alt"></i></span>
+                        <span class="ml-1">August 08, 2017 - August 08, 2017</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Components</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- row -->
+
+            <div class="container-fluid">
+                <div class="row justify-content-between mb-3">
+                    <div class="col-12 ">
+                        <h2 class="page-heading">Hi,Welcome Back!</h2>
+                        <p class="mb-0">Smakosh</p>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-xxl-12 col-xl-7">
+                        <div class="card">
+                            <div class="card-header pb-0">
+                                <h4 class="card-title">Add Menu List</h4>
+                            </div>
+                            <div class="card-body">
+                                <form action="http://quixlab.com/demo/drora/demo/main/template/index.html" method="">
+                                    <div class="form-row">
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label>Menu Name</label>
+                                                <input type="text" class="form-control" id="name">
+                                                <p id="message1"></p>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="col-6">
+                                            <div class="form-group">
+                                                <label>Ingrediants</label>
+                                                <input type="text" class="form-control" id="ingrediants">
+                                                <p id="message2"></p>
+                                            </div>
+                                        </div> -->
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label class="mr-sm-2">Select Catagory</label>
+                                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                                    <option selected>Choose...</option>
+                                                    <option value="1">Catagory 1</option>
+                                                    <option value="2">Catagory 2</option>
+                                                    <option value="3">Catagory 3</option>
+                                                </select>
+                                                <p id="message3"></p>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label class="mr-sm-2">Select Sub-Catagory</label>
+                                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                                    <option selected>Choose...</option>
+                                                    <option value="1">Catagory 1</option>
+                                                    <option value="2">Catagory 2</option>
+                                                    <option value="3">Catagory 3</option>
+                                                </select>
+                                                <p id="message4"></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label>Quantity</label>
+                                                <input type="text" class="form-control" id="quantity">
+                                                <p id="message5"></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label>Price</label>
+                                                <input type="text" class="form-control" id="price">
+                                                <p id="message6 "></p>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="col-6">
+                                            <div class="form-group">
+                                                <label>Discount</label>
+                                                <input type="email" class="form-control">
+                                            </div>
+                                        </div> -->
+
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label>Description</label>
+
+                                            <textarea class="form-control" cols="30" rows="5"></textarea>
+                                        </div>
+                                    </div>
+                                    <h2>Uploaded image</h2>
+
+                                    <div class="card-body">
+                                        <div class="col-lg-6 mb-4">
+                                            <input type="file" class="dropify" data-default-file="" />
+                                        </div>
+                                    </div>
+
+                                    <button type="button" class="btn btn-primary">Edit</button>
+                                    <button type="button" class="btn btn-danger">Delete</button>
+                                    <div class="col-12">
+                                        <div class="form-group text-center">
+                                            <button type="button" onclick="validation()"
+                                                class="btn btn-rounded btn-primary">Submit</button>
+                                        </div>
+                                    </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!--************
+            Content body end
+        *************-->
+
+
+    <!--************
+            Footer start
+        *************-->
+    <!-- <div class="footer">
+            <div class="copyright">
+                <p><a href="templatespoint.net">Templates Point</a></p>
+            </div>
+        </div> -->
+    <!--************
+            Footer end
+        *************-->
+
+
+    <!--************
+            Right sidebar start
+        *************-->
+    <div class="sidebar-right">
+        <a class="sidebar-right-trigger gradient-5-x" href="javascript:void(0)">
+            <span><i class="fa fa-cog fa-spin"></i></span>
+        </a>
+        <div class="sidebar-right-inner">
+            <div class="admin-settings">
+                <h4>Pick your style</h4>
+                <div>
+                    <p>Background</p>
+                    <select class="form-control" name="theme_version" id="theme_version">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </div>
+                <div>
+                    <p>Layout</p>
+                    <select class="form-control" name="theme_layout" id="theme_layout">
+                        <option value="vertical">Vertical</option>
+                        <option value="horizontal">Horizontal</option>
+                    </select>
+                </div>
+                <div>
+                    <p>Sidebar</p>
+                    <select class="form-control" name="sidebar_style" id="sidebar_style">
+                        <option value="full">Full</option>
+                        <option value="mini">Mini</option>
+                        <option value="compact">Compact</option>
+                        <option value="overlay">Overlay</option>
+                    </select>
+                </div>
+                <div>
+                    <p>Sidebar position</p>
+                    <select class="form-control" name="sidebar_position" id="sidebar_position">
+                        <option value="static">Static</option>
+                        <option value="fixed">Fixed</option>
+                    </select>
+                </div>
+                <div>
+                    <p>Header position</p>
+                    <select class="form-control" name="header_position" id="header_position">
+                        <option value="static">Static</option>
+                        <option value="fixed">Fixed</option>
+                    </select>
+                </div>
+                <div>
+                    <p>Container</p>
+                    <select class="form-control" name="container_layout" id="container_layout">
+                        <option value="wide">Wide</option>
+                        <option value="boxed">Boxed</option>
+                        <option value="wide-boxed">Wide Boxed</option>
+                    </select>
+                </div>
+                <div>
+                    <p>Direction</p>
+                    <select class="form-control" name="theme_direction" id="theme_direction">
+                        <option value="ltr">LTR</option>
+                        <option value="rtl">RTL</option>
+                    </select>
+                </div>
+                <div>
+                    <p>Navigation Header</p>
+                    <div>
+                        <span>
+                            <input type="radio" name="navigation_header" value="color_1"
+                                class="filled-in chk-col-primary" id="nav_header_bg_1">
+                            <label for="nav_header_bg_1"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="navigation_header" value="color_2"
+                                class="filled-in chk-col-primary" id="nav_header_bg_2">
+                            <label for="nav_header_bg_2"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="navigation_header" value="color_3"
+                                class="filled-in chk-col-primary" id="nav_header_bg_3">
+                            <label for="nav_header_bg_3"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="navigation_header" value="color_4"
+                                class="filled-in chk-col-primary" id="nav_header_bg_4">
+                            <label for="nav_header_bg_4"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="navigation_header" value="color_5"
+                                class="filled-in chk-col-primary" id="nav_header_bg_5">
+                            <label for="nav_header_bg_5"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="navigation_header" value="color_6"
+                                class="filled-in chk-col-primary" id="nav_header_bg_6">
+                            <label for="nav_header_bg_6"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="navigation_header" value="color_7"
+                                class="filled-in chk-col-primary" id="nav_header_bg_7">
+                            <label for="nav_header_bg_7"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="navigation_header" value="color_8"
+                                class="filled-in chk-col-primary" id="nav_header_bg_8">
+                            <label for="nav_header_bg_8"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="navigation_header" value="color_9"
+                                class="filled-in chk-col-primary" id="nav_header_bg_9">
+                            <label for="nav_header_bg_9"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="navigation_header" value="color_10"
+                                class="filled-in chk-col-primary" id="nav_header_bg_10">
+                            <label for="nav_header_bg_10"></label>
+                        </span>
+                    </div>
+                </div>
+                <div>
+                    <p>Header</p>
+                    <div>
+                        <span>
+                            <input type="radio" name="header_bg" value="color_1" class="filled-in chk-col-primary"
+                                id="header_bg_1">
+                            <label for="header_bg_1"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="header_bg" value="color_2" class="filled-in chk-col-primary"
+                                id="header_bg_2">
+                            <label for="header_bg_2"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="header_bg" value="color_3" class="filled-in chk-col-primary"
+                                id="header_bg_3">
+                            <label for="header_bg_3"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="header_bg" value="color_4" class="filled-in chk-col-primary"
+                                id="header_bg_4">
+                            <label for="header_bg_4"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="header_bg" value="color_5" class="filled-in chk-col-primary"
+                                id="header_bg_5">
+                            <label for="header_bg_5"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="header_bg" value="color_6" class="filled-in chk-col-primary"
+                                id="header_bg_6">
+                            <label for="header_bg_6"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="header_bg" value="color_7" class="filled-in chk-col-primary"
+                                id="header_bg_7">
+                            <label for="header_bg_7"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="header_bg" value="color_8" class="filled-in chk-col-primary"
+                                id="header_bg_8">
+                            <label for="header_bg_8"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="header_bg" value="color_9" class="filled-in chk-col-primary"
+                                id="header_bg_9">
+                            <label for="header_bg_9"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="header_bg" value="color_10" class="filled-in chk-col-primary"
+                                id="header_bg_10">
+                            <label for="header_bg_10"></label>
+                        </span>
+                    </div>
+                </div>
+                <div>
+                    <p>Sidebar</p>
+                    <div>
+                        <span>
+                            <input type="radio" name="sidebar_bg" value="color_1" class="filled-in chk-col-primary"
+                                id="sidebar_bg_1">
+                            <label for="sidebar_bg_1"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="sidebar_bg" value="color_2" class="filled-in chk-col-primary"
+                                id="sidebar_bg_2">
+                            <label for="sidebar_bg_2"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="sidebar_bg" value="color_3" class="filled-in chk-col-primary"
+                                id="sidebar_bg_3">
+                            <label for="sidebar_bg_3"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="sidebar_bg" value="color_4" class="filled-in chk-col-primary"
+                                id="sidebar_bg_4">
+                            <label for="sidebar_bg_4"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="sidebar_bg" value="color_5" class="filled-in chk-col-primary"
+                                id="sidebar_bg_5">
+                            <label for="sidebar_bg_5"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="sidebar_bg" value="color_6" class="filled-in chk-col-primary"
+                                id="sidebar_bg_6">
+                            <label for="sidebar_bg_6"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="sidebar_bg" value="color_7" class="filled-in chk-col-primary"
+                                id="sidebar_bg_7">
+                            <label for="sidebar_bg_7"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="sidebar_bg" value="color_8" class="filled-in chk-col-primary"
+                                id="sidebar_bg_8">
+                            <label for="sidebar_bg_8"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="sidebar_bg" value="color_9" class="filled-in chk-col-primary"
+                                id="sidebar_bg_9">
+                            <label for="sidebar_bg_9"></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="sidebar_bg" value="color_10" class="filled-in chk-col-primary"
+                                id="sidebar_bg_10">
+                            <label for="sidebar_bg_10"></label>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--************
+            Right sidebar end
+        *************-->
+    </div>
+    <!--************
+        Main wrapper end
+    *************-->
+
+    <!--************
+        Scripts
+    *************-->
+    <script src="../../assets/plugins/common/common.min.js"></script>
+    <script src="../js/custom.min.js"></script>
+    <script src="../js/settings.js"></script>
+    <script src="../js/quixnav.js"></script>
+    <script src="../js/styleSwitcher.js"></script>
+
+
+    <!-- Calender -->
+    <script src="../../assets/plugins/jqueryui/js/jquery-ui.min.js"></script>
+    <script src="../../assets/plugins/moment/moment.min.js"></script>
+    <script src="../../assets/plugins/fullcalendar/js/fullcalendar.min.js"></script>
+    <!-- Datedropper -->
+    <script src="../../assets/plugins/datedropper/datedropper.min.js"></script>
+    <!-- Timepicki -->
+    <script src="../../assets/plugins/timepicki/js/timepicki.js"></script>
+    <!--dropify-->
+    <script src="../../assets/plugins/dropify/dist/js/dropify.min.js"></script>
+    <script src="../js/plugins-init/dropify-init.js"></script>
+
+
+    <!-- Init files -->
+    <script src="../js/plugins-init/fullcalendar-init.js"></script>
+    <script src="../js/plugins-init/datedropper-init.js"></script>
+    <script src="../js/plugins-init/timepicki-init.js"></script>
+
+
+</body>
+<script>
+    // function validation() {
+    //     var name = document.getElementById("name").value;
+    //     // var ingrediants = document.getElementById("ingrediants").value;
+    //     var selectcategory = document.getElementById("inlineFormCustomSelect").value;
+    //     var quantity = document.getElementById("quantity").value;
+    //     var price = document.getElementById("price").value;
+    //     var description = document.getElementById("description").value;
+    //     if (name.value.length <= 0) {
+    //         document.getElementById("message1").innerHTML = "please enter the name of menu";
+    //     }
+    //     else if (ingredients.value.length <= 0) {
+    //         document.getElementById("message2").innerHTML = "please enter the ingredients";
+    //     }
+    //     else if (inlineFormCustomSelect.value.length <= 0) {
+    //         document.getElementById("message3").innerHTML = "please select the value ";
+    //     }
+    //     else if (inlineFormCustomSelect2.value.length <= 0) {
+    //         document.getElementById("message4").innerHTML = "please select the value";
+    //     }
+    //     else if (quantity.value.length <= 0) {
+    //         document.getElementById("message5").innerHTML = "please give the quantity";
+    //     }
+    //     else if (price.value.length <= 0) {
+    //         document.getElementById("message6").innerHTML = "please give the price";
+    //     }
+    //     else if (name.value.length != 0 && ingredients.value.length != 0 && inlineFormCustomSelect.value.length != 0 && inlineFormCustomSelect2.value.length != 0 && quantity.value.length != 0) {
+    //         var data = {
+    //         Menuname : document.getElementById("name").value,
+    //         Selectcategory : document.getElementById("inlineFormCustomSelect").value,
+    //         Selectsubcategory : document.getElementById("inlineFormCustomSelect").value,
+    //         Quantity : document.getElementById("quantity").value,
+    //         Price : document.getElementById("price").value,
+    //         Description : document.getElementById("description").value,
+    //         }
+    var data = {
+        Menuname: document.getElementById("name").value,
+        Selectcategory: document.getElementById("inlineFormCustomSelect").value,
+        Selectsubcategory: document.getElementById("inlineFormCustomSelect").value,
+        Quantity: document.getElementById("quantity").value,
+        Price: document.getElementById("price").value,
+        Description: document.getElementById("description").value,
+    }
+    console.log(data);
+    fetch('/sendMenuData', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+        })
+        .catch((error) => {
+            alert("MenuData Not Added Into Database")
+        })
+        // }
+    // }
+</script>
+
+</html>

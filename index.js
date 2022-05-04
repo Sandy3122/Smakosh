@@ -9,6 +9,7 @@ var path = require('path')
 const registrationSchema = require('./models/customerSignUpSchema.js');
 const custLogInData = require('./models/customerLogInSchema.js');
 const custCardDetailsData = require('./models/cardDetailsSchema.js');
+const resManagerLogin = require('./models/restaurantLoginSchema.js');
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
@@ -22,8 +23,8 @@ app.use(express.static(path.join(__dirname, 'restaurant_pages')));
 const mongoose = require("mongoose");
 // const urlencoded = require("body-parser/lib/types/urlencoded");
 mongoose.connect("mongodb+srv://Sandeep1999:Sandeep3122@sandeep.nlcna.mongodb.net/Smakosh?retryWrites=true&w=majority", {
-    useUnifiedTopology : true,
     useNewUrlParser : true,
+    useUnifiedTopology : true,
 }).then(() => {
     console.log("Successfully Connected To MongoDB Database.");
 }).catch((e) => {
@@ -36,7 +37,8 @@ var monk = require('monk');
 var dbs = monk('mongodb+srv://Sandeep1999:Sandeep3122@sandeep.nlcna.mongodb.net/Smakosh?retryWrites=true&w=majority');
 var datacollection = dbs.collection('items');
 var restaurants = dbs.collection('restaurantsData');
-// var homeData = dbs.collection('restaurantsData');
+var termsData = dbs.collection('terms');
+// var resManagerLogin = dbs.collection('restaurantmanagerlogins');
 
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
@@ -70,9 +72,9 @@ app.use('/customer', customerRouter)
 var customerLoginRouter = require('./contollers/coustomerModule/customerLoginController.js')
 app.use('/', customerLoginRouter)
 
-//Getting Users Data Route From Controllers
-var usersDataRouter = require('./contollers/coustomerModule/getusers')
-app.get('/getusers', usersDataRouter)
+// Getting Users Data Route From Controllers
+// var usersDataRouter = require('./contollers/coustomerModule/getusers')
+// app.get('/getusers', usersDataRouter)
 
 //Getting home Page Data From Controllers
 var usersDataRouter = require('./contollers/coustomerModule/homeDataController.js')
@@ -156,7 +158,49 @@ app.post('/sendCardDetails',function(req,res){
     });
 
 
+//Getting Users Data From MongoDB
+app.get('/getusers',function(req,res){
+    session = req.session;
+    if(session.user){
+        registrationSchema.find({"_id":session.user._id},function(err,result){
+            if(err){
+                console.log("err");
+            }
+            else{
+                //console.log("result");
+                res.send(result)
+            }
+        });
+    }
+    else{
+        res.send(err);
+        console.log("err");
+    }
+});
 
+
+//Search Functionality
+app.post('/search' , function(req,res){
+    console.log(req.body)
+    const searchField = req.body.searchItem;
+    restaurants.find({restaurant_city:{$regex: searchField, $options: '$i'}})
+    .then(data => {
+        res.send(data);
+    })
+});
+
+//Getting Terms Data From MongoDB
+app.get('/terms', function(req,res){
+    termsData.findOne({heading1: 'Welcome to Smakosh'},function(err,docs){
+        if(err || (docs==null)){
+            console.log(err)
+        }
+        else{
+            // console.log(docs)
+            res.send(docs)
+        }
+    })
+});
 
 
     
@@ -177,7 +221,42 @@ var adminrouter = require("./contollers/adminModule/adminModuleController.js");
 app.use("/admin", adminrouter);
 
 var loginrouter = require("./contollers/adminModule/AdminLoginControllers.js");
+// const createApplication = require("express/lib/express");
 app.get("/login", loginrouter);   
+
+
+
+
+    
+/*=========================================
+===========================================
+===========================================
+========RESTAURANT MANAGER SECTION ========
+===========================================
+===========================================
+===========================================*/
+
+// var resLoginrouter = require("./contollers/restaurantModule/LoginController.js");
+// app.use("/", resLoginrouter);
+
+//Restaurant Login Data
+app.post('/resLoginData', function(req,res){
+    //res.sendFile(__dirname + '/template/signup.html');
+    session=req.session;
+    console.log(req.body);
+    
+    resManagerLogin.findOne({Email : req.body.Email, Password:req.body.Password}, function(err,docs){
+        if(err || docs==null){
+            res.send(err)
+            //console.log(err)
+        } 
+        else{
+            session.user=docs;
+            res.send(docs);
+        }
+    })
+   
+});
 
 
 //listening to the server

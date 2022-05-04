@@ -29,22 +29,24 @@
         <video loop autoplay muted id="vid">
             <source src="../img/bg1.mp4" type="video/ogg">
             <source src="../img/bg1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+           
          </video>
         <div class="d-flex align-items-center justify-content-center vh-100">
             <div class="px-5 col-md-6 ml-auto">
                 <div class="px-5 col-10 mx-auto">
-                    <h2 class="text-dark my-0">Welcome Back To Smakoshg</h2>
+                    <h2 class="text-dark my-0">Welcome Back To Smakosh</h2>
                     <p class="text-50">Sign in as restaurant manager</p>
                     <form class="mt-5 mb-4">
                         <div class="form-group">
                             <label for="exampleInputEmail1" class="text-dark">Email</label><span class="text-danger"> *</span>
                             <input type="email" placeholder="Enter Email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+                            <p id="message1"></p>
                         </div>
                         <div class="form-group pwd">
                             <label for="exampleInputPassword1" class="text-dark">Password</label><span class="text-danger"> *</span>
                             <input type="password" name="password" placeholder="Enter Password" class="form-control" id="inputPassword";>
                             <i class="far fa-eye" id="togglePassword"></i>
+                            <p id="message2"></p>
                         </div>
                         <button type="button" class="btn btn-primary btn-lg btn-block" onclick="loginValidation()">SIGN IN</button>
                     </form>
@@ -70,7 +72,7 @@
     <!-- Custom scripts for all pages-->
     <script type="text/javascript" src="../js/osahan.js"></script>
     <!-- Custome script for login validation -->
-    <script type="text/javascript" src="../script/login.js"></script>
+    <script type="text/javascript" src="../script/restaurantLogin.js"></script>
 
 </body>
 

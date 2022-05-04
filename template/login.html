@@ -43,11 +43,13 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1" class="text-dark">Email</label><span class="text-danger"> *</span>
                             <input type="email" placeholder="Enter Email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+                            <p id="message1"></p>
                         </div>
                         <div class="form-group pwd">
                             <label for="exampleInputPassword1" class="text-dark">Password</label><span class="text-danger"> *</span>
                             <input type="password" name="password" placeholder="Enter Password" class="form-control" id="inputPassword";>
-                            <i class="far fa-eye" id="togglePassword"></i>
+                            <p id="message2"></p>
+                            <i class="far fa-eye" id="togglePassword" style="margin:-32px 0px 0px 96%;"></i>
                         </div>
                         <button type="button" class="btn btn-primary btn-lg btn-block" onclick="loginValidation()">SIGN IN</button>
                     </form>

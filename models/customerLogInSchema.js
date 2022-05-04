@@ -12,4 +12,4 @@ const logInSchema = new mongoose.Schema(
         }
     });
 
-module.exports = mongoose.model("custLogInData", logInSchema);
+module.exports = mongoose.model("custLogInData", logInSchema); 
