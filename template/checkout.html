@@ -19,6 +19,8 @@
         <!-- Sidebar CSS -->
         <link href="../vendor/sidebar/demo.css" rel="stylesheet">
         <meta charset="utf-8">
+        <!-- Sweet Alert -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </head>
 
 <body class="fixed-bottom-bar">
@@ -437,7 +439,7 @@
 
      <script>
         function CustomerCard(){
-            alert("testing")
+            // alert("testing")
         var data = {
         CardNum: document.getElementById('cardNum').value,
         ValidThrough: document.getElementById('valid').value,
@@ -456,14 +458,18 @@
         .then(response => response.json())
         .then(data => {
           console.log(data)
-          alert("Successfully Registered! Click OK To SignIn")
+          swal({
+              title: "SUCCESS!",
+              text: "Data Has Been Posted Successfully!",
+              icon: "success",
+              button: "Okay!",
+            });
           window.location.href="/customer/successful"
         })
         .catch((error) => {
           alert("Card Number Already Exists")
         });
     }
-    
     </script>
 
 

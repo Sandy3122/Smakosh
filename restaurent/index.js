@@ -27,7 +27,7 @@ mongoose.connect("mongodb+srv://Sandeep1999:Sandeep3122@sandeep.nlcna.mongodb.ne
 const connection = mongoose.connection;
 const restauntmenuData = require('./Restaurant_Admin/models/addmenuschema.js')
 const logData = require('./Restaurant_Admin/models/loginschema.js');
-const collection = require("./Restaurant_Admin/models/addmenuschema.js");
+// const collection = require("./Restaurant_Admin/models/addmenuschema.js");
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -46,27 +46,27 @@ app.get("/",(req,res)=> {
 // app.get('/login',function(req,res){
 //     res.sendFile(__dirname + "/Restaurant_Admin/loginform/login.html");
 // });
-app.get("/editmenu", function(req,res){
-    session=req.session;
-     if(session.user){
-        console.log(session.user);
-        res.sendFile(__dirname + "/Restaurant_Admin/main/template/editmenu.html");
-    }
-     else {
-     res.redirect("/")
-     }
-});
+// app.get("/editmenu", function(req,res){
+//     session=req.session;
+//      if(session.user){
+//         console.log(session.user);
+//         res.sendFile(__dirname + "/Restaurant_Admin/main/template/editmenu.html");
+//     }
+//      else {
+//      res.redirect("/")
+//      }
+// });
 
-app.get("/components", (req,res) => {
-    session=req.session;
-     if(session.user){
-        console.log(session.user);
-        res.sendFile(__dirname + "/Restaurant_Admin/main/template/components.html");
-    }
-     else {
-     res.redirect("/")
-     }
-});
+// app.get("/components", (req,res) => {
+//     session=req.session;
+//      if(session.user){
+//         console.log(session.user);
+//         res.sendFile(__dirname + "/Restaurant_Admin/main/template/components.html");
+//     }
+//      else {
+//      res.redirect("/")
+//      }
+// });
 
 // app.get("/menu", (req,res) => {
 //     session=req.session;
@@ -78,17 +78,17 @@ app.get("/components", (req,res) => {
 //      res.redirect("/")
 //      }
 // });
-app.get("/home", (req,res) => {
-     session=req.session;
-     if(session.user){
-        console.log(session.user);
-        res.sendFile(__dirname + "/Restaurant_Admin/main/template/home.html");
-    }
-     else {
-     res.redirect("/")
-     }
+// app.get("/home", (req,res) => {
+//      session=req.session;
+//      if(session.user){
+//         console.log(session.user);
+//         res.sendFile(__dirname + "/Restaurant_Admin/main/template/home.html");
+//     }
+//      else {
+//      res.redirect("/")
+//      }
 
-});
+// });
 app.get("/orders", (req,res) => {
     session=req.session;
      if(session.user){
@@ -191,7 +191,7 @@ app.post('/log', function(req,res){
 });
 ///...............get method for addmenuschema.................. ///
 app.get('/addmenuschema',(req,res)=>{
-    collection.find(function(err,docs){
+    restauntmenuData.find(function(err,docs){
         if(err || docs==null)
         {
             
@@ -263,4 +263,4 @@ app.post('/sendMenuData',function(req,res){
 
 
 
-app.listen(4000, ()=> console.log("Successfully Server Started"));
+// app.listen(4000, ()=> console.log("Successfully Server Started"));

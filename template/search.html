@@ -176,7 +176,7 @@
             <div class="search py-5">
                 <div class="input-group mb-4">
                     <input type="text" class="form-control form-control-lg input_search border-right-0" id="getitem"
-                        placeholder="Search City" />
+                        placeholder="Search " />
                     <div class="input-group-prepend">
                         <!-- <div class="btn input-group-text bg-white border_search border-left-0 text-primary"  onclick="Get()"><i class="feather-search"></i> Search</div> -->
                         <button type="button"
@@ -191,13 +191,13 @@
                     <li class="nav-item" role="presentation">
                         <a class="nav-link active border-0 bg-light text-dark rounded" id="home-tab" data-toggle="tab"
                             href="/customer/home" role="tab" aria-controls="home" aria-selected="true"><i
-                                class="feather-home mr-2"></i>Restaurants (8)</a>
+                                class="feather-home mr-2"></i>Restaurants</a>
                     </li>
-                    <li class="nav-item" role="presentation">
+                    <!-- <li class="nav-item" role="presentation">
                         <a class="nav-link border-0 bg-light text-dark rounded ml-3" id="profile-tab" data-toggle="tab"
                             href="/customer/profile" role="tab" aria-controls="profile" aria-selected="false"><i
                                 class="feather-disc mr-2"></i>Dishes (23)</a>
-                    </li>
+                    </li> -->
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -376,7 +376,7 @@
 
 <script>
     function Get() {
-        alert("testing");
+        // alert("testing");
         var data = {
             searchItem: document.getElementById("getitem").value,
         };
@@ -408,6 +408,9 @@
                     return false;
                 }
                 console.log(data);
+                //var variable = ""
+                var div = document.getElementById("search");
+                    div.innerHTML = "";
                 for (var i = 0; i < data.length; i++) {
                     var variable =
                         "" +
@@ -418,15 +421,14 @@
                         '                                            <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>' +
                         '                                            <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>' +
                         '                                            <a href="restaurant.html">' +
-                        '                                                <img alt="#" src="../img/restaurants' +
-                        data[i].restaurant_img +
+                        '                                                <img alt="#" src="../img/restaurants/' +
+data[i].restaurant_img +
                         '" class="img-fluid item-img w-100">' +
                         "                                            </a>" +
                         "                                        </div>" +
                         '                                        <div class="p-3 position-relative">' +
                         '                                            <div class="list-card-body">' +
-                        '                                                <h6 class="mb-1"><a href="/restaurant/" id="' +
-                        data[i].restaurant_name +
+                        '                                                <h6 class="mb-1"><a href="/restaurant/'+data[i].restaurant_url +'" id="' +data[i].restaurant_name +
                         '"  onclick="mypagefun(this)" class="text-black">' +
                         data[i].restaurant_name +
                         "                                          </a>" +
@@ -453,7 +455,8 @@
                         "                                    </div>" +
                         "                                </div>" +
                         "";
-                    var div = document.getElementById("search");
+                    
+                    //div.innerHTML("beforeend", variable);
                     div.insertAdjacentHTML("beforeend", variable);
                 }
             })

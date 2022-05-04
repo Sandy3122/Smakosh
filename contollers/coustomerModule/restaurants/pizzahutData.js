@@ -58,6 +58,22 @@ router.post('/getrestaurant', function(req,res){
 });
 
 //Getting Data From Mongodb Data For PizzaHut Restaurant (Veg Items)
+
+
+router.get("/VegRestaurent", function(req,res){
+    datacollection.find({restaurant_name:req.body.restaurant_name,category_name:"Veg"}, function(err,result){
+        if(err){
+            console.log(err)
+            // res.sendStatus(500)
+        } 
+        else{
+            console.log(result);
+            res.send(result);
+        }
+    })
+});
+
+
 router.get("/PizzaHutVeg", function(req,res){
     datacollection.find({restaurant_name:"Pizza Hut",category_name:"Veg Pizza"}, function(err,result){
         if(err){

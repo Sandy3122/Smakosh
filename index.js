@@ -183,7 +183,7 @@ app.get('/getusers',function(req,res){
 app.post('/search' , function(req,res){
     console.log(req.body)
     const searchField = req.body.searchItem;
-    restaurants.find({restaurant_city:{$regex: searchField, $options: '$i'}})
+    restaurants.find( {$or:[{restaurant_city:{$regex: searchField, $options: '$i'}}, {restaurant_name:{$regex: searchField, $options: '$i'}}]})
     .then(data => {
         res.send(data);
     })
@@ -236,8 +236,14 @@ app.get("/login", loginrouter);
 ===========================================
 ===========================================*/
 
-// var resLoginrouter = require("./contollers/restaurantModule/LoginController.js");
-// app.use("/", resLoginrouter);
+
+
+var resManagerRouter = require("./contollers/restaurantModule/restaurantModuleController.js");
+app.use("/", resManagerRouter);
+
+//Login Router
+// var loginRouter = require("./contollers/restaurantModule/LoginController.js");
+// app.use("/", loginRouter);
 
 //Restaurant Login Data
 app.post('/resLoginData', function(req,res){
@@ -257,6 +263,7 @@ app.post('/resLoginData', function(req,res){
     })
    
 });
+
 
 
 //listening to the server

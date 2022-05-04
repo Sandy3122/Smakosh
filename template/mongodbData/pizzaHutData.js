@@ -1,20 +1,20 @@
-//Getting Restaurant Data From MongoDB
-// fetch('/restaurant/getrestaurant',{
-//     method:'get',
-//     headers:
-//      {
-//         'Content-Type' : 'application/json'
-//     }
-// })
-// .then(response => response.json())
-// .then(data => {
-//     console.log(data)
-//     document.getElementById('restaurant_name').innerHTML = data.restaurant_name
-//     document.getElementById('restaurant_tag').innerHTML = data.restaurant_tag
-//     document.getElementById('restaurant_address').innerHTML = data.restaurant_address
-//     document.getElementById('restaurant_IMG').src = "../img/restaurants/"+data.restaurant_logo_img
-//     document.getElementById('restaurant_SideIMG').src = "../img/restaurants/"+data.restaurant_side_img
-// })
+// Getting Restaurant Data From MongoDB
+fetch('/restaurant/getrestaurant',{
+    method:'get',
+    headers:
+     {
+        'Content-Type' : 'application/json'
+    }
+})
+.then(response => response.json())
+.then(data => {
+    console.log(data)
+    document.getElementById('restaurant_name').innerHTML = data.restaurant_name
+    document.getElementById('restaurant_tag').innerHTML = data.restaurant_tag
+    document.getElementById('restaurant_address').innerHTML = data.restaurant_address
+    document.getElementById('restaurant_IMG').src = "../img/restaurants/"+data.restaurant_logo_img
+    document.getElementById('restaurant_SideIMG').src = "../img/restaurants/"+data.restaurant_side_img
+})
 
 
 //Getting Veg Items Data From MongoDB 

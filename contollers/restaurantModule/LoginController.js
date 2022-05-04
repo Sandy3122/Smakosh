@@ -10,6 +10,7 @@
 // //Importing the Schema's
 // const registrationSchema = require('../../models/customerSignUpSchema.js');
 // const custLogInData = require('../../models/customerLogInSchema.js');
+// // const resManagerLogin = require('../../models/restaurantLoginSchema.js');
 
 
 // app.use(express.static(path.join(__dirname, '../../template'))); 
@@ -25,7 +26,6 @@
 // mongoose.connect("mongodb+srv://Sandeep1999:Sandeep3122@sandeep.nlcna.mongodb.net/Smakosh?retryWrites=true&w=majority", {
 //     useUnifiedTopology : true,
 //     useNewUrlParser : true,
-//     useUnifiedTopology: true,
 // }).then(() => {
 //     console.log("Successfully Connected To MongoDB Database.");
 // }).catch((e) => {
@@ -42,68 +42,7 @@
 
 // var session;
 
-
-// //LogIn Route and getting data from mongodb
-// // router.get('/login',function(req,res){
-// //     session=req.session;
-// //     if(session.user){
-// //         res.send("Welcome User <a href=\'/customer/logout'>click to logout</a>");
-// //     }else
-// //     res.sendFile(path.resolve('template/login.html'));
-// // });
-
-// //sending registration data to database
-// router.post('/sendData', function(req,res){
-//     console.log(req.body);
-//     var obj = new registrationSchema({
-//         Name:req.body.Name,
-//         MobileNumber:req.body.MobileNumber,
-//         Email:req.body.Email,
-//         Password:req.body.Password,
-//         ConfirmPassword:req.body.ConfirmPassword,
-//     })
-
-//     registrationSchema.findOne({ $or: [{ Name:req.body.Name }, { MobileNumber:req.body.MobileNumber }, {Email: req.body.Email }, ] }, function(err,docs){
-//         if(err || docs==null){
-//             //console.log(err)
-//             obj.save(function(err, results) {
-//                 if(results){
-//                    console.log("results"+ results);
-//                     res.send(results);
-//                 }else{
-//                     console.log(err)
-//                     res.send(err);
-//                 }
-//             })
-//         } 
-//         else{
-//             res.sendStatus(500);
-//         }
-//     })
-   
-// });
-
-
-
-// //getting registration data
-// router.get('/resLoginData',(req,res)=>{
-// registrationSchema.find(function(err,result){
-//         if(err || result==null)
-//         {
-            
-//             console.log(err)
-//         }
-//         else if(result!=undefined)
-//         {
-            
-//             console.log(result)
-//             res.send(result);
-//         }
-//     })
-// });
-
-
-// // //Login Data
+// //Restaurant Login Data
 // router.post('/resLoginData', function(req,res){
 //     //res.sendFile(__dirname + '/template/signup.html');
 //     session=req.session;
@@ -121,5 +60,6 @@
 //     })
    
 // });
+
 
 // module.exports = router

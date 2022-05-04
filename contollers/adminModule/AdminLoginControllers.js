@@ -7,7 +7,6 @@ const AdminLogin = require("../../SmakoshAdmin/modals/user.js")
 router.post('/loginData', function(req,res){
   //res.sendFile(__dirname + '/template/signup.html');
   console.log(req.body);
-  
   AdminLogin.findOne({Username:req.body.Username, Password:req.body.Password}, function(err,docs){
       if(err || docs==null){
           //console.log(err)
@@ -42,4 +41,5 @@ router.post('/loginData', function(req,res){
 //     }
 //   );
 // });
+
 module.exports = router;
