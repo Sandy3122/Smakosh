@@ -2,16 +2,32 @@ const express = require("express");
 const path = require("path");
 var router = express.Router();
 
+//Importing Schemas
+const { db, collection } = require("../../SmakoshAdmin/modals/schema.js");
+const AdminLogin = require("../../SmakoshAdmin/modals/user.js")
+const collections = require("../../SmakoshAdmin/modals/sub_schema.js");
+
+
+var session;
+
 
 router.get("/login", function (req, res) {
     res.sendFile(path.resolve(  "SmakoshAdmin/views/login.html"));
 });
 
 router.get("/dashboard", function (req, res) {
-    res.sendFile(path.resolve(  "SmakoshAdmin/views/index.html"));
+    res.sendFile(path.resolve("SmakoshAdmin/views/index.html"));
 });
 router.get("/restaurant", function (req, res) {
-    res.sendFile(path.resolve(  "SmakoshAdmin/views/restaurant-data.html"));
+    session=req.session;
+    if(session.user){
+        // console.log("working");
+        console.log(session.user);
+        res.sendFile(path.resolve("SmakoshAdmin/views/restaurant-data.html"));
+    }
+    else{
+        res.redirect("/admin/login")
+    }
 });
 router.get("/menu", function (req, res) {
     res.sendFile(path.resolve(  "SmakoshAdmin/views/menu-data.html"));

@@ -25,7 +25,6 @@ const mongoose = require("mongoose");
 mongoose.connect("mongodb+srv://Sandeep1999:Sandeep3122@sandeep.nlcna.mongodb.net/Smakosh?retryWrites=true&w=majority", {
     useUnifiedTopology : true,
     useNewUrlParser : true,
-    useUnifiedTopology: true,
 }).then(() => {
     console.log("Successfully Connected To MongoDB Database.");
 }).catch((e) => {

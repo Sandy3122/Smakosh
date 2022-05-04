@@ -2,7 +2,7 @@ var express = require("express");
 var app = express();
 app.path = require("path");
 // var monk = require("monk");
-
+const bodyparser = require("body-parser");
 var path = require('path')
 
 //Importing the Schema's
@@ -212,19 +212,47 @@ app.get('/terms', function(req,res){
 ===============================
 ===============================*/
 
+//Importing Schemas
 const AdminLogin = require("./SmakoshAdmin/modals/user.js")
+const { db, collection } = require("./SmakoshAdmin/modals/schema.js");
+const collections = require("./SmakoshAdmin/modals/sub_schema.js");
 
 
-app.use(express.static(path.join(__dirname, "/SmakoshAdmin/public")));
+app.use(express.static(path.join(__dirname, "SmakoshAdmin/public")));
+app.use(bodyparser.urlencoded({ extended: true }));
+
+const console = require("console");
 
 var adminrouter = require("./contollers/adminModule/adminModuleController.js");
 app.use("/admin", adminrouter);
 
-var loginrouter = require("./contollers/adminModule/AdminLoginControllers.js");
-// const createApplication = require("express/lib/express");
-app.get("/login", loginrouter);   
+
+// var loginrouter = require("./contollers/adminModule/AdminLoginControllers.js");
+// // const createApplication = require("express/lib/express");
+// app.use("/", loginrouter);   
+
+var categoryRouter = require("./contollers/adminModule/catergoryController.js");
+app.use("/", categoryRouter);
+
+var subCategoryRouter = require("./contollers/adminModule/subCategoryController.js");
+app.use("/", subCategoryRouter);
 
 
+//Login Route
+app.post('/adminLoginData', function(req,res){
+    //res.sendFile(__dirname + '/template/signup.html');
+    console.log(req.body);
+    AdminLogin.findOne({Username:req.body.Username, Password:req.body.Password}, function(err,docs){
+        if(err || docs==null){
+            //console.log(err)
+            res.send(err)
+            // res.sendStatus(500)
+        } 
+        else{
+            res.send(docs);
+        }
+    })
+  });
 
 
     

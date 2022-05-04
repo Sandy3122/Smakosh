@@ -232,34 +232,43 @@
                 </li>
                 <li class="breadcrumb-item active"><b>Category</b></li>
             </ol>
+          
             <div class="box_general padding_bottom">
                 <div class="header_box version_2">
                     <h2><i class="fa fa-file" style="color: #30323F;"></i>Add Category</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
+                </div> 
+                <form action="/" method="post">
+                        <h6>Category Name</h6>
                         <div class="form-group">
-                            <label>Category Name</label>
-                            <input type="text" class="form-control" placeholder="John Deo">
+                            <input type="text" class="form-control" placeholder="John Deo" name="name">
                         </div>
-                    </div>
+                <br>
+             
+                <h6>Description</h6>
+                <div class="form-group">
+                        <textarea class="form-control" placeholder="Type your message..." name="description"></textarea>
                 </div>
                 <br>
-               <!-- row -->
-                <p style="font-size: 15px; color: black;">Description</p>
-                <div class="row">
-                    <div class="col-md-12">
-                        <textarea name="" id="" cols="30" rows="5">Type here</textarea>
-                    </div>
-                </div>
+                <div>
+                    <button type="button" class="btn btn-rounded btn-light"   value="submit" id="submit" onclick="sub()" >
+                      <input type="submit" value="submit" id="submit">
+                    </button> 
+                  </div>
+                  <br>
+                </form>
+                <div id="data"></div>
+          
+        </div>
+           
                 <!-- /row-->
-            </div>
-            <p><a href="#0" class="btn_1 medium">Save</a> <a href="#0" class="btn_1 medium gray">Add another item</a></p>
+          
+           
             <footer class="sticky-footer">
               
             </footer>
             <!-- table -->
             <h5>Category List</h5>
+        </div>
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
@@ -541,5 +550,31 @@
       <!-- Custom scripts for this page-->
       <script src="js/admin-datatables.js"></script>
 </body>
+<script>
+    function sub(){
+      var data = document.getElementById("data")
+  
+  
+   var htmlString=""
+  
+  let fetchRes = fetch(
+  "http://localhost:8000/getsubcat");
+    
+         
+          fetchRes.then(res =>
+              res.json()).then(d => {
+                  console.log(d)
+                  for (var i=0;i<d.length;i++)
+          {
+             
+              htmlString += "my name is " +  d[i].name + d[i].description + "<br>"
+              
+          }
+  
+    data.innerHTML=htmlString
+  
+      })
+  }
+  </script>
 
 </html>

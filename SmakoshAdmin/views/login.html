@@ -107,22 +107,22 @@
       };
       console.log(data);
     };
-    fetch("/loginData", {
-      method: "POST",
+    fetch('/adminLoginData',{
+      method:'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type' : 'application/json'
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(data)
     })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        window.location.href = "/admin/dashboard";
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      window.location.href="/admin/dashboard"
+    })
+    .catch((error)=>{
+        alert("Not Valid")
       })
-      .catch((error) => {
-        alert("Not Valid");
-      })
-    };
+  };
 
   </script>
 </html>
