@@ -3,6 +3,7 @@ var app = express();
 app.path = require("path");
 // var monk = require("monk");
 const bodyparser = require("body-parser");
+const multer =require("multer");
 var path = require('path')
 
 //Importing the Schema's
@@ -17,7 +18,6 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname, '/template'))); 
 app.use(express.static(path.join(__dirname, 'restaurant_pages')));
 // app.use(express.static(path.join(__dirname, '../')));
-
 
 // Mongodb Database Connection
 const mongoose = require("mongoose");
@@ -64,6 +64,7 @@ app.get("/", function(req,res) {
 
 
 
+
 //Customer Routers From Controllers
 var customerRouter = require('./contollers/coustomerModule/coustomerModuleController.js')
 app.use('/customer', customerRouter)
@@ -72,17 +73,9 @@ app.use('/customer', customerRouter)
 var customerLoginRouter = require('./contollers/coustomerModule/customerLoginController.js')
 app.use('/', customerLoginRouter)
 
-// Getting Users Data Route From Controllers
-// var usersDataRouter = require('./contollers/coustomerModule/getusers')
-// app.get('/getusers', usersDataRouter)
-
 //Getting home Page Data From Controllers
 var usersDataRouter = require('./contollers/coustomerModule/homeDataController.js')
 app.get('/homeData', usersDataRouter)
-
-// //Getting Card Details Data From Controllers
-// var cardDetailsRouter = require('./contollers/coustomerModule/cardDetailsControllers.js')
-// app.get('/sendCardDetails', cardDetailsRouter)
 
 
 //Restuarnt Routers
@@ -117,15 +110,6 @@ app.use('/restaurant', cakesRouter)
 // Freezing Hub Restaurant Routers
 var freezingHubRouter = require('./contollers/coustomerModule/restaurants/freezingHubData.js')
 app.use('/restaurant', freezingHubRouter)
-
-
-
-
-
-
-
-
-
 
 
 //Posting Customer Card Details To MongoDB
@@ -173,7 +157,6 @@ app.get('/getusers',function(req,res){
         });
     }
     else{
-        res.send(err);
         console.log("err");
     }
 });
@@ -227,10 +210,6 @@ var adminrouter = require("./contollers/adminModule/adminModuleController.js");
 app.use("/admin", adminrouter);
 
 
-// var loginrouter = require("./contollers/adminModule/AdminLoginControllers.js");
-// // const createApplication = require("express/lib/express");
-// app.use("/", loginrouter);   
-
 var categoryRouter = require("./contollers/adminModule/catergoryController.js");
 app.use("/", categoryRouter);
 
@@ -264,15 +243,6 @@ app.post('/adminLoginData', function(req,res){
 ===========================================
 ===========================================*/
 
-
-
-var resManagerRouter = require("./contollers/restaurantModule/restaurantModuleController.js");
-app.use("/", resManagerRouter);
-
-//Login Router
-// var loginRouter = require("./contollers/restaurantModule/LoginController.js");
-// app.use("/", loginRouter);
-
 //Restaurant Login Data
 app.post('/resLoginData', function(req,res){
     //res.sendFile(__dirname + '/template/signup.html');
@@ -291,8 +261,6 @@ app.post('/resLoginData', function(req,res){
     })
    
 });
-
-
 
 //listening to the server
 app.listen(8080, ()=> console.log("Successfully Server Started"));

@@ -410,7 +410,7 @@
                 console.log(data);
                 //var variable = ""
                 var div = document.getElementById("search");
-                    div.innerHTML = "";
+                div.innerHTML = "";
                 for (var i = 0; i < data.length; i++) {
                     var variable =
                         "" +
@@ -422,15 +422,18 @@
                         '                                            <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>' +
                         '                                            <a href="restaurant.html">' +
                         '                                                <img alt="#" src="../img/restaurants/' +
-data[i].restaurant_img +
+                        data[i].restaurant_img +
                         '" class="img-fluid item-img w-100">' +
                         "                                            </a>" +
                         "                                        </div>" +
                         '                                        <div class="p-3 position-relative">' +
                         '                                            <div class="list-card-body">' +
-                        '                                                <h6 class="mb-1"><a href="/restaurant/'+data[i].restaurant_url +'" id="' +data[i].restaurant_name +
+                        '                                                <h6 class="mb-1"><a href="/restaurant/' +
+                        data[i].restaurant_url +
+                        '" id="' +
+                        data[i].restaurant_url +
                         '"  onclick="mypagefun(this)" class="text-black">' +
-                        data[i].restaurant_name +
+                        data[i].restaurant_url +
                         "                                          </a>" +
                         "                                                </h6>" +
                         '                                                <p class="text-gray mb-1 small">' +
@@ -455,7 +458,7 @@ data[i].restaurant_img +
                         "                                    </div>" +
                         "                                </div>" +
                         "";
-                    
+
                     //div.innerHTML("beforeend", variable);
                     div.insertAdjacentHTML("beforeend", variable);
                 }

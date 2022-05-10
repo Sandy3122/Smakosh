@@ -100,7 +100,7 @@ registrationSchema.find(function(err,result){
     })
 });
 
-
+var loginData
 //Login Data
 router.post('/loginData', function(req,res){
     //res.sendFile(__dirname + '/template/signup.html');
@@ -115,6 +115,7 @@ router.post('/loginData', function(req,res){
         else{
             // session=req.session;
             session.user=docs;
+            loginData=docs;
             res.send(docs);
         }
     })

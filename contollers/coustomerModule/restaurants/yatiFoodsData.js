@@ -28,6 +28,9 @@ var restaurants = dbs.collection('restaurantsData')
 router.get('/yati-foods',function(req,res){
     res.sendFile(path.resolve("restaurant_pages/yati-foods.html"));
 });
+router.get('/yatifoods',function(req,res){
+    res.sendFile(path.resolve("restaurant_pages/yati-foods.html"));
+});
 
 router.get('/getrestaurant', function(req,res){
     restaurants.findOne({restaurant_name: 'Yati Foods'},function(err,docs){

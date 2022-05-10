@@ -31,6 +31,9 @@ var restaurants = dbs.collection('restaurantsData');
 router.get('/pizza-hut',function(req,res){
     res.sendFile(path.resolve("restaurant_pages/pizza-hut.html"));
 });
+router.get('/pizzahut',function(req,res){
+    res.sendFile(path.resolve("restaurant_pages/pizza-hut.html"));
+});
 
 router.post('/cart', function(req,res){
     // console.log(req.body)

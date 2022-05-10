@@ -21,6 +21,8 @@
         <meta charset="utf-8">
         <!-- Sweet Alert -->
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <!-- Sweet Alert -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </head>
 
 <body class="fixed-bottom-bar">
@@ -286,14 +288,14 @@
                 </div>
                 <div class="col-md-4">
                     <div class="osahan-cart-item rounded rounded shadow-sm overflow-hidden bg-white sticky_sidebar">
-                        <div class="d-flex border-bottom osahan-cart-item-profile bg-white p-3">
+                        <!-- <div class="d-flex border-bottom osahan-cart-item-profile bg-white p-3">
                             <img alt="osahan" src="../img/starter1.jpg" class="mr-3 rounded-circle img-fluid">
                             <div class="d-flex flex-column">
                                 <h6 class="mb-1 font-weight-bold">Spice Hut Indian Restaurant</h6>
                                 <p class="mb-0 small text-muted"><i class="feather-map-pin"></i> 2036 2ND AVE, NEW YORK, NY 10029</p>
                             </div>
-                        </div>
-                        <div class="bg-white border-bottom py-2">
+                        </div> -->
+                        <!-- <div class="bg-white border-bottom py-2">
                             <div class="gold-members d-flex align-items-center justify-content-between px-3 py-2 border-bottom">
                                 <div class="media align-items-center">
                                     <div class="mr-2 text-danger">&middot;</div>
@@ -367,19 +369,72 @@
                                 <div class="input-group-prepend"><span class="input-group-text"><i class="feather-message-square"></i></span></div>
                                 <textarea placeholder="Any suggestions? We will pass it on..." aria-label="With textarea" class="form-control"></textarea>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="bg-white p-3 clearfix border-bottom">
-                            <p class="mb-1">Item Total <span class="float-right text-dark">₹3140</span></p>
-                            <p class="mb-1">Restaurant Charges <span class="float-right text-dark">₹62.8</span></p>
-                            <p class="mb-1">Delivery Fee<span class="text-info ml-1"><i class="feather-info"></i></span><span class="float-right text-dark">₹10</span></p>
-                            <p class="mb-1 text-success">Total Discount<span class="float-right text-success">₹1884</span></p>
-                            <hr>
-                            <h6 class="font-weight-bold mb-0">TO PAY <span class="float-right">₹1329</span></h6>
-                        </div>
-                        <div class="p-3"   onclick="CustomerCard()">
+                            <div
+                class="gold-members d-flex align-items-center justify-content-between px-3 py-2 border-bottom"
+              >
+                <div class="media align-items-center">
+                  <div class="mr-2 text-success">&middot;</div>
+                  <div class="media-body">
+                    <p class="m-0" id="cart_item"></p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center">
+                  <span class="count-number float-right"
+                    ><button
+                      type="button"
+                      class="btn-sm left dec btn btn-outline-secondary"
+                      onclick="subprice()"
+                    >
+                      <i class="feather-minus"></i></button
+                    ><input
+                      class="count-number-input"
+                      type="text"
+                      readonly=""
+                      value="" id="quantity" /><button
+                      type="button"
+                      class="btn-sm right inc btn btn-outline-secondary"
+                      onclick="addprice()"
+                    >
+                      <i class="feather-plus"></i></button
+                  ></span>
+                  <p class="text-gray mb-0 float-right ml-2 text-muted small" id="cart_price">
+                    ₹
+                  </p>
+                  <p id="cart_item_price" style="display: none"></p>
+                </div>
+              </div>
+              <p class="mb-1">
+                Item Total <span class="float-right text-dark" id="total_price">₹3140</span>
+              </p>
+              <p class="mb-1">
+                Restaurant Charges
+                <span class="float-right text-dark">₹62.8</span>
+              </p>
+              <p class="mb-1">
+                Delivery Fee<span class="text-info ml-1"
+                  ><i class="feather-info"></i></span
+                ><span class="float-right text-dark">₹10</span>
+              </p>
+              <p class="mb-1 text-success">
+                Total Discount<span class="float-right text-success">₹180</span>
+              </p>
+              <hr />
+              <h6 class="font-weight-bold mb-0">
+                TO PAY <span class="float-right" id="overall_cost">₹</span>
+              </h6>
+            </div>
+            <div class="p-3" onclick="CustomerCard()">
+              <a
+                class="btn btn-success btn-block btn-lg"
+                href="/customer/successful" 
+                >PAY <i class="feather-arrow-right"></i
+              ></a>
+                        <!-- <div class="p-3"   onclick="CustomerCard()">
                             <a class="btn btn-success btn-block btn-lg">PAY ₹1329<i class="feather-arrow-right"></i></a>
-                            <!-- <a class="btn btn-success btn-block btn-lg" href="/customer/successful" >PAY ₹1329<i class="feather-arrow-right"></i></a> -->
-                        </div>
+                             <a class="btn btn-success btn-block btn-lg" href="/customer/successful" >PAY ₹1329<i class="feather-arrow-right"></i></a> 
+                        </div> -->
                     </div><a href="                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 "></a>
                 </div>
             </div>
@@ -439,7 +494,6 @@
 
      <script>
         function CustomerCard(){
-            // alert("testing")
         var data = {
         CardNum: document.getElementById('cardNum').value,
         ValidThrough: document.getElementById('valid').value,
@@ -470,56 +524,65 @@
           alert("Card Number Already Exists")
         });
     }
+
+
+    function subprice(){
+    var val = document.getElementById('quantity').value
+    var price = document.getElementById('cart_item_price').innerHTML;
+    var totalprice = document.getElementById('cart_price').innerHTML
+    // alert(val)
+    if(parseInt(val)<=1){
+        document.getElementById('quantity').value = "1"
+    }
+    else{
+        document.getElementById('quantity').value = parseInt(val) - 1
+        document.getElementById('cart_price').innerHTML = parseInt(totalprice) - parseInt(price)
+        document.getElementById('total_price').innerHTML = parseInt(totalprice) - parseInt(price)
+        document.getElementById('overall_cost').innerHTML = (parseInt(totalprice) - parseInt(price)) + 62 + 10
+        document.getElementById('total_pay+').innerHTML = (parseInt(totalprice) - parseInt(price)) + 62 + 10
+    }
+}
+
+function addprice(){
+    var val = document.getElementById('quantity').value;
+    var price = document.getElementById('cart_item_price').innerHTML;
+    var totalprice = parseInt(price) * (parseInt(val) + 1)
+    
+    // alert(totalprice)
+    document.getElementById('quantity').value = parseInt(val) + 1
+    document.getElementById('cart_price').innerHTML = totalprice.toString()
+    document.getElementById('total_price').innerHTML = totalprice.toString()
+    document.getElementById('overall_cost').innerHTML = totalprice + 62 + 10 
+}
     </script>
 
 
-    <!-- <script>
-        function CustomerCard(){
-            alert("testing")
-        //   var name = document.getElementById('cardholder_name').value
-        //   if(name.length <= 4){
-        //     alert("please enter the cardholder name")
-        //   }
-          var CardNumber = document.getElementById('cardNum').value
-          if(Cardnumber.length <= 15){
-            alert("Please enter valid card number")
-          }
-          var Cvv = document.getElementById('cvv').value
-          if(Cvv.length <= 2){
-            alert("Please enter valid CVV number")
-          }
-          var Valid = document.getElementById('valid').value
-          if(Valid.length <= 3){
-            alert("Please enter Valid Expiration Month")
-          }
-         
-          var NameOnCard = document.getElementById('name').value
-          if(NameOnCard.length <= 7){
-            alert("please enter valid expiration year")
-          }
-          // console.log(name+"  "+ cardnumber+"  "+ cvv+"  "+ ExpirationMonth+"  "+ year)
-          if((CardNumber.length == 16) && (Cvv.length == 3) && (Valid.length == 4) && (NameOnCard.length == 8)){
-            var data = {
-              CardNumber: CardNumber,
-              Cvv:Cvv,
-              Valid:Valid,
-              NameOnCard:NameOnCard
-            }
-            fetch("/sendCardDetails",
-            {
-                method: "POST",
-                headers: {
-                  'Accept': 'application/json',
-                  'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(function(res){ return res.json(); })
-            .then(function(data){ alert( JSON.stringify( data ) ) })
-          }
-          
-        }
-    
-      </script> -->
+   
+
+      <script>
+        var checkout =  window.localStorage.getItem('itemcart')
+
+          var data2 = {
+        name:checkout
+    }
+
+    fetch('/restaurant/cart',{
+        method:'POST',
+        headers:{
+            'Content-Type' : 'application/json'
+        },
+        body : JSON.stringify(data2)
+    })
+    .then(response => response.json())
+    .then(data3 => {
+        console.log(data3)
+        document.getElementById('cart_item').innerHTML = data3[0].item_name
+        document.getElementById('cart_price').innerHTML = data3[0].price
+        document.getElementById('cart_item_price').innerHTML = data3[0].price
+        document.getElementById('total_price').innerHTML = data3[0].price
+        document.getElementById('overall_cost').innerHTML = parseInt(data3[0].price) + 62 + 10
+        document.getElementById('quantity').value = "1"
+    })
+      </script>
 
 </html>

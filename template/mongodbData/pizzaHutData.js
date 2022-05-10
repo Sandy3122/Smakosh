@@ -44,6 +44,8 @@ fetch('/restaurant/PizzaHutVeg',{
     var data2 = {
         name:this.id
     }
+
+    window.localStorage.setItem('itemcart',this.id)
     fetch('/restaurant/cart',{
         method:'POST',
         headers:{

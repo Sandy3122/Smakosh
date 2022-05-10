@@ -28,6 +28,9 @@ var restaurants = dbs.collection('restaurantsData')
 router.get('/royal-tiffins',function(req,res){
     res.sendFile(path.resolve("restaurant_pages/royal-tiffins.html"));
 });
+router.get('/royaltiffins',function(req,res){
+    res.sendFile(path.resolve("restaurant_pages/royal-tiffins.html"));
+});
 
 router.get('/getrestaurant', function(req,res){
     restaurants.findOne({restaurant_name: 'Royal Tiffins'},function(err,docs){

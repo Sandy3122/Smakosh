@@ -28,6 +28,9 @@ var restaurants = dbs.collection('restaurantsData')
 router.get('/sub-way',function(req,res){
     res.sendFile(path.resolve("restaurant_pages/sub-way.html"));
 });
+router.get('/subway',function(req,res){
+    res.sendFile(path.resolve("restaurant_pages/sub-way.html"));
+});
 
 router.get('/getrestaurant', function(req,res){
     restaurants.findOne({restaurant_name: 'SubWay'},function(err,docs){

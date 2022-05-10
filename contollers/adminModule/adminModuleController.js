@@ -12,7 +12,7 @@ var session;
 
 
 router.get("/login", function (req, res) {
-    res.sendFile(path.resolve(  "SmakoshAdmin/views/login.html"));
+    res.sendFile(path.resolve("SmakoshAdmin/views/login.html"));
 });
 
 router.get("/dashboard", function (req, res) {

@@ -28,6 +28,9 @@ var restaurants = dbs.collection('restaurantsData')
 router.get('/dakshin-haweli',function(req,res){
     res.sendFile(path.resolve("restaurant_pages/dakshin-haweli.html"));
 });
+router.get('/dakshinhaweli',function(req,res){
+    res.sendFile(path.resolve("restaurant_pages/dakshin-haweli.html"));
+});
 
 router.get('/getrestaurant', function(req,res){
     restaurants.findOne({restaurant_name: 'Dakshin Haweli'},function(err,docs){

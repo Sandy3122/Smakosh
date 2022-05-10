@@ -145,13 +145,13 @@
     </div>
     <div class="offer-section py-4">
         <div class="container position-relative">
-            <img alt="#" src="../img/restaurants/freezing_hub/freezingHublogo.png" class="restaurant-pic">
-            <div class="pt-3 text-white">
-                <h2 class="font-weight-bold">Freezing Hub</h2>
-                <p class="text-white m-0">Milkshakes, Desserts, Beverages</p>
-                <p class="text-white m-0">Kakinada, Mainroad</p>
-                <div class="rating-wrap d-flex align-items-center mt-2">
-                    <ul class="rating-stars list-unstyled">
+        <img alt="#" id="restaurant_IMG" class="restaurant-pic" />
+        <div class="pt-3 text-white">
+          <h2 class="font-weight-bold" id="restaurant_name"></h2>
+          <p class="text-white m-0" id="restaurant_tag"></p>
+          <p class="text-white m-0" id="restaurant_address"></p>
+          <div class="rating-wrap d-flex align-items-center mt-2">
+            <ul class="rating-stars list-unstyled">
                         <li>
                             <i class="feather-star text-warning"></i>
                             <i class="feather-star text-warning"></i>
@@ -185,7 +185,7 @@
                     <a href="#ratings-and-reviews" class="text-decoration-none text-dark mx-2"><i class="p-2 bg-light rounded-circle font-weight-bold  feather-star"></i></a>
                     <a href="#ratings-and-reviews" class="text-decoration-none text-dark"><i class="p-2 bg-light rounded-circle font-weight-bold feather-map-pin"></i></a>
                 </div>
-                <a href="/contact-us" class="btn btn-sm btn-outline-light ml-auto">Contact</a>
+                <a href="/customer/contact-us" class="btn btn-sm btn-outline-light ml-auto">Contact</a>
             </div>
         </div>
     </div>
@@ -731,6 +731,29 @@
     <script type="text/javascript" src="../js/osahan.js"></script>
     <!-- fetching data from mongodb -->
     <script src="../mongodbData/freezingHubData.js"></script>
+     <!-- Getting Users Data -->
+     <script>
+        
+        const api_url = "/getusers";
+        // Defining async function
+        async function getapi(url) {
+            // Storing response
+            const response = await fetch(url);
+            // Storing data in form of JSON
+            var data = await response.json();
+            console.log(data);
+                if(data){
+                    
+                    document.getElementById("dropdownMenuButton").innerHTML = data[0].Name;   
+                    document.getElementById("userName").innerHTML = data[0].Name;   
+                    document.getElementById("userEmail").innerHTML = data[0].Email;   
+                    document.querySelectorAll('#userMobile','#exampleInputEmail1').innerHTML = data[0].MobileNumber;   
+                }
+        }
+        // Calling that async function
+        getapi(api_url);
+        
+            </script>
 </body>
 
 </html>

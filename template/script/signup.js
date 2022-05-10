@@ -11,7 +11,7 @@ function RegisterationData() {
           title: "Fields Empty!",
           text: "Please Check The Missing Fields!",
           icon: "warning",
-          button: "OK",
+          button: "OKAY",
         });
         return false;
       }

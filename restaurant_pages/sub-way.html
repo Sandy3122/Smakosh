@@ -144,13 +144,13 @@
     </div>
     <div class="offer-section py-4">
         <div class="container position-relative">
-            <img alt="#" src="../img/restaurants/subway/subWaylogo.png" class="restaurant-pic">
+            <img alt="#" id="restaurant_IMG" class="restaurant-pic" />
             <div class="pt-3 text-white">
-                <h2 class="font-weight-bold">SubWay</h2>
-                <p class="text-white m-0">Burger, Pizza, Desserts</p>
-                <p class="text-white m-0">Kakinada, Mainroad</p>
-                <div class="rating-wrap d-flex align-items-center mt-2">
-                    <ul class="rating-stars list-unstyled">
+              <h2 class="font-weight-bold" id="restaurant_name"></h2>
+              <p class="text-white m-0" id="restaurant_tag"></p>
+              <p class="text-white m-0" id="restaurant_address"></p>
+              <div class="rating-wrap d-flex align-items-center mt-2">
+                <ul class="rating-stars list-unstyled">
                         <li>
                             <i class="feather-star text-warning"></i>
                             <i class="feather-star text-warning"></i>
@@ -733,6 +733,30 @@
     <script type="text/javascript" src="../js/osahan.js"></script>
     <!-- fetching data from mongodb -->
     <script src="../mongodbData/subWayData.js"></script>
+
+     <!-- Getting Users Data -->
+     <script>
+        
+        const api_url = "/getusers";
+        // Defining async function
+        async function getapi(url) {
+            // Storing response
+            const response = await fetch(url);
+            // Storing data in form of JSON
+            var data = await response.json();
+            console.log(data);
+                if(data){
+                    
+                    document.getElementById("dropdownMenuButton").innerHTML = data[0].Name;   
+                    document.getElementById("userName").innerHTML = data[0].Name;   
+                    document.getElementById("userEmail").innerHTML = data[0].Email;   
+                    document.querySelectorAll('#userMobile','#exampleInputEmail1').innerHTML = data[0].MobileNumber;   
+                }
+        }
+        // Calling that async function
+        getapi(api_url);
+        
+            </script>
 </body>
 
 </html>

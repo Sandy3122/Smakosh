@@ -31,18 +31,10 @@ mongoose.connect("mongodb+srv://Sandeep1999:Sandeep3122@sandeep.nlcna.mongodb.ne
 })
 const connection = mongoose.connection;
 
-
-
-// var monk = require('monk');
-// var dbs = monk('mongodb+srv://Sandeep1999:Sandeep3122@sandeep.nlcna.mongodb.net/Smakosh?retryWrites=true&w=majority')
-// var datacollection = dbs.collection('items')
-// var restaurants = dbs.collection('restaurantsData')
-
 var session;
 
 
 //getting navbar html pages
-
 router.get('/home',function(req,res){
     session=req.session;
     if(session.user){
@@ -65,25 +57,6 @@ router.get('/login',function(req,res){
     res.sendFile(path.resolve('template/login.html'));
 });
 
-// router.post('/loginData', function(req,res){
-//     //res.sendFile(__dirname + '/template/signup.html');
-//     session=req.session;
-//     console.log(req.body);
-    
-//     registrationSchema.findOne({Email :req.body.Email, Password:req.body.Password}, function(err,docs){
-//         if(err || docs==null){
-//             //console.log(err)
-//             res.sendStatus(500)
-//         } 
-//         else{
-//             // session=req.session;
-//             session.user=docs;
-//             res.send(docs);
-//         }
-//     })
-
-   
-// });
 
 router.get('/restaurantSignIn',function(req,res){
     res.sendFile(path.resolve('template/signInRestaurant.html'));

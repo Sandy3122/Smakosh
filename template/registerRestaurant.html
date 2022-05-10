@@ -1,202 +1,572 @@
-<!-- <!DOCTYPE html> -->
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Smakosh - Online Food Ordering Website</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Signup</title>
 
-     <!-- ======== Custom Css ======== -->
-     <link rel="stylesheet" href="../css/restaurantRegistrationStyle.css">
-    <link href="data.js" rel="JavaScript" type="text/js" />
-    
-    <!-- ======== Custome Jquery ======== -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <script src="index.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <link href="data.js" rel="JavaScript" type="text/js">
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
 
-    <!-- Latest compiled and minified CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css"
-    />
-  </head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-  <body>
-    <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div
-          class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2"
-        >
-          <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-            <h2 id="heading">Sign Up Your User Account</h2>
-            <p>Fill all form field to go to next step</p>
-            <form id="msform">
-              <!-- progressbar -->
-              <ul id="progressbar">
-                <li class="active" id="account"><strong>Account</strong></li>
-                <li id="personal"><strong>Personal</strong></li>
-                <li id="payment"><strong>Image</strong></li>
-                <li id="confirm"><strong>Finish</strong></li>
-              </ul>
-              <div class="progress">
-                <div
-                  class="progress-bar progress-bar-striped progress-bar-animated"
-                  role="progressbar"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Custome JavaScript -->
+<!-- <script type="text/javascript" src="./script.js"></script> -->
+<!-- Custom styles for this template -->
+<link href="../css/restaurantRegistration.css" rel="stylesheet" />
+</head>
+<body>
+          <section>
+          <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+
+
+                </div>
               </div>
-              <br />
-              <!-- fieldsets -->
-              <fieldset>
-                <div class="form-card">
-                  <div class="row">
-                    <div class="col-7">
-                      <h2 class="fs-title">Restuarant Information:</h2>
-                    </div>
-                    <div class="col-4">
-                      <h2 class="steps">Step 1 - 4</h2>
-                    </div>
-                  </div>
-                  <label class="fieldlabels">Email: *</label>
-                  <input type="email" name="email" placeholder="Email Id" />
-                  <label class="fieldlabels">Username: *</label>
-                  <input type="text" name="uname" placeholder="UserName" />
-                  <label class="fieldlabels">Password: *</label>
-                  <input type="password" name="pwd" placeholder="Password" />
-                  <label class="fieldlabels">Confirm Password: *</label>
-                  <input
-                    type="password"
-                    name="cpwd"
-                    placeholder="Confirm Password"
-                  />
-                </div>
-                <input
-                  type="button"
-                  name="next"
-                  class="next action-button"
-                  value="Next"
-                />
-              </fieldset>
-              <fieldset>
-                <div class="form-card">
-                  <div class="row">
-                    <div class="col-7">
-                      <h2 class="fs-title">Restuarant Manager Information:</h2>
-                    </div>
-                    <div class="col-4">
-                      <h2 class="steps">Step 2 - 4</h2>
-                    </div>
-                  </div>
-                  <label class="fieldlabels">First Name: *</label>
-                  <input type="text" name="fname" placeholder="First Name" />
-                  <label class="fieldlabels">Last Name: *</label>
-                  <input type="text" name="lname" placeholder="Last Name" />
-                  <label class="fieldlabels">Contact No.: *</label>
-                  <input type="text" name="phno" placeholder="Contact No." />
-                  <label class="fieldlabels">Alternate Contact No.: *</label>
-                  <input
-                    type="text"
-                    name="phno_2"
-                    placeholder="Alternate Contact No."
-                  />
-                </div>
-                <input
-                  type="button"
-                  name="next"
-                  class="next action-button"
-                  value="Next"
-                />
-                <input
-                  type="button"
-                  name="previous"
-                  class="previous action-button-previous"
-                  value="Previous"
-                />
-              </fieldset>
-              <fieldset>
-                <div class="form-card">
-                  <div class="row">
-                    <div class="col-7">
-                      <h2 class="fs-title">Restuarant Certificates Upload:</h2>
-                    </div>
-                    <div class="col-4">
-                      <h2 class="steps">Step 3 - 2</h2>
-                    </div>
-                  </div>
-                  <label class="fieldlabels">Upload Your Photo:</label>
-                  <input type="file" name="pic" accept="image/*" />
-                  <label class="fieldlabels">Upload Signature Photo:</label>
-                  <input type="file" name="pic" accept="image/*" />
-                </div>
-                <input
-                  type="button"
-                  name="next"
-                  class="next action-button"
-                  value="Submit"
-                />
-                <input
-                  type="button"
-                  name="previous"
-                  class="previous action-button-previous"
-                  value="Previous"
-                />
-              </fieldset>
-              <fieldset>
-                <div class="form-card">
-                  <div class="row">
-                    <div class="col-7">
-                      <h2 class="fs-title">Finish:</h2>
-                    </div>
-                    <div class="col-4">
-                      <h2 class="steps">Step 4 - 4</h2>
-                    </div>
-                  </div>
-                  <br /><br />
-                  <h2 class="purple-text text-center">
-                    <strong>SUCCESS !</strong>
-                  </h2>
-                  <br />
-                  <div class="row justify-content-center">
-                    <div class="col-3">
-                      <img
-                        src="https://i.imgur.com/GwStPmg.png"
-                        class="fit-image"
-                      />
-                    </div>
-                  </div>
-                  <br /><br />
-                  <div class="row justify-content-center">
-                    <div class="col-7 text-center">
-                      <h5 class="purple-text text-center">
-                        You Have Successfully Signed Up
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-              </fieldset>
-            </form>
           </div>
-        </div>
-      </div>
-    </div>
-    <!--  -->
-  </body>
+        </section>
 
-    <!-- Custome script for Progress From -->
-    <script type="text/javascript" src="../script/restaurantRegistration.js"></script>
+        <!-- main content -->
+        <section class="form-box">
+            <div class="container">
+                
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+                    
+                        <!-- Form Wizard -->
+                        <div class="form-wizard form-header-classic form-body-classic">
+                       
+                        
+                        <form>
+
+                            <h3>Register Your Restuarant Details With Smakosh</h3>
+                            <p>Fill all form field to go next step</p>
+                            
+                            <!-- Form progress -->
+                            <div class="form-wizard-steps form-wizard-tolal-steps-4">
+                                <div class="form-wizard-progress">
+                                    <div class="form-wizard-progress-line" data-now-value="12.25" data-number-of-steps="4" style="width: 12.25%;"></div>
+                                </div>
+                                <!-- Step 1 -->
+                                <div class="form-wizard-step active">
+                                    <div class="form-wizard-step-icon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></div>
+                                    <p>Account</p>
+                                </div>
+                                <!-- Step 1 -->
+                                
+                                <!-- Step 2 -->
+                                <div class="form-wizard-step">
+                                    <div class="form-wizard-step-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+                                    <p>Manager</p>
+                                </div>
+                                <!-- Step 2 -->
+                                
+                                <!-- Step 3 -->
+                                <div class="form-wizard-step">
+                                    <div class="form-wizard-step-icon"><i class="fa fa-image" aria-hidden="true"></i></div>
+                                    <p>Image</p>
+                                </div>
+                                <!-- Step 3 -->
+                                
+                                <!-- Step 4 -->
+                                <div class="form-wizard-step">
+                                    <div class="form-wizard-step-icon"><i class="fa fa-file-text" aria-hidden="true"></i></div>
+                                    <p>Confirm</p>
+                                </div>
+                                <!-- Step 4 -->
+                            </div>
+                            <!-- Form progress -->
+                            
+                            
+                            <!-- Form Step 1 -->
+                            <fieldset>
+                                <!-- Progress Bar -->
+                                <div class="progress">
+                                  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%">
+                                  </div>
+                                </div>
+                                <!-- Progress Bar -->
+                                <h4>Restuarant Information: <span>Step 1 - 4</span></h4>
+                                <div class="form-group">
+                                  <form>
+                                    <label>Restuarant Name: <span>*</span></label>
+                                    <input type="text" name="Email" placeholder="Name" id="ResName" class="form-control required">
+                                </div>
+                                <div class="form-group">
+                                    <label>Restuarant Phone Number: <span>*</span></label>
+                                    <input type="number" name="mobile" placeholder="Phone Number" id="ResNum" class="form-control required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Restuarant Email: <span>*</span></label>
+                                    <input type="email" name="email" placeholder="Email" id="ResEmail" class="form-control required">
+                                </div>
+
+                                
+                                <div class="form-group">
+                                    <label>Restuarant Address: <span>*</span></label>
+                                    <input type="text" name="address" placeholder="Address" id="ResAddress" class="form-control required">
+                                </div>
+                                <div class="form-wizard-buttons">
+                                    <!-- <button type="Next" class="btn btn-next">Next</button> -->
+                                    <button type="Next" class="btn btn-next">Next</button>
+                                    <!-- <input type="submit" value="Next" id="LoginBtn"> -->
+                                </div>
+                            </fieldset>
+                            <!-- Form Step 1 -->
+
+                            
+                            <!-- Form Step 2 -->
+                            <fieldset>
+                                <!-- Progress Bar -->
+                                <div class="progress">
+                                  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                                  </div>
+                                </div>
+                                <!-- Progress Bar -->
+                                <h4>Restuarant Manager Information : <span>Step 2 - 4</span></h4>
+                                <div class="form-group">
+                                    <label>Restuarant Manager Name: <span>*</span></label>
+                                    <input type="text" name="First Name" placeholder="Enter Manager Name" id="ResMName" class="form-control required">
+                                </div>
+                                <div class="form-group">
+                                    <label>Restuarant Manager Phone Number: <span>*</span></label>
+                                    <input type="number" name="mobile" placeholder="Phone Number" id="ResMNum" class="form-control required">
+                                </div>
+                                
+                                <div style="clear:both;"></div>
+                                <div class="form-group">
+                                    <label>Restuarant Manager Email: <span>*</span></label>
+                                    <input type="text" name="email" placeholder="Email" id="ResMEmail" class="form-control required">
+                                </div>
+                                <div class="form-group">
+                                  <label for="password">Restuarant Manager Password: <span>*</span></label>
+                                  <input type="password" name="password" placeholder="Enter Your Password" id="ResMPassword" class="form-control required">
+                              </div>
+                                
+                                
+                                <div class="form-wizard-buttons">
+                                    <button type="button" class="btn btn-previous">Previous</button>
+                                    <!-- <button type="button" class="btn btn-next">Next</button> -->
+                                    <button type="Next" class="btn btn-next">Next</button>
+
+                                </div>
+                            </fieldset>
+                            <!-- Form Step 2 -->
+
+                            
+                            <!-- Form Step 3 -->
+                            <fieldset>
+                                <!-- Progress Bar -->
+                                <div class="progress">
+                                  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                                  </div>
+                                </div>
+                                <!-- Progress Bar -->
+                                <h4>Upload Restuarant Certificates: <span>Step 3 - 4</span></h4>
+                                
+
+
+                               
+                          <label class="form-group">Upload Your Restuarant Photo:</label>
+                           <input type="file" name="pic" accept="image/*"> 
+                      <br/>
+                                <div class="form-wizard-buttons">
+                                    <button type="button" class="btn btn-previous">Previous</button>
+                                    <button type="button" class="btn btn-next" onclick="AddData()">Next</button>
+                                </div>
+                            </fieldset>
+                            <!-- Form Step 3 -->
+                            
+                            
+                            <!-- Form Step 4 -->
+                            <fieldset>
+                                <!-- Progress Bar -->
+                                <div class="progress">
+                                  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                  </div>
+                                </div>
+                                <!-- Progress Bar -->
+                                <h4>Confirm Details: <span>Step 4 - 4</span></h4>
+                                <div style="clear:both;"></div>
+                                <div class="table-responsive" id="tbody">
+                                <table class="table" id="show" >
+                                    <tr><th>Restuarant Name</th><td></td></tr>
+                                    <tr><th>Restuarant Phone Number</th><td></td></tr>
+                                    <tr><th>Restuarant Email</th><td></td></tr>
+                                    <tr><th>Restuarant Address</th><td></td></tr>
+                                    <tr><th>Restuaranat Manager Name</th><td></td></tr>
+                                    <tr><th>Restuaranat Manager Phone Number</th><td></td></tr>
+                                    <tr><th>Restuaranat Manager Email</th><td></td></tr>
+                                    
+                                  </table>
+                                  <!-- <table class="table" border="4">
+                                    <thead  id="show">
+                                      <tr>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email</th>
+                                        <th>Age</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email</th>
+                                      </tr>
+                                    </thead>
+                                  </table> -->
+
+                                </div>
+                                <div class="form-wizard-buttons">
+                                    <button type="button" class="btn btn-previous">Previous</button>
+                                    <button type="submit" class="btn btn-submit" onclick="Submit()">Submit</button>
+                                </div>
+                            </fieldset>
+                            <!-- Form Step 4 -->
+                        
+                        </form>
+                        
+                        </div>
+                        <!-- Form Wizard -->
+                    </div>
+                </div>
+                    
+            </div>
+        </section>
+        <!-- main content -->
+  </body>
+</html>
+</body>
+
+<script>
+"use strict";
+(function( $ ) {
+
+function scroll_to_class(element_class, removed_height) {
+var scroll_to = $(element_class).offset().top - removed_height;
+if($(window).scrollTop() != scroll_to) {
+  $('.form-wizard').stop().animate({scrollTop: scroll_to}, 0);
+}
+}
+
+function bar_progress(progress_line_object, direction) {
+var number_of_steps = progress_line_object.data('number-of-steps');
+var now_value = progress_line_object.data('now-value');
+var new_value = 0;
+if(direction == 'right') {
+  new_value = now_value + ( 100 / number_of_steps );
+}
+else if(direction == 'left') {
+  new_value = now_value - ( 100 / number_of_steps );
+}
+progress_line_object.attr('style', 'width: ' + new_value + '%;').data('now-value', new_value);
+}
+
+jQuery(document).ready(function() {
+
+/*
+  Form
+*/
+$('.form-wizard fieldset:first').fadeIn('slow');
+
+$('.form-wizard .required').on('focus', function() {
+  $(this).removeClass('input-error');
+});
+
+// next step
+$('.form-wizard .btn-next').on('click', function() {
+  var parent_fieldset = $(this).parents('fieldset');
+  var next_step = true;
+  // navigation steps / progress steps
+  var current_active_step = $(this).parents('.form-wizard').find('.form-wizard-step.active');
+  var progress_line = $(this).parents('.form-wizard').find('.form-wizard-progress-line');
+  
+  // fields validation
+  parent_fieldset.find('.required').each(function() {
+    if( $(this).val() == "" ) {
+      $(this).addClass('input-error');
+      next_step = false;
+    }
+    else {
+      $(this).removeClass('input-error');
+    }
+  });
+  // fields validation
+  
+  if( next_step ) {
+    parent_fieldset.fadeOut(400, function() {
+      // change icons
+      current_active_step.removeClass('active').addClass('activated').next().addClass('active');
+      // progress bar
+      bar_progress(progress_line, 'right');
+      // show next step
+      $(this).next().fadeIn();
+      // scroll window to beginning of the form
+      scroll_to_class( $('.form-wizard'), 20 );
+    });
+  }
+  
+});
+
+// previous step
+$('.form-wizard .btn-previous').on('click', function() {
+  // navigation steps / progress steps
+  var current_active_step = $(this).parents('.form-wizard').find('.form-wizard-step.active');
+  var progress_line = $(this).parents('.form-wizard').find('.form-wizard-progress-line');
+  
+  $(this).parents('fieldset').fadeOut(400, function() {
+    // change icons
+    current_active_step.removeClass('active').prev().removeClass('activated').addClass('active');
+    // progress bar
+    bar_progress(progress_line, 'left');
+    // show previous step
+    $(this).prev().fadeIn();
+    // scroll window to beginning of the form
+    scroll_to_class( $('.form-wizard'), 20 );
+  });
+});
+
+// submit
+$('.form-wizard').on('submit', function(e) {
+  
+  // fields validation
+  $(this).find('.required').each(function() {
+    if( $(this).val() == "" ) {
+      e.preventDefault();
+      $(this).addClass('input-error');
+    }
+    else {
+      $(this).removeClass('input-error');
+    }
+  });
+  // fields validation
+  
+});
+
+
+});
+
+
+
+// image uploader scripts 
+
+var $dropzone = $('.image_picker'),
+$droptarget = $('.drop_target'),
+$dropinput = $('#inputFile'),
+$dropimg = $('.image_preview'),
+$remover = $('[data-action="remove_current_image"]');
+
+$dropzone.on('dragover', function() {
+$droptarget.addClass('dropping');
+return false;
+});
+
+$dropzone.on('dragend dragleave', function() {
+$droptarget.removeClass('dropping');
+return false;
+});
+
+$dropzone.on('drop', function(e) {
+$droptarget.removeClass('dropping');
+$droptarget.addClass('dropped');
+$remover.removeClass('disabled');
+e.preventDefault();
+
+var file = e.originalEvent.dataTransfer.files[0],
+  reader = new FileReader();
+
+reader.onload = function(event) {
+$dropimg.css('background-image', 'url(' + event.target.result + ')');
+};
+
+console.log(file);
+reader.readAsDataURL(file);
+
+return false;
+});
+
+$dropinput.change(function(e) {
+$droptarget.addClass('dropped');
+$remover.removeClass('disabled');
+$('.image_title input').val('');
+
+var file = $dropinput.get(0).files[0],
+  reader = new FileReader();
+
+reader.onload = function(event) {
+$dropimg.css('background-image', 'url(' + event.target.result + ')');
+}
+
+reader.readAsDataURL(file);
+});
+
+$remover.on('click', function() {
+$dropimg.css('background-image', '');
+$droptarget.removeClass('dropped');
+$remover.addClass('disabled');
+$('.image_title input').val('');
+});
+
+$('.image_title input').blur(function() {
+if ($(this).val() != '') {
+$droptarget.removeClass('dropped');
+}
+});
+
+// image uploader scripts
+
+}( jQuery ));
+
+
+// function validation(){
+//   var mail = document.getElementById("email").value;
+
+//   var regx = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/
+
+//   if(regx.text(mail)){
+//     alert(" enter @ valid mail")
+//     return true
+//   }
+//   else{
+//     alert("sorry!")
+//     return false;
+//   }
+// }
+
+// $(function(){
+//   var email = $("#email").val();
+//   if(email.indexOf("@") < 0 || email.indexOf(".") < 0){
+//     alert("Invalid email");
+//   }
+// });
+</script>
+
+<script>
+  var list1 = [];
+  var list2 = [];
+  var list3 = [];
+  var list4 = [];
+  var list5 = [];
+  var list6 = [];
+  var list7 = [];
+  var list8 = [];
+
+  var n = 1;
+  var x = 0;
+
+  function AddData(){
+alert("Testing")
+var AddRown = document.getElementById('show');
+var NewRow = AddRown.insertRow(n);
+  // var NewRow = document.createElement("td");
+
+  // var x = document.createElement('TBODY');
+  // var y =document.createElement("TR");
+  // var z = document.createElement("TD");
+
+  // z.innerHTML = "A table cell inside a tr inside a tbody inside a table!"
+  // y.appendChild(z);
+  // x.appendChild(y);
+  // document.getElementById("myTable").appendChild(x);
+
+      list1[x] = document.getElementById('ResName').value;
+      list2[x] = document.getElementById('ResNum').value;
+      list3[x] = document.getElementById('ResEmail').value;
+      list4[x] = document.getElementById('ResAddress').value;
+      list5[x] = document.getElementById('ResMName').value;
+      list6[x] = document.getElementById('ResMNum').value;
+      list7[x] = document.getElementById('ResMEmail').value;
+      list8[x] = document.getElementById('ResMPassword').value;
+
+
+      var cel1 = NewRow.insertCell(0);
+      var cel2 = NewRow.insertCell(1);
+      var cel3 = NewRow.insertCell(2);
+      var cel4 = NewRow.insertCell(3);
+      var cel5 = NewRow.insertCell(4);
+      var cel6 = NewRow.insertCell(5);
+      var cel7 = NewRow.insertCell(6);
+      var cel8 = NewRow.insertCell(7);
+
+      cel1.innerHTML = list1[x];
+      cel2.innerHTML = list2[x];
+      cel3.innerHTML = list3[x];
+      cel4.innerHTML = list4[x];
+      cel5.innerHTML = list5[x];
+      cel6.innerHTML = list6[x];
+      cel7.innerHTML = list7[x];
+      cel8.innerHTML = list8[x];
+
+      n++;
+      x++;
+  }
+
+</script>
+
+<script>
+  function Submit(){
+    alert("Working")
+  var data = {
+    ResName: document.getElementById('ResName').value,
+    ResPhoneNumber: document.getElementById('ResNum').value,
+    ResEmail: document.getElementById('ResEmail').value,
+    ResAddress: document.getElementById('ResAddress').value,
+    ResManagerName: document.getElementById('ResMName').value,
+    ResManagerEmail: document.getElementById('ResMNum').value,
+    ResManagerContactNo: document.getElementById('ResMEmail').value,
+    ResManagerPassword: document.getElementById('ResMEmail').value,
+    // UploadYourResPhoto: document.getElementById('confirmpassword').value,
+
+  }
+
+  fetch('/sendRestaurant', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+    
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      swal({
+        title: "Successfully Submited",
+        text: "Click OK To SignIn",
+        icon: "success",
+        button: "OK",
+      });
+      window.location.href="/"
+    })
+    .catch((error) => {
+      alert("Mail ID Already Exits")
+    });
+
+  }
+  
+</script>
+
 
 </html>
