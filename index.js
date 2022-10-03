@@ -1,10 +1,9 @@
 var express = require("express");
 var app = express();
+var path = require('path')
 app.path = require("path");
 // var monk = require("monk");
 const bodyparser = require("body-parser");
-const multer =require("multer");
-var path = require('path')
 
 //Importing the Schema's
 const registrationSchema = require('./models/customerSignUpSchema.js');
@@ -142,24 +141,7 @@ app.post('/sendCardDetails',function(req,res){
     });
 
 
-//Getting Users Data From MongoDB
-app.get('/getusers',function(req,res){
-    session = req.session;
-    if(session.user){
-        registrationSchema.find({"_id":session.user._id},function(err,result){
-            if(err){
-                console.log("err");
-            }
-            else{
-                //console.log("result");
-                res.send(result)
-            }
-        });
-    }
-    else{
-        console.log("err");
-    }
-});
+
 
 
 //Search Functionality
@@ -263,4 +245,4 @@ app.post('/resLoginData', function(req,res){
 });
 
 //listening to the server
-app.listen(8080, ()=> console.log("Successfully Server Started"));
+app.listen(8000, ()=> console.log("Successfully Server Started"));

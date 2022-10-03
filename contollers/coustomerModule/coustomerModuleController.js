@@ -34,18 +34,24 @@ const connection = mongoose.connection;
 var session;
 
 
+
+
 //getting navbar html pages
-router.get('/home',function(req,res){
-    session=req.session;
-    if(session.user){
-        // console.log("working");
-        console.log(session.user);
-        res.sendFile(path.resolve('template/home.html'));
-    }
-    else{
-        res.redirect("/customer/login")
-    }
+// router.get('/home',function(req,res){
+//     session=req.session;
+//     if(session.user){
+//         // console.log("working");
+//         console.log(session.user);
+//         res.sendFile(path.resolve('template/home.html'));
+//     }
+//     else{
+//         res.redirect("/customer/login")
+//     }
    
+// });
+
+router.get('/home',function(req,res){
+    res.sendFile(path.resolve('template/home.html'));
 });
 
 //LogIn Route and getting data from mongodb
